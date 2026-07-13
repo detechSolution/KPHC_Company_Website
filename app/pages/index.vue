@@ -3,6 +3,24 @@ useSeoMeta({
   title: 'Kalihi-Palama Health Center',
   description: 'Care when you need it most of all. Comprehensive medical, dental, and behavioral health services for our community.',
 })
+
+const highlightCards = [
+  {
+    title: 'Kalihi-Palama Health Center Events',
+    action: 'View More',
+    to: '/resources',
+  },
+  {
+    title: 'We\'re Hiring! Apply Today',
+    action: 'Apply Now',
+    to: '/careers',
+  },
+  {
+    title: 'Apply for WIC Services',
+    action: 'Apply Now',
+    to: '/services/additional',
+  },
+]
 </script>
 
 <template>
@@ -18,6 +36,123 @@ useSeoMeta({
         color: 'primary',
         size: 'xl',
       }]"
-    />
+    >
+      <div class="flex items-end justify-center gap-3 overflow-hidden sm:gap-4">
+        <ImageSkeleton
+          class="hidden h-40 w-[18%] sm:block lg:h-48"
+          label="Healthcare photo placeholder"
+        />
+        <ImageSkeleton
+          class="hidden h-48 w-[22%] sm:block lg:h-56"
+          label="Healthcare photo placeholder"
+        />
+        <ImageSkeleton
+          class="h-52 w-[70%] sm:h-64 sm:w-[28%] lg:h-72"
+          label="Featured healthcare photo placeholder"
+        />
+        <ImageSkeleton
+          class="hidden h-48 w-[22%] sm:block lg:h-56"
+          label="Healthcare photo placeholder"
+        />
+        <ImageSkeleton
+          class="hidden h-40 w-[18%] sm:block lg:h-48"
+          label="Healthcare photo placeholder"
+        />
+      </div>
+    </HeroBanner>
+
+    <section class="bg-white py-section">
+      <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
+        <AccentTitle
+          title="We Provide Comprehensive Healthcare for Our Patients."
+          accent="Comprehensive Healthcare"
+          class="max-w-3xl text-3xl sm:text-4xl"
+          align="center"
+        />
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          As a Patient-Centered Medical Home, we coordinate your care across medical, dental, behavioral health, and social services — so you and your family get the support you need in one place.
+        </p>
+        <p class="mt-3 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          Our team is committed to culturally respectful, affordable care for every stage of life.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <UButton
+            label="Book a Consultation"
+            color="primary"
+            size="xl"
+          />
+          <UButton
+            label="Open Patient Portal"
+            color="primary"
+            variant="outline"
+            size="xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white pb-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) gap-4 px-gutter sm:grid-cols-2 sm:px-gutter-lg lg:grid-cols-3 lg:gap-6">
+        <NuxtLink
+          v-for="card in highlightCards"
+          :key="card.title"
+          :to="card.to"
+          class="group relative block overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <ImageSkeleton
+            class="aspect-[4/3] w-full"
+            :label="`${card.title} image placeholder`"
+          />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-950/80 via-zinc-950/30 to-transparent p-5 sm:p-6">
+            <h3 class="text-lg font-semibold text-white text-balance sm:text-xl">
+              {{ card.title }}
+            </h3>
+            <span class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-green-200 transition-colors group-hover:text-white">
+              {{ card.action }}
+              <UIcon
+                name="i-lucide-chevron-right"
+                class="size-4"
+              />
+            </span>
+          </div>
+        </NuxtLink>
+      </div>
+    </section>
+
+    <section class="bg-green-50 py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p class="text-sm font-semibold tracking-wide text-primary uppercase">
+            Comprehensive Services
+          </p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 text-balance sm:text-4xl">
+            Empowering your health and uplifting your life
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+            From primary care and dental to behavioral health, WIC, pharmacy, and more — explore the programs designed to keep you and your family thriving.
+          </p>
+          <UButton
+            label="Explore Our Services"
+            to="/services"
+            color="primary"
+            size="xl"
+            class="mt-8"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <ImageSkeleton
+            class="aspect-square w-full"
+            label="Patient care photo placeholder"
+          />
+          <ImageSkeleton
+            class="aspect-square w-full"
+            label="Provider consultation photo placeholder"
+          />
+        </div>
+      </div>
+    </section>
+
+    <PageCta />
   </div>
 </template>
