@@ -27,6 +27,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  // Light-only site — no dark/system theme switching
+  ui: {
+    colorMode: false,
+  },
+
   compatibilityDate: '2026-06-30',
 
   eslint: {

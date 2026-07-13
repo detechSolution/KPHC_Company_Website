@@ -1,18 +1,53 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/**
+ * KHPC brand tokens — sampled from mockups/
+ * Primary green: #23B473 | Mint surface: #EBFAF3 | Forest: #0F3C28 | Footer: #111113
+ */
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
+  --font-accent: 'Caveat', cursive;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  /* Brand green scale (primary ≈ 500) */
+  --color-green-50: #EBFAF3;
+  --color-green-100: #D4F5E6;
+  --color-green-200: #A8EBCB;
+  --color-green-300: #6FDBA9;
+  --color-green-400: #3FC788;
+  --color-green-500: #23B473;
+  --color-green-600: #1C9A61;
+  --color-green-700: #167A4E;
+  --color-green-800: #115C3B;
+  --color-green-900: #0F3C28;
+  --color-green-950: #072418;
+
+  /* Charcoal neutrals — footer / headings (~#111113) */
+  --color-zinc-50: #FAFAFA;
+  --color-zinc-100: #F4F4F5;
+  --color-zinc-200: #E4E4E7;
+  --color-zinc-300: #D4D4D8;
+  --color-zinc-400: #A1A1AA;
+  --color-zinc-500: #71717A;
+  --color-zinc-600: #52525B;
+  --color-zinc-700: #3F3F46;
+  --color-zinc-800: #27272A;
+  --color-zinc-900: #18181B;
+  --color-zinc-950: #111113;
+
+  /* Section rhythm from mockups (~80–100px vertical, 24–32px gutters) */
+  --spacing-section-sm: 3.5rem;
+  --spacing-section: 5rem;
+  --spacing-section-lg: 6.25rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-lg: 2rem;
+}
+
+:root {
+  /* Softer cards/images (~12px base → rounded-2xl ≈ 24px for media) */
+  --ui-radius: 0.75rem;
+  /* Content width ≈ 1152px from mockup frames */
+  --ui-container: 72rem;
+  /* Room for logo + pill CTAs */
+  --ui-header-height: 5rem;
 }

@@ -31,7 +31,7 @@
       }, {
         icon: 'i-lucide-palette',
         title: 'Beautiful by default',
-        description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.',
+        description: 'Leveraging Nuxt UI\'s design system with consistent spacing and polished components that look great out of the box.',
       }, {
         icon: 'i-lucide-zap',
         title: 'Lightning fast',

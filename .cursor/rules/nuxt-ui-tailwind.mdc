@@ -10,13 +10,18 @@ alwaysApply: false
 
 - Prefer Nuxt UI primitives (`UButton`, `UPageHero`, `UHeader`, …) over custom one-offs
 - Use Iconify names already in the project (`i-lucide-*`, `i-simple-icons-*`)
-- Theme tokens live in `app/app.config.ts` (`ui.colors`) — extend there, don’t hardcode brand colors ad hoc
+- Theme tokens live in `app/assets/css/main.css` (`@theme`) + `app/app.config.ts` (`ui.colors`) — extend there, don’t hardcode brand colors ad hoc
+- Brand primary is green-500 `#23B473`; mint surfaces use `bg-green-50`; forest accents use `text-green-900` / `bg-green-900`
+- Section spacing: `py-section` / `py-section-lg`; grid gaps: `gap-gutter` / `gap-gutter-lg`
+- Script emphasis in headings: `font-accent text-primary`
 - Keep marketing sections focused: one purpose, one headline, light supporting copy
 
 ## Styling
 
 - Tailwind utility classes in templates; shared tokens/base in `app/assets/css/main.css`
 - Prefer Nuxt UI semantic color props (`primary`, `neutral`, `muted`) over raw hex in components
+- Light mode only (`ui.colorMode: false`) — do not reintroduce dark mode or `UColorModeButton`
+- Buttons are pills by default; cards/media use `rounded-2xl` / `--ui-radius`
 - Mobile-first layouts; verify desktop and mobile
 
 ## Accessibility

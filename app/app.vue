@@ -36,15 +36,16 @@ useSeoMeta({
       </template>
 
       <template #right>
-        <UColorModeButton />
-
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
+          label="Book a Consultation"
+          color="primary"
+          size="md"
+        />
+        <UButton
+          label="Patient Portal"
+          color="primary"
+          variant="outline"
+          size="md"
         />
       </template>
     </UHeader>
