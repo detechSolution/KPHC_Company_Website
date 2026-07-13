@@ -1,0 +1,35 @@
+---
+description: Nuxt 4 SSG conventions for this static company website
+globs: "{nuxt.config.ts,app/**/*.{vue,ts},public/**/*}"
+alwaysApply: false
+---
+
+# Nuxt SSG Conventions
+
+## Directory layout (Nuxt 4)
+
+- App code lives under `app/` (`app.vue`, `pages/`, `components/`, `composables/`, `assets/`)
+- Root keeps `nuxt.config.ts`, `public/`, `package.json`
+- `~/` and `@/` alias to `app/`; `~~/` and `@@/` alias to project root
+- Do **not** create `server/` or Nitro route handlers
+
+## Pages & composition
+
+- Keep `app.vue` and `pages/*` thin: layout shell + feature composition
+- File-based routing under `app/pages/`
+- Use `useSeoMeta` / `useHead` on every public page
+- Prefer `NuxtLink` for internal links so prerender crawl discovers routes
+- Wrap browser-only APIs/widgets in `<ClientOnly>` with a sensible fallback
+
+## Data & state
+
+- Prefer build-time data (imports, JSON, CMS fetch during generate)
+- `useAsyncData` / `useFetch` only when the request succeeds at generate time
+- Avoid `import.meta.server` branches that assume a live Node server in production
+- Values like `new Date()` are frozen at generate time — intentional for SSG
+
+## Config
+
+- `nitro.preset: 'static'` and `routeRules['/**'].prerender: true` stay on
+- Add new public routes to the site graph (linked) or to `nitro.prerender.routes`
+- Deploy artifact: `.output/public`

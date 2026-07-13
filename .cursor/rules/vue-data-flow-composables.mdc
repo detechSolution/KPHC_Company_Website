@@ -1,0 +1,48 @@
+---
+description: Vue component data flow (props/emits) and composable extraction patterns
+globs: "**/*.{vue,ts}"
+alwaysApply: false
+---
+
+# Vue Data Flow & Composables
+
+## Data flow
+
+- Primary model: props down, events up
+- Use `v-model` only for true two-way contracts
+- Use `provide` / `inject` only for deep-tree or shared context
+- Type contracts with `defineProps`, `defineEmits`, and `InjectionKey` when needed
+
+```vue
+<script setup lang="ts">
+const props = defineProps<{ item: Item }>()
+const emit = defineEmits<{ select: [id: string] }>()
+</script>
+```
+
+## Composables
+
+Extract into `useXxx()` when logic is reused, stateful, or side-effect heavy.
+
+- Keep APIs small, typed, and predictable
+- Separate feature logic from presentational components
+- Return refs/computed explicitly; avoid leaking internal mutable bags
+
+```ts
+// composables/useFeature.ts
+export function useFeature() {
+  const items = ref<Item[]>([])
+  const count = computed(() => items.value.length)
+  async function load() { /* ... */ }
+  return { items, count, load }
+}
+```
+
+## Optional features (only when required)
+
+Do not add by default:
+
+- Slots, fallthrough attrs, KeepAlive, Teleport, Suspense
+- Transition / TransitionGroup / class- or state-driven animation
+- Custom directives, async components, render functions, plugins
+- App-wide stores (Pinia) only when state crosses feature boundaries

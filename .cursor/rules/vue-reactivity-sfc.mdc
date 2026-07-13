@@ -1,0 +1,41 @@
+---
+description: Vue reactivity model and SFC structure/template safety rules
+globs: "**/*.{vue,ts}"
+alwaysApply: false
+---
+
+# Vue Reactivity & SFC
+
+## Reactivity
+
+- Keep source state minimal with `ref` / `reactive`
+- Derive with `computed`; avoid recomputing expensive logic in templates
+- Use `watch` / `watchEffect` only for side effects
+- Do not duplicate derived values into extra refs
+
+```ts
+// ❌ BAD — derived state stored separately
+const items = ref<Item[]>([])
+const count = ref(0)
+watch(items, (v) => { count.value = v.length })
+
+// ✅ GOOD
+const items = ref<Item[]>([])
+const count = computed(() => items.value.length)
+```
+
+## SFC structure
+
+Order sections: `<script>` → `<template>` → `<style>`.
+
+- Keep SFCs focused; split large components
+- Keep templates declarative; move branching/derivation into script
+- Avoid `v-html` unless content is trusted/sanitized
+- Always use stable `:key` on `v-for` lists (prefer ids over index)
+- Prefer `v-if` for rare/expensive toggles; `v-show` for frequent toggles
+
+## Performance (only after behavior works)
+
+- Virtualize very large lists
+- Consider `v-once` / `v-memo` for static or rarely changing subtrees
+- Avoid heavy component abstraction inside hot list paths

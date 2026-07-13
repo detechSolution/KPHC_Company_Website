@@ -32,3 +32,6 @@ jobs:
 
       - name: Typecheck
         run: pnpm run typecheck
+
+      - name: Generate static site
+        run: pnpm run generate

@@ -1,0 +1,27 @@
+---
+description: KHPC company website — always-on SSG project constraints
+alwaysApply: true
+---
+
+# KHPC Company Website
+
+Static marketing site built with Nuxt 4 + Nuxt UI + Tailwind. Deployed as SSG only.
+
+## Hard constraints
+
+- **SSG only** — `nuxt generate` / `pnpm build` outputs `.output/public` for static hosts
+- **No runtime server** — do not add `server/`, Nitro API routes, middleware that needs a Node server, ISR, or SWR
+- **Keep `ssr: true`** — required so pages prerender to real HTML at build time (SEO). Do not set `ssr: false` unless explicitly requested (that becomes a client-only SPA shell)
+- **No Pinia by default** — prefer local state, props/emits, and small composables; add a store only if state truly crosses features
+- Prefer content and data that can be known at build time; external fetches must work during `generate`
+
+## Stack
+
+- Vue 3 Composition API + `<script setup lang="ts">`
+- Nuxt 4 `app/` srcDir (`pages/`, `components/`, `composables/`, `assets/`)
+- Nuxt UI components + Tailwind CSS v4
+- pnpm package manager
+
+## Agent guidance sources
+
+Follow Cursor rules in `.cursor/rules/`. Conventions are adapted from [antfu/skills](https://github.com/antfu/skills) (vue, nuxt, vue-best-practices) for this SSG site — not a full-stack Nuxt app.

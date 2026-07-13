@@ -1,0 +1,43 @@
+---
+description: Vue 3 architecture defaults — Composition API, component boundaries, thin views
+globs: "**/*.{vue,ts}"
+alwaysApply: false
+---
+
+# Vue Architecture
+
+## Default stack
+
+- Vue 3 + Composition API + `<script setup lang="ts">` (always include `lang="ts"`)
+- Prefer Composition API unless the project explicitly requires Options API
+- Prefer templates over JSX unless the project already uses JSX
+- In this Nuxt app, keep `app.vue` / `pages/*` as thin composition surfaces
+
+## Core principles
+
+- One source of truth; derive everything else
+- Props down, events up
+- Small, focused components
+- Prefer `computed` over template logic or unnecessary watchers
+
+## Before coding (non-trivial features)
+
+Sketch a short component map:
+
+- One sentence responsibility per component
+- Keep route/page/app shells as composition surfaces only
+- Move feature UI and logic into feature components/composables
+- Define typed props/emits for each child
+- Prefer `components/<feature>/...` and `composables/use<Feature>.ts` when adding 2+ components
+
+## Split triggers
+
+Split if any are true:
+
+- Orchestration/state plus substantial multi-section UI
+- 3+ distinct UI sections (form, filters, list, footer)
+- Repeated template blocks (rows, cards, list items)
+
+For CRUD/list features, split at least into: container, form/input, list/item, footer/filters.
+
+Allow a single-file approach only for tiny demos; justify why splitting is unnecessary.

@@ -1,0 +1,22 @@
+---
+description: Final self-check before finishing Vue/Nuxt work
+globs: "**/*.{vue,ts}"
+alwaysApply: false
+---
+
+# Vue Finish Checklist
+
+Before finishing Vue work, verify:
+
+- [ ] Behavior matches requirements
+- [ ] Source state is minimal; derived values use `computed`
+- [ ] SFC order is script → template → style; templates stay declarative
+- [ ] Components are focused; split when multi-responsibility
+- [ ] App/page/route views stay composition surfaces (not full feature dumps)
+- [ ] Props/emits (and inject keys) are explicit and typed
+- [ ] Stateful/side-effect logic lives in composables when justified
+- [ ] Optional Vue features used only when required
+- [ ] Performance tweaks applied only after core behavior works
+- [ ] No `server/` routes or runtime Nitro APIs introduced
+- [ ] New pages are prerenderable (`NuxtLink` or listed in prerender routes)
+- [ ] SEO meta set for public pages (`useSeoMeta` / `useHead`)

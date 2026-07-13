@@ -5,15 +5,27 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
+  // Company site: SSG only. Keep ssr:true so pages prerender to real HTML at
+  // build time (required for SEO). There is no Node/Nitro server at runtime.
+  ssr: true,
+
+  nitro: {
+    preset: 'static',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
+
+  routeRules: {
+    '/**': { prerender: true }
+  },
+
   devtools: {
     enabled: true
   },
 
   css: ['~/assets/css/main.css'],
-
-  routeRules: {
-    '/': { prerender: true }
-  },
 
   compatibilityDate: '2026-06-30',
 
