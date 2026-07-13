@@ -25,3 +25,6 @@ logs
 
 # pnpm local store (if created in-repo)
 .pnpm-store
+
+# Design mockups (local reference only)
+mockups/

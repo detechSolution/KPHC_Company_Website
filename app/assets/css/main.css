@@ -46,8 +46,8 @@
 :root {
   /* Softer cards/images (~12px base → rounded-2xl ≈ 24px for media) */
   --ui-radius: 0.75rem;
-  /* Content width ≈ 1152px from mockup frames */
-  --ui-container: 72rem;
+  /* Content width 1320px from design */
+  --ui-container: 82.5rem;
   /* Room for logo + pill CTAs */
   --ui-header-height: 5rem;
 }
