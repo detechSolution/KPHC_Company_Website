@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
   ],
 
   // Company site: SSG only. Keep ssr:true so pages prerender to real HTML at
@@ -13,16 +13,16 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      routes: ['/']
-    }
+      routes: ['/'],
+    },
   },
 
   routeRules: {
-    '/**': { prerender: true }
+    '/**': { prerender: true },
   },
 
   devtools: {
-    enabled: true
+    enabled: true,
   },
 
   css: ['~/assets/css/main.css'],
@@ -31,10 +31,8 @@ export default defineNuxtConfig({
 
   eslint: {
     config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  }
+      // Let @antfu/eslint-config own JS/TS/Vue/stylistic; Nuxt adds Nuxt-specific rules only
+      standalone: false,
+    },
+  },
 })
