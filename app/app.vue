@@ -31,12 +31,6 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          KHPC © {{ new Date().getFullYear() }} All Rights Reserved
-        </p>
-      </template>
-    </UFooter>
+    <AppFooter />
   </UApp>
 </template>

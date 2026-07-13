@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/about', '/services', '/resources', '/careers', '/donate'],
     },
   },
 

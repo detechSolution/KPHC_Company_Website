@@ -1,0 +1,139 @@
+<script setup lang="ts">
+const year = new Date().getFullYear()
+
+const contact = {
+  address: 'P.O. Box 17460\nHonolulu, HI 96817',
+  phone: '(808) 848-1438',
+  phoneHref: 'tel:+18088481438',
+  email: 'admingroup@kphc.org',
+  emailHref: 'mailto:admingroup@kphc.org',
+}
+
+const centerLinks = [
+  { label: 'Services', to: '/services' },
+  { label: 'Directory', to: '/resources' },
+  { label: 'Donate', to: '/donate' },
+  { label: 'Career', to: '/careers' },
+]
+
+const resourceLinks = [
+  { label: 'Language Assistance', to: '/resources' },
+  { label: 'Community Resources', to: '/resources' },
+  { label: 'Nutrition', to: '/resources' },
+]
+
+const socialLinks = [
+  {
+    label: 'Instagram',
+    icon: 'i-simple-icons-instagram',
+    to: 'https://www.kphc.org/',
+    target: '_blank' as const,
+  },
+  {
+    label: 'Facebook',
+    icon: 'i-simple-icons-facebook',
+    to: 'https://www.kphc.org/',
+    target: '_blank' as const,
+  },
+]
+</script>
+
+<template>
+  <footer class="bg-zinc-950 text-white">
+    <div class="mx-auto w-full max-w-(--ui-container) px-gutter py-section sm:px-gutter-lg">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
+        <div>
+          <h2 class="text-sm font-semibold tracking-wide text-white">
+            Contacts
+          </h2>
+
+          <div class="mt-4 space-y-3 text-sm leading-relaxed text-zinc-300">
+            <p class="whitespace-pre-line">
+              {{ contact.address }}
+            </p>
+            <p>
+              <a
+                :href="contact.phoneHref"
+                class="transition-colors hover:text-white"
+              >
+                {{ contact.phone }}
+              </a>
+            </p>
+            <p>
+              <a
+                :href="contact.emailHref"
+                class="transition-colors hover:text-white"
+              >
+                {{ contact.email }}
+              </a>
+            </p>
+          </div>
+
+          <div class="mt-6 flex items-center gap-3">
+            <UButton
+              v-for="social in socialLinks"
+              :key="social.label"
+              :to="social.to"
+              :target="social.target"
+              :icon="social.icon"
+              :aria-label="social.label"
+              color="neutral"
+              variant="outline"
+              square
+              size="md"
+              :ui="{
+                base: 'rounded-lg border-zinc-600 bg-transparent text-white hover:bg-zinc-800 hover:text-white',
+              }"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold tracking-wide text-white">
+            At Kalihi-Palama Health Center
+          </h2>
+          <ul class="mt-4 space-y-3">
+            <li
+              v-for="link in centerLinks"
+              :key="link.label"
+            >
+              <NuxtLink
+                :to="link.to"
+                class="text-sm text-zinc-300 transition-colors hover:text-white"
+              >
+                {{ link.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold tracking-wide text-white">
+            Other Resources
+          </h2>
+          <ul class="mt-4 space-y-3">
+            <li
+              v-for="link in resourceLinks"
+              :key="link.label"
+            >
+              <NuxtLink
+                :to="link.to"
+                class="text-sm text-zinc-300 transition-colors hover:text-white"
+              >
+                {{ link.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-zinc-800">
+      <div class="mx-auto flex w-full max-w-(--ui-container) px-gutter py-5 sm:px-gutter-lg">
+        <p class="text-sm text-zinc-400">
+          KHPC © {{ year }} All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+</template>
