@@ -76,7 +76,7 @@ const reasons = [
         </p>
       </div>
 
-      <div class="mx-auto mt-12 flex w-full max-w-(--ui-container) flex-col gap-6 px-gutter sm:px-gutter-lg">
+      <div class="mx-auto mt-stack-xl flex w-full max-w-(--ui-container) flex-col gap-stack-lg px-gutter sm:mt-12 sm:px-gutter-lg">
         <article
           v-for="service in services"
           :key="service.title"

@@ -61,7 +61,7 @@ const sectionClass = computed(() => [
 
 const containerClass = computed(() => [
   'relative z-10 mx-auto flex w-full max-w-(--ui-container) flex-col px-gutter sm:px-gutter-lg',
-  props.size === 'lg' ? 'py-section-lg' : 'py-section',
+  props.size === 'lg' ? 'py-section-sm sm:py-section-lg' : 'py-section-sm sm:py-section',
   isCentered.value ? 'items-center text-center' : 'items-start text-left',
 ])
 

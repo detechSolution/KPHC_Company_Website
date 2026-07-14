@@ -47,8 +47,8 @@ const socialLinks = [
 
 <template>
   <footer class="bg-zinc-950 text-white">
-    <div class="mx-auto w-full max-w-(--ui-container) px-gutter py-section sm:px-gutter-lg">
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
+    <div class="mx-auto w-full max-w-(--ui-container) px-gutter py-section-sm sm:px-gutter-lg sm:py-section">
+      <div class="grid gap-split sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-split-lg">
         <div>
           <h2 class="text-sm font-semibold tracking-wide text-white">
             Contacts

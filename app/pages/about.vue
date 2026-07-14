@@ -80,8 +80,8 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
       description="We provide comprehensive, high-quality medical care to support the well-being of our community."
     />
 
-    <section class="bg-white py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <AccentTitle
             title="More Than a Clinic - A Community Home"
@@ -170,8 +170,8 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
       </div>
     </section>
 
-    <section class="bg-green-50 py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-green-50 py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <ImageSkeleton
           class="aspect-[4/3] w-full"
           label="Patient care photo placeholder"

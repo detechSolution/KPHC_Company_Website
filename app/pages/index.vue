@@ -9,16 +9,22 @@ const highlightCards = [
     title: 'Kalihi-Palama Health Center Events',
     action: 'View More',
     to: '/resources',
+    image: '/images/events.webp',
+    alt: 'Community event with traditional Hawaiian dance performance at KPHC',
   },
   {
     title: 'We\'re Hiring! Apply Today',
     action: 'Apply Now',
     to: '/careers',
+    image: '/images/hiring.webp',
+    alt: 'Kalihi-Palama Health Center building exterior',
   },
   {
     title: 'Apply for WIC Services',
     action: 'Apply Now',
     to: '/services/additional',
+    image: '/images/services.webp',
+    alt: 'Smiling child receiving WIC nutrition support',
   },
 ]
 </script>
@@ -35,7 +41,7 @@ const highlightCards = [
       <HeroCarousel />
     </HeroBanner>
 
-    <section class="bg-white py-section">
+    <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
         <AccentTitle
           title="We Provide Comprehensive Healthcare for Our Patients."
@@ -52,7 +58,7 @@ const highlightCards = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) gap-grid px-gutter sm:grid-cols-2 sm:px-gutter-lg lg:grid-cols-3 lg:gap-gutter">
         <NuxtLink
           v-for="card in highlightCards"
@@ -60,10 +66,15 @@ const highlightCards = [
           :to="card.to"
           class="group relative block overflow-hidden rounded-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          <ImageSkeleton
-            class="aspect-[4/3] w-full"
-            :label="`${card.title} image placeholder`"
-          />
+          <img
+            :src="card.image"
+            :alt="card.alt"
+            class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="480"
+          >
           <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-950/80 via-zinc-950/30 to-transparent p-5 sm:p-6">
             <h3 class="text-lg font-semibold text-white text-balance sm:text-xl">
               {{ card.title }}
@@ -80,7 +91,7 @@ const highlightCards = [
       </div>
     </section>
 
-    <section class="bg-green-50 py-section">
+    <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <p class="text-sm font-semibold tracking-wide text-primary uppercase">
@@ -102,14 +113,24 @@ const highlightCards = [
         </div>
 
         <div class="grid grid-cols-2 gap-grid">
-          <ImageSkeleton
-            class="aspect-square w-full"
-            label="Patient care photo placeholder"
-          />
-          <ImageSkeleton
-            class="aspect-square w-full"
-            label="Provider consultation photo placeholder"
-          />
+          <img
+            src="/images/empowering-1.webp"
+            alt="Patient and provider in a consultation at Kalihi-Palama Health Center"
+            class="aspect-square w-full rounded-card object-cover"
+            loading="lazy"
+            decoding="async"
+            width="480"
+            height="480"
+          >
+          <img
+            src="/images/empowering-2.webp"
+            alt="Kalihi-Palama Health Center community members gathered together"
+            class="aspect-square w-full rounded-card object-cover"
+            loading="lazy"
+            decoding="async"
+            width="480"
+            height="480"
+          >
         </div>
       </div>
     </section>
