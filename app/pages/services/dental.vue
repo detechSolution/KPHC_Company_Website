@@ -7,34 +7,34 @@ useSeoMeta({
 const appointmentSites = [
   {
     name: 'Main Medical and Dental Center',
-    phone: '(808) 848-1438',
-    address: '915 N. King Street, Honolulu, HI 96817',
+    phone: '(808) 845-0686',
+    address: '915 N. King St., Honolulu, HI 96817',
   },
   {
-    name: 'Family Dental Clinic (1st Floor)',
-    phone: '(808) 791-6600',
-    address: '710 N. King Street, Honolulu, HI 96817',
+    name: 'Family Dental Clinic, 1st Floor',
+    phone: '(808) 843-7502',
+    address: '710 N. King St., Honolulu, HI 96817',
   },
   {
-    name: 'Children\'s Dental Clinic (2nd Floor)',
-    phone: '(808) 791-6600',
-    address: '710 N. King Street, Honolulu, HI 96817',
+    name: 'Children\'s Dental Clinic, 2nd Floor',
+    phone: '(808) 843-7520',
+    address: '710 N. King St., Honolulu, HI 96817',
   },
   {
     name: 'Downtown Family Dental Center',
-    phone: '(808) 791-9400',
-    address: '150 N. Hotel Street, Honolulu, HI 96817',
+    phone: '(808) 792-5576',
+    address: '89 S. King St., Honolulu, HI 96813',
   },
 ]
 
 const proofOfIncome = [
-  'Pay stubs (most recent 30 days)',
-  'Social Security benefit letter',
-  'Current tax return',
-  'Unemployment benefit statement',
-  'Public assistance award letter',
-  'Letter from employer stating wages',
-  'Bank statements showing income deposits',
+  'Pay Stubs (at least one month)',
+  'Determination letter from the Department of Human Services (Medicaid recipient)',
+  'Social Security Benefit Letter',
+  'Unemployment Insurance Benefit Stub',
+  'Bank or Savings Statement',
+  'Current Tax Return',
+  'Disability Award Letter',
 ]
 </script>
 
@@ -58,17 +58,17 @@ const proofOfIncome = [
           />
           <div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             <p>
-              Our dental team provides preventive and restorative care for children and adults. From oral exams and cleanings to fillings and patient education, we help your family keep healthy smiles for life.
+              At KPHC, our dentists, hygienists, and dental staff provide quality, integrated, family dental care for the community and all others in need of dental care. Our focus is on preventive and primary dental care that is provided in a caring, culturally sensitive, and respectful environment. Our general dentists provide a range of services for patients of all ages, including comprehensive oral exams, cleanings, dentures, consultation, basic restorative care (fillings, crowns), and urgent care.
             </p>
             <p>
-              Clinics follow ADA, OSHA, and CDC recommendations for infection control so you can feel confident every visit.
+              In addition, we may offer certain oral surgery and root canal therapy. We can assist with a referral for specialty care (wisdom teeth removal, implants, root canal therapy, braces, periodontal/gum surgery, etc.), which may be required to address your treatment needs.
             </p>
           </div>
           <CalloutBox
             title="Who Is Eligible"
             class="mt-6"
           >
-            We accept QUEST and most private dental insurance plans, and offer sliding-scale discounts for low-income patients who qualify. Bring proof of income when applying for the sliding fee scale.
+            We accept QUEST and most private dental insurance plans, and offer sliding-scale discounts for low-income patients who qualify. We can help facilitate completing an application to obtain State Quest coverage if eligible. Proof of income is required at the time of registration (to be updated annually) to participate in sliding scale discounts.
           </CalloutBox>
         </div>
 
@@ -90,7 +90,7 @@ const proofOfIncome = [
           Clinics follow ADA, OSHA, and CDC recommendations for infection control.
         </h2>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          Sterilization protocols, protective equipment, and clinic procedures are updated to meet current professional guidelines for patient and staff safety.
+          A scheduled comprehensive examination with complete x-ray series is required prior to beginning any permanent restorative or rehabilitative dental care.
         </p>
 
         <h3 class="mt-12 text-xl font-semibold text-zinc-950 sm:text-2xl">
@@ -115,7 +115,7 @@ const proofOfIncome = [
           </li>
         </ul>
         <p class="mt-6 max-w-3xl text-sm leading-relaxed text-zinc-600 text-pretty">
-          Sliding-scale discounts may be available for qualifying low-income patients. Ask our front desk team about eligibility when you call.
+          We provide discounts for low-income uninsured patients. Our procedures and visit fees may be discounted based on family income level using State and Federal guidelines.
         </p>
 
         <h3 class="mt-12 text-xl font-semibold text-zinc-950 sm:text-2xl">
@@ -130,7 +130,7 @@ const proofOfIncome = [
           </li>
         </ol>
         <p class="mt-6 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          We also accept QUEST and private insurance. Bring your insurance card and photo ID to every visit.
+          We accept QUEST and most private dental insurance plans. We can help facilitate completing an application to obtain State Quest coverage if eligible.
         </p>
       </div>
     </section>

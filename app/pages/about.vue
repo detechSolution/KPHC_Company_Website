@@ -57,7 +57,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
   mission: {
     title: 'Our Mission',
     icon: 'i-lucide-hand-heart',
-    body: 'To provide quality integrated health and social services that are accessible, culturally respectful, and centered on the people of Kalihi-Palama and surrounding communities.',
+    body: 'Kalihi-Palama Health Center (KPHC) is committed to providing quality integrated health and social services to our community and all others in need of health care.',
   },
   vision: {
     title: 'Our Vision',
@@ -89,7 +89,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
             class="text-3xl sm:text-4xl"
           />
           <p class="mt-5 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
-            Kalihi-Palama Health Center is an independent 501(c)(3) non-profit Federally Qualified Health Center serving the Kalihi-Palama community in Honolulu, Hawaii. We care for more than 20,000 patients each year with medical, dental, behavioral health, and social services under one roof.
+            Kalihi-Palama Health Center (KPHC) is an independent, 501(c)(3) non-profit organization that plays a crucial role in the Kalihi-Palama community as a provider of health and social services to patients who typically face significant barriers when accessing health care. KPHC is located in the heart of Kalihi-Palama; an urban, inner-city community that is home to approximately 63,820 residents, many of whom are vulnerable, underserved Asian, Native Hawaiian, and Pacific Island ethnic minorities. KPHC serves more than 20,000 patients annually.
           </p>
           <p class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             Our doors are open to everyone — including those who are uninsured or underinsured — with sliding fee scales and culturally competent care.
@@ -126,7 +126,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
                 808-848-1438
               </a>
               <p class="text-xs text-green-100">
-                Connect through the Physician's exchange.
+                Make an appointment
               </p>
             </div>
           </div>

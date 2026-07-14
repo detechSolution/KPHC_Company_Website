@@ -43,22 +43,22 @@ const pharmacyServices = [
 
 const pharmacyLocations = [
   {
-    name: 'Downtown Family Medical / Ke\'eaumoku',
-    address: '150 N. Hotel Street, Honolulu, HI 96817',
-    phone: '(808) 791-9400',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+    name: 'Downtown Family Medical & Dental Center',
+    address: '89 South King Street, Honolulu, HI 96813',
+    phone: '(808) 792-5560',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
     name: 'Comprehensive Primary Health Care & Dental Center',
-    address: '710 N. King Street, Honolulu, HI 96817',
-    phone: '(808) 791-6600',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+    address: '710 North King Street, Honolulu, HI 96817',
+    phone: '(808) 843-7575',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
-    name: 'Behavioral Medical Health Education & Pharmacy',
-    address: '952 N. King Street, Honolulu, HI 96817',
-    phone: '(808) 848-1438',
-    hours: 'Hours vary — please call',
+    name: 'Behavioral Health, Medical, Health Education & Pharmacy',
+    address: '952 North King Street, Honolulu, HI 96817',
+    phone: '(808) 791-6330',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
 ]
 
@@ -158,8 +158,8 @@ const wicDocuments = [
           </ul>
           <ClinicCard
             class="mt-6 max-w-lg"
-            name="Kalihi-Palama Primary Health Care & Dental Center"
-            address="915 N. King Street, Honolulu, HI 96817"
+            name="Main Medical & Dental Center"
+            address="915 North King Street, Honolulu, HI 96817"
             phone="(808) 848-1438"
             hours="By appointment"
           />

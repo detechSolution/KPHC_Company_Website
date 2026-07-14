@@ -21,7 +21,7 @@ const centerLinks: FooterLink[] = [
   { label: 'Services', to: '/services' },
   { label: 'Directory', to: '/resources' },
   { label: 'Donate', to: '/donate' },
-  { label: 'Career', to: '/careers' },
+  { label: 'Careers', to: '/careers' },
 ]
 
 const resourceLinks: FooterLink[] = [

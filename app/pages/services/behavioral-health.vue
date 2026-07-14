@@ -8,88 +8,92 @@ const offerings = [
   {
     icon: 'i-lucide-messages-square',
     title: 'Behavioral Health',
-    description: 'Individual and group therapy for anxiety, depression, trauma, and social wellness.',
+    description: 'Individual and group therapy, medication management, and consultation for patients of all ages.',
   },
   {
     icon: 'i-lucide-users',
     title: 'Social Services',
-    description: 'Dedicated case management to connect you with essential community resources.',
+    description: 'Case management and crisis support that connect you with essential community resources.',
   },
   {
     icon: 'i-lucide-heart-handshake',
     title: 'Healthcare for the Homeless',
-    description: 'Low-barrier medical care and mental health services for unhoused individuals.',
+    description: 'Accessible medical care, behavioral health, and housing support for people experiencing homelessness.',
   },
 ]
 
 const behavioralServices = [
-  'Diagnostic evaluation',
-  'Individual psychotherapy',
-  'Group therapy and psychoeducation',
-  'Medication management (when appropriate)',
-  'Crisis support and care coordination',
+  'Behavioral Health Consultation',
+  'Diagnostic Evaluation',
+  'Medication Evaluation and Management',
+  'Short-term Psychotherapy',
+  'Tobacco Cessation',
+  'Substance Abuse Individual and Group Therapy',
+  'Individual Psychotherapy',
+  'Group Psychotherapy',
+  'Stress Management',
+  'Domestic Violence',
+  'Sex Trafficking',
 ]
 
 const expectItems = [
   {
-    title: 'Patient-Centered Care Team Approach',
-    body: 'Your counselor works with your primary care provider and social services team so treatment stays coordinated.',
+    title: 'Patient Centered Care Team Approach',
+    body: 'As a patient at Kalihi-Palama Health Center, a team of healthcare professionals and support staff will assist you to meet your healthcare needs. Our goal is to provide you with integrated services to keep you healthy and/or achieve wellness. Our trained integrated care team will assist you to navigate your healthcare needs to include enrollment, financial qualifying, scheduling appointments, medical and specialty care visits, referrals for treatment to specialists or testing, getting prescriptions you need and providing education on important health topics.',
   },
   {
     title: 'The Assessment Process',
-    body: 'We start with a thorough evaluation of your needs, strengths, and goals before recommending a plan of care.',
+    body: 'When you first begin treatment with any healthcare professional at KPHC, you will first begin with an assessment. A healthcare professional will ask you many questions about your concerns, background, and goals so the best treatment/care plan can be developed.',
   },
   {
     title: 'Your Plan of Care',
-    body: 'Together we set clear goals and choose therapies that fit your culture, language, and life circumstances.',
+    body: 'Based on your assessment and request, you and your care team will put together a "treatment plan" and develop self-management goals. With certain healthcare providers in Behavioral Health and Health Care for the Homeless Project, you will be asked to sign that you agree with your treatment plan. Remember, this is YOUR treatment plan so we encourage you to give frequent feedback on your treatment progress and what will be helpful to you to meet your goals.',
+  },
+  {
+    title: 'Self-Management Goals',
+    body: 'When working with your healthcare team you may be requested to participate in the development of self-management goals. Self-management goals are goals that you will develop in collaboration with your team of healthcare providers to manage chronic healthcare conditions on a daily basis. These goals are activities including learning, understanding and following medical regimens/recommendations, making changes in lifestyle such as exercise and diet, and dealing with emotions that arise from having a chronic healthcare condition.',
   },
   {
     title: 'Recovery / Transition Plan',
-    body: 'As you progress, we update your plan and connect you with community supports for lasting wellness.',
+    body: 'When receiving services from certain healthcare providers, such as Behavioral Health and Health Care for the Homeless, as you make progress towards your treatment goals, you will be discussing with your team your next steps in recovery. This may include completion of treatment and discharge from our programs or the need for external specialized services. The eventual goal is to help you have the highest quality independent life possible within the community.',
   },
 ]
 
 const clinics = [
   {
-    name: 'Akala-Lani Clinic',
-    address: '915 N. King Street, Honolulu, HI 96817',
-    phone: '(808) 848-1438',
-    hours: 'By appointment',
+    name: 'Behavioral Health, Medical, Health Education & Pharmacy',
+    address: '952 North King Street, Honolulu, HI 96817',
+    phone: '(808) 841-7981',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
-    name: 'KPHC Palama Community Health Center',
-    address: '710 N. King Street, Honolulu, HI 96817',
-    phone: '(808) 791-6600',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
-  },
-  {
-    name: 'Chinatown Gateway Clinic',
-    address: '150 N. Hotel Street, Honolulu, HI 96817',
-    phone: '(808) 791-9400',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+    name: 'Kaaahi Clinic',
+    address: '546 Kaaahi Street, Honolulu, HI 96817',
+    phone: '(808) 791-6342',
+    hours: 'Monday–Friday 8:00 AM – 4:00 PM',
   },
 ]
 
 const homelessPrograms = [
   {
-    title: 'Ka\'a\'ahi Street Clinic',
-    body: 'Walk-in and low-barrier clinical care for people experiencing homelessness, including medical and behavioral health support.',
-  },
-  {
-    title: 'Permanent Housing Program',
-    body: 'Case management that helps individuals move from homelessness into stable, permanent housing with ongoing support.',
-  },
-  {
-    title: 'Housing First Program',
-    body: 'Housing-first services that prioritize a safe place to live while connecting people to health and social resources.',
-  },
-  {
-    title: 'Community Based Case Management (CBCM)',
-    body: 'Intensive community outreach and case management for clients with complex medical and social needs.',
+    title: 'Community-Based Case Management Service',
+    body: 'Case Management and 24-hour crisis intervention services are provided to clients with severe and persistent mental illness, alcohol or substance abuse issues, and/or chronic medical issues.',
   },
   {
     title: 'Community Integrated Services (CIS)',
-    body: 'Integrated services that bridge clinical care with housing, benefits, and community partnerships.',
+    body: 'Community Integrated Services provides housing-focused support for eligible QUEST Integration (QI) members who are homeless, at risk of homelessness, or transitioning from institutions. The program is managed by Hawaii Med-QUEST and contracted health plans. CIS Case Managers assist clients with housing applications, securing housing, tenancy rights education, and developing skills for independent living.',
+  },
+  {
+    title: 'Ka\'a\'ahi Street Clinic',
+    body: 'Located at the IHS Homeless Shelter for Women and Families. Services include Behavioral Health Care, Medical Care, TB Screening, and Follow-up & Referral Service.',
+  },
+  {
+    title: 'Permanent Housing Program',
+    body: 'Permanent Housing is a supportive housing program that provides housing subsidies along with long-term case management services to homeless individuals and families with disabilities. Participants pay 30% of their income towards rent, and the program subsidy provides the remaining dollar amount.',
+  },
+  {
+    title: 'Housing First Program',
+    body: 'Housing First is a collaborative effort with U.S. VETS that provide case management, housing assistance, and supportive services to chronically homeless individuals and families. Services are provided with the immediate and primary focus on helping participants to quickly access and sustain permanent housing. The Housing First model is recognized as a Best Practice by the National Alliance to End Homelessness.',
   },
 ]
 </script>
@@ -108,26 +112,23 @@ const homelessPrograms = [
       <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
         <div>
           <AccentTitle
-            title="About Our Behavioral Health & Social Services"
-            accent="Behavioral Health & Social Services"
+            title="Behavioral Health and Social Services at Kalihi-Palama Health Center"
+            accent="Behavioral Health and Social Services"
             class="text-3xl sm:text-4xl"
           />
           <div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             <p>
-              Behavioral health is part of whole-person care at KPHC. Our counselors and social workers partner with your medical team to support mental wellness, life stressors, and community resources.
+              Kalihi-Palama Health Center (KPHC) is committed to providing quality integrated health and social services to our community and all others in need of health care.
             </p>
             <p>
-              Services include therapy, case management, and specialized programs for people experiencing homelessness — all delivered with cultural respect and confidentiality.
-            </p>
-            <p>
-              You do not need a crisis to ask for help. Early support can make a lasting difference for you and your family.
+              We provide access to comprehensive primary health care services. We are a patient-centered medical home, and our patients have access to evidence-based care and self-management support. Our focus is preventative primary health care provided in a respectful, caring, and culturally appropriate manner. Our patients have the ability to choose their Primary Care Provider (PCP). We provide care coordination and continuity of care to our patients.
             </p>
           </div>
           <CalloutBox
             title="Who Is Eligible?"
             class="mt-6"
           >
-            Behavioral health and social services are available to KPHC patients and community members who meet program criteria. Insurance and sliding-fee options may apply — call us to learn more.
+            The Behavioral Health Program provides behavioral health treatment to patients of all ages that are current patients at Kalihi-Palama Health Center. Insurance and sliding-fee options may apply — call us to learn more.
           </CalloutBox>
         </div>
 
@@ -146,7 +147,7 @@ const homelessPrograms = [
     <section class="bg-white pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-center text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
-          Services & Offerings
+          Overall Health & Wellness
         </h2>
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
@@ -164,7 +165,7 @@ const homelessPrograms = [
           Behavioral Health
         </h2>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          Our behavioral health clinicians provide confidential evaluation and treatment in a supportive environment. We treat the whole person — not just a diagnosis.
+          The Behavioral Health Program provides behavioral health treatment to patients of all ages that are current patients at Kalihi-Palama Health Center. The following modalities are provided through the department:
         </p>
         <ul class="mt-6 space-y-2.5 text-base text-zinc-600">
           <li
@@ -198,14 +199,14 @@ const homelessPrograms = [
         </div>
 
         <a
-          href="tel:+18088481438"
+          href="tel:+18088417981"
           class="mt-10 inline-flex items-center gap-3 rounded-full bg-green-900 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
         >
           <UIcon
             name="i-lucide-phone"
             class="size-5"
           />
-          Make an appointment today by calling 808-848-1438
+          Make an appointment today by calling 808-841-7981
         </a>
       </div>
     </section>
@@ -215,6 +216,9 @@ const homelessPrograms = [
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
           Clinic Hours & Locations
         </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
+          Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.
+        </p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ClinicCard
             v-for="clinic in clinics"
@@ -231,7 +235,7 @@ const homelessPrograms = [
           Healthcare For The Homeless
         </h2>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          KPHC provides low-barrier medical, behavioral health, and housing support for people experiencing homelessness across Honolulu.
+          The Health Care for the Homeless Project (HCHP) has been providing accessible, quality care for individuals and families who are homeless or at risk for homelessness since 1988.
         </p>
         <div class="mt-8 space-y-6">
           <div

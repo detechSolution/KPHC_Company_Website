@@ -8,72 +8,94 @@ const offerings = [
   {
     icon: 'i-lucide-user',
     title: 'Adult Medicine',
-    description: 'Primary care for adults, including wellness visits, chronic condition management, and acute illness care.',
+    description: 'Adult, pediatric, and family medicine with preventive care, wellness visits, immunizations, and care coordination.',
   },
   {
     icon: 'i-lucide-heart',
     title: 'Women\'s Health',
-    description: 'Preventive screenings, reproductive health, prenatal support, and compassionate care across life stages.',
+    description: 'Reproductive health, prenatal care, screenings, and gynecological services across life stages.',
   },
   {
     icon: 'i-lucide-baby',
     title: 'Pediatric Medicine',
-    description: 'Well-child visits, immunizations, and sick visits for infants, children, and adolescents.',
+    description: 'Well-baby and well-child care, developmental screening, teen medical care, and sick visits.',
   },
 ]
 
 const adultServices = [
-  'Annual physical exams and preventive screenings',
-  'Chronic disease management (diabetes, hypertension, asthma)',
-  'Acute illness and injury care',
-  'Immunizations and health education',
-  'Referrals and care coordination',
+  'Preventative Care',
+  'Physical Exams',
+  'Annual Wellness Visits',
+  'Women\'s Health',
+  'Developmental Care',
+  'Immunizations',
+  'Care Coordination',
 ]
 
 const womensServices = [
-  'Well-woman exams and cancer screenings',
-  'Family planning and reproductive health',
-  'Prenatal and postpartum support',
-  'Menopause and midlife health',
+  'Reproductive Health Services',
+  'Birth Control',
+  'Breast Checks',
+  'Breast Feeding',
+  'Other Gynecological Exams',
+  'PAP Smears',
+  'Pregnancy Testing and Counseling',
+  'Prenatal Care and Delivery Services',
+  'STD/HIV Testing and Treatment',
 ]
 
 const pediatricServices = [
-  'Well-child checkups and developmental screening',
-  'Childhood immunizations',
-  'School and sports physicals',
-  'Sick visits and chronic condition support',
+  'Child Car Safety Education and Inspections',
+  'Developmental Screening',
+  'Health Education',
+  'Sick Child Care and Follow-Up',
+  'Teen Medical Care',
+  'Well Baby Care',
+  'Well-Child Check-Ups',
 ]
 
 const clinics = [
   {
     name: 'Main Medical & Dental Center',
-    address: '915 N. King Street, Honolulu, HI 96817',
+    address: '915 North King Street, Honolulu, HI 96817',
     phone: '(808) 848-1438',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+    hours: 'Mon, Tue, Thu, Fri, Sat 8:00 AM – 5:00 PM · Wed 8:00 AM – 7:00 PM',
+  },
+  {
+    name: 'Kaaahi Clinic',
+    address: '546 Kaaahi Street, Honolulu, HI 96817',
+    phone: '(808) 791-6342',
+    hours: 'Monday–Friday 8:00 AM – 4:00 PM',
   },
   {
     name: 'Downtown Family Medical & Dental Center',
-    address: '150 N. Hotel Street, Honolulu, HI 96817',
-    phone: '(808) 791-9400',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+    address: '89 South King Street, Honolulu, HI 96813',
+    phone: '(808) 792-5560',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
     name: 'Comprehensive Primary Health Care & Dental Center',
-    address: '710 N. King Street, Honolulu, HI 96817',
-    phone: '(808) 791-6600',
-    hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+    address: '710 North King Street, Honolulu, HI 96817',
+    phone: '(808) 843-7575',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
-    name: 'Behavioral Health / Medical Health Education',
-    address: '952 N. King Street, Honolulu, HI 96817',
-    phone: '(808) 848-1438',
-    hours: 'By appointment',
+    name: 'Behavioral Health, Medical, Health Education & Pharmacy',
+    address: '952 North King Street, Honolulu, HI 96817',
+    phone: '(808) 791-6330',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
-    name: 'Ka\'a\'ahi Clinic',
-    address: '420 Ka\'a\'ahi Street, Honolulu, HI 96817',
-    phone: '(808) 791-6300',
-    hours: 'Hours vary by program',
+    name: 'Women\'s Health — Comprehensive Primary Health Care & Dental Center',
+    address: '710 North King Street, Honolulu, HI 96817',
+    phone: '(808) 843-7550',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
+  },
+  {
+    name: 'Pediatrics — Comprehensive Primary Health Care & Dental Center',
+    address: '710 North King Street, Honolulu, HI 96817',
+    phone: '(808) 843-7552',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
 ]
 </script>
@@ -92,19 +114,16 @@ const clinics = [
       <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
         <div>
           <AccentTitle
-            title="About Our Medical Services"
+            title="Medical Services at Kalihi-Palama Health Center"
             accent="Medical Services"
             class="text-3xl sm:text-4xl"
           />
           <div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             <p>
-              Our medical team provides patient-centered primary care for adults, women, and children. Whether you need a routine checkup, help managing a chronic condition, or care for a sick child, we are here for you.
+              Kalihi-Palama Health Center (KPHC) is committed to providing quality integrated health and social services to our community and all others in need of health care.
             </p>
             <p>
-              As a Federally Qualified Health Center, we accept most insurance plans and offer a sliding fee scale based on income so cost is never a barrier to care.
-            </p>
-            <p>
-              Same-day and next-day appointments may be available — call the clinic nearest you to schedule.
+              We provide access to comprehensive primary health care services. We are a patient-centered medical home, and our patients have access to evidence-based care and self-management support. Our focus is preventative primary health care provided in a respectful, caring, and culturally appropriate manner. Our patients have the ability to choose their Primary Care Provider (PCP). We provide care coordination and continuity of care to our patients.
             </p>
           </div>
           <CalloutBox
@@ -130,7 +149,7 @@ const clinics = [
     <section class="bg-white pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-center text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
-          Services & Offerings
+          Overall Health & Wellness
         </h2>
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
@@ -148,6 +167,9 @@ const clinics = [
           <h3 class="text-xl font-semibold text-zinc-950">
             Adult Medicine
           </h3>
+          <p class="mt-1 text-sm text-zinc-500">
+            Adult, Pediatric & Family Medicine
+          </p>
           <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
             <li
               v-for="item in adultServices"
@@ -183,9 +205,9 @@ const clinics = [
           <ClinicCard
             class="mt-6"
             name="Comprehensive Primary Health Care & Dental Center"
-            address="710 N. King Street, Honolulu, HI 96817"
-            phone="(808) 791-6600"
-            hours="Mon–Fri 8:00 AM – 5:00 PM"
+            address="710 North King Street, Honolulu, HI 96817"
+            phone="(808) 843-7550"
+            hours="Monday–Friday 8:00 AM – 5:00 PM"
           />
         </div>
 
@@ -208,10 +230,10 @@ const clinics = [
           </ul>
           <ClinicCard
             class="mt-6"
-            name="Main Medical & Dental Center"
-            address="915 N. King Street, Honolulu, HI 96817"
-            phone="(808) 848-1438"
-            hours="Mon–Fri 8:00 AM – 5:00 PM"
+            name="Comprehensive Primary Health Care & Dental Center"
+            address="710 North King Street, Honolulu, HI 96817"
+            phone="(808) 843-7552"
+            hours="Monday–Friday 8:00 AM – 5:00 PM"
           />
         </div>
       </div>
@@ -222,6 +244,9 @@ const clinics = [
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Clinic Hours & Locations
         </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
+          Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.
+        </p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ClinicCard
             v-for="clinic in clinics"
