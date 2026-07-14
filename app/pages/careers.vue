@@ -32,10 +32,15 @@ useSeoMeta({
           </div>
         </div>
 
-        <ImageSkeleton
-          class="aspect-[4/3] w-full"
-          label="Careers photo placeholder"
-        />
+        <img
+          src="/images/home/hiring.webp"
+          alt="Kalihi-Palama Health Center care team"
+          class="aspect-[4/3] w-full rounded-card object-cover"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
+        >
       </div>
     </section>
 

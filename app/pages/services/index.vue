@@ -10,24 +10,32 @@ const services = [
     count: '3 Services',
     description: 'Comprehensive primary care for adults, women, and children — including preventive visits, chronic disease management, and family medicine.',
     to: '/services/medical',
+    image: '/images/services/medical-services.webp',
+    alt: 'Patient and provider in a consultation at Kalihi-Palama Health Center',
   },
   {
     title: 'Behavioral Health and Social Services',
     count: '3 Services',
     description: 'Integrated counseling, case management, and healthcare for the homeless programs that support mind, emotions, and daily life.',
     to: '/services/behavioral-health',
+    image: '/images/services/behavioral-health-services.webp',
+    alt: 'Kalihi-Palama Health Center community members gathered together',
   },
   {
     title: 'Dental Services',
     count: '4 Clinics',
     description: 'Preventive and restorative dental care for the whole family, with clinics dedicated to adults and children across Honolulu.',
     to: '/services/dental',
+    image: '/images/services/dental-services.webp',
+    alt: 'Dental provider caring for a patient at Kalihi-Palama Health Center',
   },
   {
     title: 'Additional Services',
     count: '4 Services',
     description: 'Optometry, pharmacy, WIC, and wellness education that wrap around your primary care and keep your family supported.',
     to: '/services/additional',
+    image: '/images/services/additional-services.webp',
+    alt: 'Healthcare provider administering a vaccination to a patient',
   },
 ]
 
@@ -82,10 +90,15 @@ const reasons = [
           :key="service.title"
           class="grid overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm sm:grid-cols-[minmax(0,280px)_1fr] lg:grid-cols-[minmax(0,340px)_1fr]"
         >
-          <ImageSkeleton
-            class="min-h-48 w-full sm:min-h-full sm:rounded-none"
-            :label="`${service.title} photo placeholder`"
-          />
+          <img
+            :src="service.image"
+            :alt="service.alt"
+            class="min-h-48 w-full object-cover sm:min-h-full sm:rounded-none"
+            loading="lazy"
+            decoding="async"
+            width="680"
+            height="480"
+          >
           <div class="flex flex-col justify-center p-6 sm:p-8">
             <div class="flex flex-wrap items-start justify-between gap-3">
               <h3 class="text-xl font-semibold text-zinc-950 sm:text-2xl">

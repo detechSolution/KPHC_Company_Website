@@ -115,10 +115,15 @@ const clinics = [
           </CalloutBox>
         </div>
 
-        <ImageSkeleton
-          class="aspect-[4/3] w-full"
-          label="Medical services photo placeholder"
-        />
+        <img
+          src="/images/services/medical-services.webp"
+          alt="Healthcare provider in consultation with a patient at Kalihi-Palama Health Center"
+          class="aspect-[4/3] w-full rounded-card object-cover"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
+        >
       </div>
     </section>
 

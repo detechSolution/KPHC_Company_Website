@@ -104,10 +104,15 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
         </div>
 
         <div class="relative">
-          <ImageSkeleton
-            class="aspect-[4/3] w-full"
-            label="KPHC staff photo placeholder"
-          />
+          <img
+            src="/images/home/hiring.webp"
+            alt="Kalihi-Palama Health Center care team"
+            class="aspect-[4/3] w-full rounded-card object-cover"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="600"
+          >
           <div class="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl bg-green-900 px-4 py-3 text-white shadow-lg sm:bottom-6 sm:left-6">
             <UIcon
               name="i-lucide-phone"
@@ -172,10 +177,15 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
 
     <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
-        <ImageSkeleton
-          class="aspect-[4/3] w-full"
-          label="Patient care photo placeholder"
-        />
+        <img
+          src="/images/mission.webp"
+          alt="Kalihi-Palama Health Center mission in action"
+          class="aspect-[4/3] w-full rounded-card object-cover"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
+        >
 
         <div>
           <div

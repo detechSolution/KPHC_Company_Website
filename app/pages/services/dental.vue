@@ -72,10 +72,15 @@ const proofOfIncome = [
           </CalloutBox>
         </div>
 
-        <ImageSkeleton
-          class="aspect-[4/3] w-full"
-          label="Dental services photo placeholder"
-        />
+        <img
+          src="/images/services/dental-services.webp"
+          alt="Dental provider caring for a patient at Kalihi-Palama Health Center"
+          class="aspect-[4/3] w-full rounded-card object-cover"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
+        >
       </div>
     </section>
 

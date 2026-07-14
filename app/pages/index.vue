@@ -9,21 +9,21 @@ const highlightCards = [
     title: 'Kalihi-Palama Health Center Events',
     action: 'View More',
     to: '/resources',
-    image: '/images/events.webp',
+    image: '/images/home/events.webp',
     alt: 'Community event with traditional Hawaiian dance performance at KPHC',
   },
   {
     title: 'We\'re Hiring! Apply Today',
     action: 'Apply Now',
     to: '/careers',
-    image: '/images/hiring.webp',
-    alt: 'Kalihi-Palama Health Center building exterior',
+    image: '/images/home/hiring.webp',
+    alt: 'Kalihi-Palama Health Center care team',
   },
   {
     title: 'Apply for WIC Services',
     action: 'Apply Now',
     to: '/services/additional',
-    image: '/images/services.webp',
+    image: '/images/home/wic.webp',
     alt: 'Smiling child receiving WIC nutrition support',
   },
 ]
@@ -114,8 +114,8 @@ const highlightCards = [
 
         <div class="grid grid-cols-2 gap-grid">
           <img
-            src="/images/empowering-1.webp"
-            alt="Patient and provider in a consultation at Kalihi-Palama Health Center"
+            src="/images/home/empowering-pediatric-care.webp"
+            alt="Kalihi-Palama Health Center provider with a young patient during a checkup"
             class="aspect-square w-full rounded-card object-cover"
             loading="lazy"
             decoding="async"
@@ -123,8 +123,8 @@ const highlightCards = [
             height="480"
           >
           <img
-            src="/images/empowering-2.webp"
-            alt="Kalihi-Palama Health Center community members gathered together"
+            src="/images/services/medical-services.webp"
+            alt="Healthcare provider in consultation with a patient at Kalihi-Palama Health Center"
             class="aspect-square w-full rounded-card object-cover"
             loading="lazy"
             decoding="async"

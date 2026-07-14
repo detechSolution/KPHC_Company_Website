@@ -110,10 +110,15 @@ const wicDocuments = [
           </CalloutBox>
         </div>
 
-        <ImageSkeleton
-          class="aspect-[4/3] w-full"
-          label="Additional services photo placeholder"
-        />
+        <img
+          src="/images/services/additional-services.webp"
+          alt="Healthcare provider administering a vaccination to a patient"
+          class="aspect-[4/3] w-full rounded-card object-cover"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
+        >
       </div>
     </section>
 
