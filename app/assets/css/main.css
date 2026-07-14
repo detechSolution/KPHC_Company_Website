@@ -60,6 +60,6 @@
   --ui-radius: 0.75rem;
   /* Content width 1320px from design */
   --ui-container: 82.5rem;
-  /* Room for logo + pill CTAs */
+  /* Room for stacked logo + pill CTAs */
   --ui-header-height: 5rem;
 }

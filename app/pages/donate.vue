@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { PAYPAL_DONATE_URL } from '~/utils/external-links'
+
 useSeoMeta({
   title: 'Donate | Kalihi-Palama Health Center',
   description: 'Donate now to make a difference in our programs, community, and someone\'s life.',
@@ -29,11 +31,17 @@ useSeoMeta({
               Your donation helps fund medical, dental, behavioral health, WIC, and outreach programs that serve more than 20,000 patients each year.
             </p>
             <p>
-              Contributions are tax-deductible to the extent allowed by law. Thank you for investing in healthier lives across Kalihi-Palama and greater Honolulu.
+              You can give online securely through PayPal or mail a check using the address below. Contributions are tax-deductible to the extent allowed by law.
+            </p>
+            <p>
+              Thank you for investing in healthier lives across Kalihi-Palama and greater Honolulu.
             </p>
           </div>
           <UButton
             label="Donate Here"
+            :to="PAYPAL_DONATE_URL"
+            target="_blank"
+            rel="noopener noreferrer"
             color="primary"
             size="xl"
             class="mt-8"
@@ -89,6 +97,9 @@ useSeoMeta({
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
           <UButton
             label="Donate Here"
+            :to="PAYPAL_DONATE_URL"
+            target="_blank"
+            rel="noopener noreferrer"
             color="primary"
             size="xl"
           />

@@ -49,9 +49,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     }"
     :ui="{
       root: 'border-0 bg-white/85 backdrop-blur-md shadow-[0_1px_0_0_var(--color-green-100)]',
-      container: 'gap-4 px-gutter sm:gap-6 sm:px-gutter-lg',
-      center: 'hidden lg:flex',
-      right: 'gap-3 shrink-0',
+      container: 'gap-2 px-gutter sm:gap-3 sm:px-gutter-lg lg:gap-4',
+      left: 'flex items-center gap-1.5 lg:min-w-0 lg:flex-1',
+      center: 'hidden lg:flex lg:min-w-0 lg:justify-center',
+      right: 'flex items-center justify-end gap-2 lg:min-w-0 lg:flex-1',
+      title: 'flex items-center shrink-0',
     }"
   >
     <template #title>
@@ -62,9 +64,11 @@ const items = computed<NavigationMenuItem[]>(() => [
       :items="items"
       variant="link"
       color="neutral"
-      class="gap-2"
+      class="w-fit shrink-0"
       :ui="{
-        link: 'px-2.5 py-1.5 text-sm font-medium text-zinc-800 data-[active]:text-primary data-[active]:font-semibold',
+        root: 'w-fit justify-center',
+        list: 'w-fit gap-0 xl:gap-0.5',
+        link: 'whitespace-nowrap px-2 py-1.5 xl:px-2.5 text-sm font-medium text-zinc-800 data-[active]:text-primary data-[active]:font-semibold',
       }"
     />
 

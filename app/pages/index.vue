@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CAREERS_JOBS_URL } from '~/utils/external-links'
+
 useSeoMeta({
   title: 'Kalihi-Palama Health Center',
   description: 'Care when you need it most of all. Comprehensive medical, dental, and behavioral health services for our community.',
@@ -15,7 +17,8 @@ const highlightCards = [
   {
     title: 'We\'re Hiring! Apply Today',
     action: 'Apply Now',
-    to: '/careers',
+    to: CAREERS_JOBS_URL,
+    target: '_blank' as const,
     image: '/images/home/hiring.webp',
     alt: 'Kalihi-Palama Health Center care team',
   },
@@ -64,6 +67,8 @@ const highlightCards = [
           v-for="card in highlightCards"
           :key="card.title"
           :to="card.to"
+          :target="card.target"
+          :rel="card.target ? 'noopener noreferrer' : undefined"
           class="group relative block overflow-hidden rounded-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <img

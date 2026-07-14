@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { PATIENT_PORTAL_URL } from '~/utils/external-links'
+
 const year = new Date().getFullYear()
 
 interface FooterLink {
@@ -23,7 +25,7 @@ const centerLinks: FooterLink[] = [
 ]
 
 const resourceLinks: FooterLink[] = [
-  { label: 'Patient Portal', to: 'https://www.kphc.org/', target: '_blank' as const },
+  { label: 'Patient Portal', to: PATIENT_PORTAL_URL, target: '_blank' as const },
   { label: 'Language Assistance', to: '/resources' },
   { label: 'Community Resources', to: '/resources' },
   { label: 'Nutrition', to: '/resources' },

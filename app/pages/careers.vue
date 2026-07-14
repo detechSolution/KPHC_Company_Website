@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CAREERS_JOBS_URL } from '~/utils/external-links'
+
 useSeoMeta({
   title: 'Careers | Kalihi-Palama Health Center',
   description: 'Join Kalihi-Palama Health Center and help deliver compassionate care to our community.',
@@ -50,12 +52,14 @@ useSeoMeta({
           Join Our Team Now
         </h2>
         <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
-          Send us your resume and a note about the kind of work you'd like to do. We're always looking for passionate people.
+          Browse current openings and apply online. We're always looking for passionate people to join our team.
         </p>
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
           <UButton
-            label="Send Us Your Resume"
-            to="mailto:admingroup@kphc.org?subject=Career%20Inquiry"
+            label="View Current Openings"
+            :to="CAREERS_JOBS_URL"
+            target="_blank"
+            rel="noopener noreferrer"
             color="primary"
             size="xl"
           />
