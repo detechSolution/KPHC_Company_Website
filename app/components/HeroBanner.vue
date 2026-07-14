@@ -170,8 +170,11 @@ const descriptionClass = computed(() => [
 
       <div
         v-if="images.length || $slots.default"
-        class="hero-enter hero-enter-delay-4 mt-10 w-full sm:mt-12"
-        :class="isCentered ? 'max-w-5xl' : 'max-w-4xl'"
+        class="hero-enter hero-enter-delay-4 -mb-2 mt-8 w-full sm:mt-10"
+        :class="[
+          isCentered ? 'max-w-full' : 'max-w-4xl',
+          variant === 'soft' && 'hero-media--soft',
+        ]"
       >
         <slot>
           <div class="flex justify-center gap-3 overflow-hidden sm:gap-4">
@@ -222,6 +225,10 @@ const descriptionClass = computed(() => [
 
 .hero-enter-delay-4 {
   animation-delay: 320ms;
+}
+
+.hero-media--soft {
+  --hero-carousel-fade: var(--color-green-50);
 }
 
 @media (prefers-reduced-motion: reduce) {

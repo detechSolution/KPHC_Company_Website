@@ -27,7 +27,7 @@ const highlightCards = [
   <div>
     <HeroBanner
       size="lg"
-      variant="plain"
+      variant="soft"
       title="Modern Healthcare Solutions That Puts You First."
       accent="Healthcare Solutions"
       description="Kalihi-Palama Health Center is a Federally Qualified Health Center (FQHC) providing accessible medical, dental, and behavioral health care for our community."
@@ -37,28 +37,7 @@ const highlightCards = [
         size: 'xl',
       }]"
     >
-      <div class="flex items-end justify-center gap-3 overflow-hidden sm:gap-4">
-        <ImageSkeleton
-          class="hidden h-40 w-[18%] sm:block lg:h-48"
-          label="Healthcare photo placeholder"
-        />
-        <ImageSkeleton
-          class="hidden h-48 w-[22%] sm:block lg:h-56"
-          label="Healthcare photo placeholder"
-        />
-        <ImageSkeleton
-          class="h-52 w-[70%] sm:h-64 sm:w-[28%] lg:h-72"
-          label="Featured healthcare photo placeholder"
-        />
-        <ImageSkeleton
-          class="hidden h-48 w-[22%] sm:block lg:h-56"
-          label="Healthcare photo placeholder"
-        />
-        <ImageSkeleton
-          class="hidden h-40 w-[18%] sm:block lg:h-48"
-          label="Healthcare photo placeholder"
-        />
-      </div>
+      <HeroCarousel />
     </HeroBanner>
 
     <section class="bg-white py-section">
