@@ -80,7 +80,7 @@ const reasons = [
         <article
           v-for="service in services"
           :key="service.title"
-          class="grid overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm sm:grid-cols-[minmax(0,280px)_1fr] lg:grid-cols-[minmax(0,340px)_1fr]"
+          class="grid overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm sm:grid-cols-[minmax(0,280px)_1fr] lg:grid-cols-[minmax(0,340px)_1fr]"
         >
           <ImageSkeleton
             class="min-h-48 w-full sm:min-h-full sm:rounded-none"

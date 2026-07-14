@@ -142,7 +142,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
           <article
             v-for="card in historyCards"
             :key="card.title"
-            class="rounded-2xl p-6 sm:p-7"
+            class="rounded-card p-6 sm:p-7"
             :class="card.featured
               ? 'bg-primary text-white'
               : 'border border-zinc-200 bg-white shadow-sm'"

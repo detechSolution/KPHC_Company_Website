@@ -11,7 +11,7 @@ withDefaults(defineProps<{
   <div
     role="img"
     :aria-label="label"
-    class="relative overflow-hidden rounded-2xl bg-green-100/80"
+    class="relative overflow-hidden rounded-card bg-green-100/80"
   >
     <USkeleton class="absolute inset-0 size-full rounded-none" />
   </div>

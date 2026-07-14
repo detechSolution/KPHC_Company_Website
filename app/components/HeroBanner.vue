@@ -18,13 +18,13 @@ const props = withDefaults(defineProps<{
   description?: string
   links?: ButtonProps[]
   align?: HeroBannerAlign
-  /** soft = mint wash (default), solid = mint band, plain = white */
+  /** soft = mint gradient (homepage), solid = green-50 band, plain = white */
   variant?: HeroBannerVariant
   size?: HeroBannerSize
   images?: { src: string, alt: string }[]
 }>(), {
   align: 'center',
-  variant: 'soft',
+  variant: 'solid',
   size: 'md',
   badgeIcon: 'i-lucide-sparkles',
   links: () => [],
@@ -73,7 +73,7 @@ const titleClass = computed(() => [
 ])
 
 const descriptionClass = computed(() => [
-  'mt-4 text-base sm:text-lg text-zinc-600 text-pretty',
+  'mt-stack text-base sm:text-lg text-zinc-600 text-pretty',
   isCentered.value ? 'max-w-2xl' : 'max-w-xl',
 ])
 </script>
@@ -95,7 +95,7 @@ const descriptionClass = computed(() => [
     <div :class="containerClass">
       <div
         v-if="badge"
-        class="hero-enter mb-5 inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3.5 py-1.5 text-sm font-medium text-green-800"
+        class="hero-enter mb-stack inline-flex items-center gap-2 rounded-full bg-green-100 px-3.5 py-1.5 text-sm font-medium text-green-800"
       >
         <UIcon
           v-if="badgeIcon"
@@ -107,7 +107,7 @@ const descriptionClass = computed(() => [
 
       <div
         v-else-if="eyebrow"
-        class="hero-enter mb-4 inline-flex items-center gap-2.5"
+        class="hero-enter mb-stack inline-flex items-center gap-2"
       >
         <span
           v-if="eyebrowIcon"
@@ -155,7 +155,7 @@ const descriptionClass = computed(() => [
 
       <div
         v-if="links.length || $slots.actions"
-        class="hero-enter hero-enter-delay-3 mt-8 flex flex-wrap gap-3"
+        class="hero-enter hero-enter-delay-3 mt-stack-lg flex flex-wrap gap-stack-sm"
         :class="isCentered ? 'justify-center' : 'justify-start'"
       >
         <slot name="actions">
@@ -170,20 +170,20 @@ const descriptionClass = computed(() => [
 
       <div
         v-if="images.length || $slots.default"
-        class="hero-enter hero-enter-delay-4 -mb-2 mt-8 w-full sm:mt-10"
+        class="hero-enter hero-enter-delay-4 mt-stack-lg w-full sm:mt-stack-xl"
         :class="[
           isCentered ? 'max-w-full' : 'max-w-4xl',
           variant === 'soft' && 'hero-media--soft',
         ]"
       >
         <slot>
-          <div class="flex justify-center gap-3 overflow-hidden sm:gap-4">
+          <div class="flex justify-center gap-stack-sm overflow-hidden sm:gap-grid">
             <img
               v-for="(image, index) in images"
               :key="`${image.src}-${index}`"
               :src="image.src"
               :alt="image.alt"
-              class="h-48 w-[70%] shrink-0 rounded-2xl object-cover shadow-md sm:h-64 sm:w-[48%] lg:h-72"
+              class="h-48 w-[70%] shrink-0 rounded-card object-cover shadow-md sm:h-64 sm:w-[48%] lg:h-72"
               :class="images.length > 1 && index === 0 ? 'hidden sm:block' : undefined"
               loading="eager"
             >

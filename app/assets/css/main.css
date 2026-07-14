@@ -41,10 +41,22 @@
   --spacing-section-lg: 6.25rem;
   --spacing-gutter: 1.5rem;
   --spacing-gutter-lg: 2rem;
+
+  /* Inline rhythm — stacks, button groups, grids */
+  --spacing-stack-sm: 0.75rem;
+  --spacing-stack: 1.25rem;
+  --spacing-stack-lg: 2rem;
+  --spacing-stack-xl: 2.5rem;
+  --spacing-grid: 1rem;
+  --spacing-split: 2.5rem;
+  --spacing-split-lg: 4rem;
+
+  /* Card / media corners — matches --ui-radius (12px) */
+  --radius-card: 0.75rem;
 }
 
 :root {
-  /* Softer cards/images (~12px base → rounded-2xl ≈ 24px for media) */
+  /* Card corners align with Nuxt UI base radius */
   --ui-radius: 0.75rem;
   /* Content width 1320px from design */
   --ui-container: 82.5rem;

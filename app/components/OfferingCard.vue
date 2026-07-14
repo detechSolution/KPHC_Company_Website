@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="flex flex-col items-center rounded-2xl border border-zinc-200 bg-white p-6 text-center shadow-sm sm:p-8">
+  <article class="flex flex-col items-center rounded-card border border-zinc-200 bg-white p-6 text-center shadow-sm sm:p-8">
     <div class="flex size-14 items-center justify-center rounded-full bg-green-50 text-primary">
       <UIcon
         :name="icon"

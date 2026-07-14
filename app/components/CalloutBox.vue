@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="rounded-2xl border border-green-200 bg-green-50 p-5 sm:p-6">
+  <div class="rounded-card border border-green-200 bg-green-50 p-5 sm:p-6">
     <h3
       v-if="title"
       class="text-sm font-bold tracking-wide text-green-900 uppercase"

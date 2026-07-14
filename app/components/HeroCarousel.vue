@@ -154,7 +154,7 @@ watch(() => props.items, preloadImages, { deep: true })
       <div
         v-for="slot in visibleSlots"
         :key="slot.rel"
-        class="hero-carousel-slide relative shrink-0 overflow-hidden rounded-xl"
+        class="hero-carousel-slide relative shrink-0 overflow-hidden rounded-card"
         :class="[
           slotVisibilityClass(slot.rel),
           slotSizeClass(slot.rel),
@@ -207,29 +207,28 @@ watch(() => props.items, preloadImages, { deep: true })
   max-width: 100vw;
   transform: translateX(-50%);
   overflow: hidden;
-  padding-bottom: 0.25rem;
 }
 
 .hero-carousel__track {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.625rem;
-  padding: 0.5rem 0;
+  gap: var(--spacing-stack-sm);
+  padding: var(--spacing-stack-sm) 0;
   min-height: calc(min(82vw, 36rem) * 10 / 16);
 }
 
 @media (min-width: 640px) {
   .hero-carousel__track {
-    gap: 0.75rem;
-    padding: 0.75rem 0;
+    gap: var(--spacing-grid);
+    padding: var(--spacing-grid) 0;
     min-height: calc(40vw * 10 / 16);
   }
 }
 
 @media (min-width: 1024px) {
   .hero-carousel__track {
-    gap: 1rem;
+    gap: var(--spacing-gutter);
     min-height: calc(min(42vw, 42rem) * 10 / 16);
   }
 }
@@ -296,9 +295,8 @@ watch(() => props.items, preloadImages, { deep: true })
 .hero-carousel__dots {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding-bottom: 0.25rem;
+  gap: var(--spacing-stack-sm);
+  margin-top: var(--spacing-stack-lg);
 }
 
 .hero-carousel__dot {

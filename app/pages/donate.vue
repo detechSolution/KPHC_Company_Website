@@ -40,7 +40,7 @@ useSeoMeta({
           />
         </div>
 
-        <article class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+        <article class="rounded-card border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
           <div class="flex items-center gap-3">
             <div class="flex size-11 items-center justify-center rounded-xl bg-green-50 text-primary">
               <UIcon

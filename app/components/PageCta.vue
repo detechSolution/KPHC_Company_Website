@@ -9,7 +9,7 @@ withDefaults(defineProps<{
 }>(), {
   title: 'Ready to Take Control of Your Health?',
   description: 'Schedule your appointment today. We accept most insurance plans and offer a sliding fee scale for those who qualify. No one is turned away.',
-  primaryLabel: 'Book An Appointment',
+  primaryLabel: 'Book an Appointment',
   secondaryLabel: 'Call Us Now',
   secondaryHref: 'tel:+18088481438',
 })

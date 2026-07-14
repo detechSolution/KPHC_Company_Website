@@ -31,11 +31,6 @@ const highlightCards = [
       title="Modern Healthcare Solutions That Puts You First."
       accent="Healthcare Solutions"
       description="Kalihi-Palama Health Center is a Federally Qualified Health Center (FQHC) providing accessible medical, dental, and behavioral health care for our community."
-      :links="[{
-        label: 'Book a Consultation',
-        color: 'primary',
-        size: 'xl',
-      }]"
     >
       <HeroCarousel />
     </HeroBanner>
@@ -48,35 +43,22 @@ const highlightCards = [
           class="max-w-3xl text-3xl sm:text-4xl"
           align="center"
         />
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+        <p class="mt-stack max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
           As a Patient-Centered Medical Home, we coordinate your care across medical, dental, behavioral health, and social services — so you and your family get the support you need in one place.
         </p>
-        <p class="mt-3 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+        <p class="mt-stack-sm max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
           Our team is committed to culturally respectful, affordable care for every stage of life.
         </p>
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <UButton
-            label="Book a Consultation"
-            color="primary"
-            size="xl"
-          />
-          <UButton
-            label="Open Patient Portal"
-            color="primary"
-            variant="outline"
-            size="xl"
-          />
-        </div>
       </div>
     </section>
 
     <section class="bg-white pb-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) gap-4 px-gutter sm:grid-cols-2 sm:px-gutter-lg lg:grid-cols-3 lg:gap-6">
+      <div class="mx-auto grid w-full max-w-(--ui-container) gap-grid px-gutter sm:grid-cols-2 sm:px-gutter-lg lg:grid-cols-3 lg:gap-gutter">
         <NuxtLink
           v-for="card in highlightCards"
           :key="card.title"
           :to="card.to"
-          class="group relative block overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          class="group relative block overflow-hidden rounded-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <ImageSkeleton
             class="aspect-[4/3] w-full"
@@ -99,15 +81,15 @@ const highlightCards = [
     </section>
 
     <section class="bg-green-50 py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <p class="text-sm font-semibold tracking-wide text-primary uppercase">
             Comprehensive Services
           </p>
-          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 text-balance sm:text-4xl">
+          <h2 class="mt-stack-sm text-3xl font-semibold tracking-tight text-zinc-950 text-balance sm:text-4xl">
             Empowering your health and uplifting your life
           </h2>
-          <p class="mt-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          <p class="mt-stack text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             From primary care and dental to behavioral health, WIC, pharmacy, and more — explore the programs designed to keep you and your family thriving.
           </p>
           <UButton
@@ -115,11 +97,11 @@ const highlightCards = [
             to="/services"
             color="primary"
             size="xl"
-            class="mt-8"
+            class="mt-stack-lg"
           />
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-grid">
           <ImageSkeleton
             class="aspect-square w-full"
             label="Patient care photo placeholder"

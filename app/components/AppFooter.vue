@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const year = new Date().getFullYear()
 
+interface FooterLink {
+  label: string
+  to: string
+  target?: '_blank'
+}
+
 const contact = {
   address: 'P.O. Box 17460\nHonolulu, HI 96817',
   phone: '(808) 848-1438',
@@ -9,14 +15,15 @@ const contact = {
   emailHref: 'mailto:admingroup@kphc.org',
 }
 
-const centerLinks = [
+const centerLinks: FooterLink[] = [
   { label: 'Services', to: '/services' },
   { label: 'Directory', to: '/resources' },
   { label: 'Donate', to: '/donate' },
   { label: 'Career', to: '/careers' },
 ]
 
-const resourceLinks = [
+const resourceLinks: FooterLink[] = [
+  { label: 'Patient Portal', to: 'https://www.kphc.org/', target: '_blank' as const },
   { label: 'Language Assistance', to: '/resources' },
   { label: 'Community Resources', to: '/resources' },
   { label: 'Nutrition', to: '/resources' },
@@ -99,6 +106,8 @@ const socialLinks = [
             >
               <NuxtLink
                 :to="link.to"
+                :target="link.target"
+                :rel="link.target ? 'noopener noreferrer' : undefined"
                 class="text-sm text-zinc-300 transition-colors hover:text-white"
               >
                 {{ link.label }}
@@ -118,6 +127,8 @@ const socialLinks = [
             >
               <NuxtLink
                 :to="link.to"
+                :target="link.target"
+                :rel="link.target ? 'noopener noreferrer' : undefined"
                 class="text-sm text-zinc-300 transition-colors hover:text-white"
               >
                 {{ link.label }}

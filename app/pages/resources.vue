@@ -181,7 +181,7 @@ const openItem = ref('0')
           collapsible
           :items="items"
           :ui="{
-            item: 'mb-4 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm last:mb-0',
+            item: 'mb-4 overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm last:mb-0',
             trigger: 'px-5 py-4 text-left sm:px-6',
             body: 'px-5 pb-5 sm:px-6 sm:pb-6',
           }"
@@ -296,7 +296,7 @@ const openItem = ref('0')
                 <article
                   v-for="option in telehealthOptions"
                   :key="option.title"
-                  class="rounded-2xl border border-zinc-200 bg-white p-4 text-center"
+                  class="rounded-card border border-zinc-200 bg-white p-4 text-center"
                 >
                   <div class="mx-auto flex size-11 items-center justify-center rounded-full bg-green-50 text-primary">
                     <UIcon
