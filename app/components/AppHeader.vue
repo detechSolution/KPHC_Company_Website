@@ -52,6 +52,9 @@ const items = computed<NavigationMenuItem[]>(() => [
       color: 'neutral',
       variant: 'ghost',
       size: 'md',
+      ui: {
+        base: 'outline-none focus:outline-none focus-visible:outline-none ring-0 focus-visible:ring-0',
+      },
     }"
     :ui="{
       root: 'border-0 bg-white/85 backdrop-blur-md shadow-[0_1px_0_0_var(--color-green-100)]',
@@ -59,7 +62,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       left: 'flex items-center gap-1.5 lg:min-w-0 lg:flex-1',
       center: 'hidden lg:flex lg:min-w-0 lg:justify-center',
       right: 'flex items-center justify-end gap-2 lg:min-w-0 lg:flex-1',
-      title: 'flex items-center shrink-0',
+      title: 'flex items-center shrink-0 outline-none focus:outline-none focus-visible:outline-none ring-0',
       body: 'flex flex-col gap-0 px-gutter py-4 sm:px-gutter-lg',
       content: 'w-full max-w-sm',
     }"
@@ -76,7 +79,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       :ui="{
         root: 'w-fit justify-center',
         list: 'w-fit gap-0 xl:gap-0.5',
-        link: 'whitespace-nowrap px-2 py-1.5 xl:px-2.5 text-sm font-medium text-zinc-800 data-[active]:text-primary data-[active]:font-semibold',
+        link: 'whitespace-nowrap px-2 py-1.5 xl:px-2.5 text-sm font-medium text-zinc-800 data-[active]:text-primary data-[active]:font-semibold outline-none focus-visible:before:outline-none',
       }"
     />
 
@@ -123,7 +126,7 @@ const items = computed<NavigationMenuItem[]>(() => [
         class="-mx-1"
         :ui="{
           list: 'gap-0.5',
-          link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold',
+          link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold outline-none focus-visible:before:outline-none',
         }"
       />
 

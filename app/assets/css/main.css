@@ -65,3 +65,23 @@
   /* Room for larger logo + pill CTAs */
   --ui-header-height: 6rem;
 }
+
+/* Remove Nuxt UI focus/active green outlines on logo, nav links, and menu toggle */
+a[data-slot="title"]:focus,
+a[data-slot="title"]:focus-visible,
+a[data-slot="title"]:active,
+[data-slot="toggle"]:focus,
+[data-slot="toggle"]:focus-visible,
+[data-slot="toggle"]:active,
+[data-slot="link"]:focus,
+[data-slot="link"]:focus-visible,
+[data-slot="link"]:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+[data-slot="link"]:focus::before,
+[data-slot="link"]:focus-visible::before,
+[data-slot="link"]:active::before {
+  outline: none !important;
+}
