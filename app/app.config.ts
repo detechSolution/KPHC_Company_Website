@@ -4,15 +4,8 @@ export default defineAppConfig({
       primary: 'green',
       neutral: 'zinc',
     },
-    // Drop Nuxt UI's green focus/active outline on links (logo, nav, etc.)
     link: {
-      base: 'outline-none focus:outline-none focus-visible:outline-none rounded-md',
-    },
-    navigationMenu: {
-      slots: {
-        link: 'focus-visible:before:outline-none',
-        childLink: 'focus-visible:before:outline-none',
-      },
+      base: 'rounded-md',
     },
     button: {
       slots: {

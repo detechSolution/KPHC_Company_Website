@@ -66,22 +66,14 @@
   --ui-header-height: 6rem;
 }
 
-/* Remove Nuxt UI focus/active green outlines on logo, nav links, and menu toggle */
-a[data-slot="title"]:focus,
+/* Keyboard focus — visible on :focus-visible only; mouse clicks stay clean */
 a[data-slot="title"]:focus-visible,
-a[data-slot="title"]:active,
-[data-slot="toggle"]:focus,
-[data-slot="toggle"]:focus-visible,
-[data-slot="toggle"]:active,
-[data-slot="link"]:focus,
-[data-slot="link"]:focus-visible,
-[data-slot="link"]:active {
-  outline: none !important;
-  box-shadow: none;
+[data-slot="toggle"]:focus-visible {
+  outline: 2px solid var(--color-green-500);
+  outline-offset: 2px;
 }
 
-[data-slot="link"]:focus::before,
-[data-slot="link"]:focus-visible::before,
-[data-slot="link"]:active::before {
-  outline: none !important;
+[data-slot="link"]:focus-visible::before {
+  outline: 2px solid var(--color-green-500) !important;
+  outline-offset: 2px;
 }

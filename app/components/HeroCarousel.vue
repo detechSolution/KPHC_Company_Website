@@ -115,7 +115,7 @@ let timer: ReturnType<typeof setInterval> | undefined
 
 function start() {
   stop()
-  if (props.items.length < 2)
+  if (reduceMotion.value || props.items.length < 2)
     return
   timer = setInterval(advance, props.delay)
 }

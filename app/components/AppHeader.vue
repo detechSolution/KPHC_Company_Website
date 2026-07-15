@@ -146,9 +146,6 @@ onBeforeUnmount(() => {
         color: 'neutral',
         variant: 'ghost',
         size: 'md',
-        ui: {
-          base: 'outline-none focus:outline-none focus-visible:outline-none ring-0 focus-visible:ring-0',
-        },
       }"
       :ui="{
         root: 'border-0 bg-white/85 backdrop-blur-md shadow-[0_1px_0_0_var(--color-green-100)]',
@@ -156,7 +153,7 @@ onBeforeUnmount(() => {
         left: 'flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none!',
         center: 'hidden shrink-0 items-center justify-center min-[1280px]:flex group-data-[compact]/nav:hidden!',
         right: 'flex min-w-0 items-center justify-end gap-2.5 min-[1280px]:flex-1 group-data-[compact]/nav:flex-none!',
-        title: 'flex items-center shrink-0 outline-none focus:outline-none focus-visible:outline-none ring-0',
+        title: 'flex items-center shrink-0',
         toggle: 'flex! shrink-0 min-[1280px]:hidden! group-data-[compact]/nav:flex!',
         content: 'w-full max-w-sm',
         body: 'flex flex-col gap-0 px-gutter py-4 sm:px-gutter-lg',
@@ -174,7 +171,7 @@ onBeforeUnmount(() => {
         :ui="{
           root: 'w-fit justify-center',
           list: 'w-fit flex-nowrap gap-1',
-          link: 'whitespace-nowrap px-2.5 py-1.5 text-sm font-medium text-zinc-800 data-[active]:text-primary data-[active]:font-semibold outline-none focus-visible:before:outline-none',
+          link: 'whitespace-nowrap px-2.5 py-1.5 text-sm font-medium text-zinc-800 data-[active]:text-primary data-[active]:font-semibold',
         }"
       />
 
@@ -230,7 +227,7 @@ onBeforeUnmount(() => {
           class="-mx-1"
           :ui="{
             list: 'gap-0.5',
-            link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold outline-none focus-visible:before:outline-none',
+            link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold',
           }"
         />
 

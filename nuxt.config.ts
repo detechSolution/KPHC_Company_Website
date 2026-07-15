@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { PUBLIC_ROUTES } from './app/utils/site'
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -13,7 +15,7 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/about', '/services', '/resources', '/careers', '/donate'],
+      routes: [...PUBLIC_ROUTES],
     },
   },
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { DEFAULT_DESCRIPTION, OG_IMAGE_URL, SITE_NAME, SITE_URL } from '~/utils/site'
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,15 +19,17 @@ useHead({
   },
 })
 
-const title = 'Kalihi-Palama Health Center'
-const description = 'Care when you need it most of all. Comprehensive medical, dental, and behavioral health services for our community.'
-
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
+  title: SITE_NAME,
+  description: DEFAULT_DESCRIPTION,
+  ogTitle: SITE_NAME,
+  ogDescription: DEFAULT_DESCRIPTION,
+  ogImage: OG_IMAGE_URL,
+  ogImageAlt: 'Kalihi-Palama Health Center care team with patients',
+  ogUrl: SITE_URL,
+  ogType: 'website',
   twitterCard: 'summary_large_image',
+  twitterImage: OG_IMAGE_URL,
 })
 </script>
 

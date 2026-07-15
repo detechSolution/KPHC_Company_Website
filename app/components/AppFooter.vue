@@ -152,7 +152,7 @@ const socialLinks = [
     <div class="border-t border-zinc-800">
       <div class="mx-auto flex w-full max-w-(--ui-container) px-gutter py-5 sm:px-gutter-lg">
         <p class="text-sm text-zinc-400">
-          KHPC © {{ year }} All Rights Reserved
+          KPHC © {{ year }} All Rights Reserved
         </p>
       </div>
     </div>

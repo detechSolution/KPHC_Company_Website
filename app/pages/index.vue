@@ -37,7 +37,7 @@ const highlightCards = [
     <HeroBanner
       size="lg"
       variant="soft"
-      title="Modern Healthcare Solutions That Puts You First."
+      title="Modern Healthcare Solutions That Put You First."
       accent="Healthcare Solutions"
       description="Kalihi-Palama Health Center is a Federally Qualified Health Center (FQHC) providing accessible medical, dental, and behavioral health care for our community."
     >
