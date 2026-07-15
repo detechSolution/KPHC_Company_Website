@@ -10,7 +10,7 @@ const highlightCards = [
   {
     title: 'Kalihi-Palama Health Center Events',
     action: 'View More',
-    to: '/resources',
+    to: '/events',
     image: '/images/home/events.webp',
     alt: 'Community event with traditional Hawaiian dance performance at KPHC',
   },

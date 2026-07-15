@@ -27,6 +27,7 @@ const contact = {
 const centerLinks: FooterLink[] = [
   { label: 'Services', to: '/services' },
   { label: 'Directory', to: BOOK_APPOINTMENT_HREF },
+  { label: 'Events', to: '/events' },
   { label: 'Donate', to: '/donate' },
   { label: 'Careers', to: '/careers' },
 ]
