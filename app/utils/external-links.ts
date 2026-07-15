@@ -18,3 +18,6 @@ export const BOOK_APPOINTMENT_HREF = '/resources#locations'
 
 export const INSTAGRAM_URL = 'https://www.instagram.com/kphc.hawaii/'
 export const FACEBOOK_URL = 'https://www.facebook.com/KalihiPalamaHealth'
+
+/** HIPAA Notice of Privacy Practices (static PDF in public/) */
+export const HIPAA_NOTICE_PDF = '/docs/hipaa.pdf'

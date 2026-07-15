@@ -96,7 +96,7 @@ const highlightCards = [
       </div>
     </section>
 
-    <section class="bg-green-50 py-section-sm sm:py-section">
+    <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <p class="text-sm font-semibold tracking-wide text-primary uppercase">

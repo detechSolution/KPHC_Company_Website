@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { HIPAA_NOTICE_PDF } from '~/utils/external-links'
+
 useSeoMeta({
   title: 'Resources | Kalihi-Palama Health Center',
   description: 'Clinic locations, patient privacy, telemedicine options, appointment information, and more.',
@@ -282,6 +284,9 @@ watch(() => route.hash, () => {
                 label="Download Full HIPAA Privacy Notice (PDF)"
                 color="primary"
                 size="lg"
+                :to="HIPAA_NOTICE_PDF"
+                target="_blank"
+                external
               />
             </div>
           </template>
@@ -412,6 +417,9 @@ watch(() => route.hash, () => {
                 label="Download HIPAA Notice of Privacy Practices (PDF)"
                 color="primary"
                 size="lg"
+                :to="HIPAA_NOTICE_PDF"
+                target="_blank"
+                external
               />
             </div>
           </template>

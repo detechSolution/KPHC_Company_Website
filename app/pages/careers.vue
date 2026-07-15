@@ -62,7 +62,7 @@ useSeoMeta({
             rel="noopener noreferrer"
             color="primary"
             size="xl"
-            class="w-full sm:w-auto"
+            class="w-full justify-center sm:w-auto"
           />
           <UButton
             label="Learn About KPHC"
@@ -70,7 +70,7 @@ useSeoMeta({
             color="primary"
             variant="outline"
             size="xl"
-            class="w-full sm:w-auto"
+            class="w-full justify-center sm:w-auto"
           />
         </div>
       </div>
