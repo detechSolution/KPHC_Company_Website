@@ -72,6 +72,33 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
     body: 'We lead with aloha, equity, integrity, and collaboration. We honor culture, listen first, and partner with patients and community to remove barriers to wellness.',
   },
 }
+
+const qualityBadges = [
+  {
+    src: '/images/badges/national-quality-leader-2025-diabetes.webp',
+    alt: 'HRSA National Quality Leader 2025 badge for Diabetes Health',
+  },
+  {
+    src: '/images/badges/advancing-hit-2024.webp',
+    alt: 'HRSA Advancing HIT for Quality 2024 Awardee badge',
+  },
+  {
+    src: '/images/badges/health-center-quality-leader-2024.webp',
+    alt: 'HRSA Health Center Quality Leader 2024 Awardee badge',
+  },
+  {
+    src: '/images/badges/advancing-hit-2023.webp',
+    alt: 'HRSA Advancing HIT for Quality 2023 Awardee badge',
+  },
+  {
+    src: '/images/badges/advancing-hit-2022.webp',
+    alt: 'HRSA Advancing HIT for Quality 2022 Awardee badge',
+  },
+  {
+    src: '/images/badges/access-enhancer-2022.webp',
+    alt: 'HRSA Access Enhancer 2022 Awardee badge',
+  },
+]
 </script>
 
 <template>
@@ -229,6 +256,38 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
+        <AccentTitle
+          title="HRSA Quality Recognition"
+          accent="Recognition"
+          class="text-3xl sm:text-4xl"
+          align="center"
+        />
+        <p class="mt-stack max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          Kalihi-Palama Health Center is recognized by the Health Resources and Services Administration for excellence in clinical quality, access, and health information technology.
+        </p>
+
+        <ul class="mt-stack-xl flex w-full list-none flex-wrap items-center justify-center gap-4 sm:gap-5 lg:gap-6">
+          <li
+            v-for="badge in qualityBadges"
+            :key="badge.src"
+            class="flex shrink-0 items-center justify-center"
+          >
+            <img
+              :src="badge.src"
+              :alt="badge.alt"
+              class="size-28 object-contain transition-transform duration-300 ease-out hover:scale-105 sm:size-[7.5rem] lg:size-32"
+              loading="lazy"
+              decoding="async"
+              width="154"
+              height="154"
+            >
+          </li>
+        </ul>
       </div>
     </section>
 
