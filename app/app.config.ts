@@ -43,5 +43,16 @@ export default defineAppConfig({
         root: 'rounded-card',
       },
     },
+    // Base layout; AppHeader uses min-[1280px] + data-compact for show/hide (avoids hamburger flash)
+    header: {
+      slots: {
+        left: 'flex items-center gap-1.5',
+        center: 'shrink-0 items-center justify-center',
+        right: 'flex items-center justify-end gap-2.5 min-w-0',
+        toggle: 'shrink-0',
+        content: 'w-full max-w-sm',
+        overlay: '',
+      },
+    },
   },
 })
