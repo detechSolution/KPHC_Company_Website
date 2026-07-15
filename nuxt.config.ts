@@ -20,7 +20,23 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/**': { prerender: true },
+    '/_nuxt/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable',
+      },
+    },
+    '/**': {
+      prerender: true,
+      headers: {
+        'cache-control': 'public, max-age=0, must-revalidate',
+      },
+    },
+  },
+
+  experimental: {
+    // After a deploy, cached HTML may reference removed chunk hashes. Reload
+    // immediately when a lazy chunk fails instead of showing a 500 error page.
+    emitRouteChunkError: 'automatic-immediate',
   },
 
   devtools: {
