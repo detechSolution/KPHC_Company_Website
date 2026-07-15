@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
+
 useSeoMeta({
   title: 'About Us | Kalihi-Palama Health Center',
   description: 'We provide comprehensive, high-quality medical care to support the well-being of our community.',
@@ -120,10 +122,10 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
             />
             <div>
               <a
-                href="tel:+18088481438"
+                :href="MAIN_PHONE_HREF"
                 class="block text-sm font-semibold tracking-wide"
               >
-                808-848-1438
+                {{ MAIN_PHONE }}
               </a>
               <p class="text-xs text-green-100">
                 Make an appointment

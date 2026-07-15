@@ -37,6 +37,14 @@ const services = [
     image: '/images/services/additional-services.webp',
     alt: 'Healthcare provider administering a vaccination to a patient',
   },
+  {
+    title: 'Nutrition',
+    count: 'ADA Recognized',
+    description: 'Diabetes self-management education and registered dietitian counseling to help you build healthier habits every day.',
+    to: '/services/nutrition',
+    image: '/images/home/wic.webp',
+    alt: 'Nutrition support and healthy eating education at Kalihi-Palama Health Center',
+  },
 ]
 
 const reasons = [

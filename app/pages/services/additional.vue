@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
+
 useSeoMeta({
   title: 'Additional Services | Kalihi-Palama Health Center',
   description: 'Wraparound support for every part of your life — optometry, pharmacy, WIC, and wellness education.',
@@ -160,7 +162,7 @@ const wicDocuments = [
             class="mt-6 max-w-lg"
             name="Main Medical & Dental Center"
             address="915 North King Street, Honolulu, HI 96817"
-            phone="(808) 848-1438"
+            :phone="MAIN_PHONE"
             hours="By appointment"
           />
         </div>
@@ -244,14 +246,14 @@ const wicDocuments = [
         </ul>
 
         <a
-          href="tel:+18088481438"
+          :href="MAIN_PHONE_HREF"
           class="mt-10 inline-flex items-center gap-3 rounded-full bg-green-900 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
         >
           <UIcon
             name="i-lucide-phone"
             class="size-5"
           />
-          808-848-1438
+          {{ MAIN_PHONE }}
         </a>
       </div>
     </section>

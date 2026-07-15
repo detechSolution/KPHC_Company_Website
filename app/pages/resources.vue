@@ -124,36 +124,77 @@ const registrationItems = [
   },
 ]
 
+const accordionSections = ['privacy', 'locations', 'appointment', 'registration', 'hipaa'] as const
+type AccordionSection = typeof accordionSections[number]
+
 const items = [
   {
+    value: 'privacy',
     label: 'Notice of Privacy Practice',
     icon: 'i-lucide-shield',
     description: 'Effective Date: January 1, 2008 · Reviewed & Revised: April 8, 2013',
     slot: 'privacy' as const,
   },
   {
+    value: 'locations',
     label: 'Clinic Hours & Locations',
     icon: 'i-lucide-map-pin',
     slot: 'locations' as const,
   },
   {
+    value: 'appointment',
     label: 'Make An Appointment',
     icon: 'i-lucide-calendar',
     slot: 'appointment' as const,
   },
   {
+    value: 'registration',
     label: 'Patient Registration',
     icon: 'i-lucide-user-round',
     slot: 'registration' as const,
   },
   {
+    value: 'hipaa',
     label: 'HIPAA Regulation',
     icon: 'i-lucide-file-text',
     slot: 'hipaa' as const,
   },
 ]
 
-const openItem = ref('0')
+const route = useRoute()
+// Default matches SSG HTML; hash is applied client-side (fragments are unavailable at prerender).
+const openItem = ref<string | undefined>('privacy')
+
+function sectionFromHash(hash: string): AccordionSection | undefined {
+  const id = hash.replace(/^#/, '')
+  return accordionSections.find(section => section === id)
+}
+
+function applyHashSection() {
+  const section = sectionFromHash(route.hash)
+  if (section) {
+    openItem.value = section
+  }
+}
+
+function scrollToAccordion() {
+  if (!sectionFromHash(route.hash)) {
+    return
+  }
+  nextTick(() => {
+    document.getElementById('resources-accordion')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+}
+
+onMounted(() => {
+  applyHashSection()
+  scrollToAccordion()
+})
+
+watch(() => route.hash, () => {
+  applyHashSection()
+  scrollToAccordion()
+})
 </script>
 
 <template>
@@ -165,7 +206,10 @@ const openItem = ref('0')
     />
 
     <section class="bg-white py-section">
-      <div class="mx-auto w-full max-w-3xl px-gutter sm:px-gutter-lg">
+      <div
+        id="resources-accordion"
+        class="mx-auto w-full max-w-3xl scroll-mt-[calc(var(--ui-header-height)+1rem)] px-gutter sm:px-gutter-lg"
+      >
         <UAccordion
           v-model="openItem"
           type="single"

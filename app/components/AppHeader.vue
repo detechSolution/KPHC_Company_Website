@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { BOOK_APPOINTMENT_HREF } from '~/utils/external-links'
 
 const route = useRoute()
 
-const appointmentHref = 'tel:+18088481438'
+const appointmentHref = BOOK_APPOINTMENT_HREF
 
 const items = computed<NavigationMenuItem[]>(() => [
   {

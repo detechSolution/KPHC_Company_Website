@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PATIENT_PORTAL_URL } from '~/utils/external-links'
+import { BOOK_APPOINTMENT_HREF, MAIN_PHONE, MAIN_PHONE_HREF, PATIENT_PORTAL_URL } from '~/utils/external-links'
 
 const year = new Date().getFullYear()
 
@@ -11,15 +11,15 @@ interface FooterLink {
 
 const contact = {
   address: 'P.O. Box 17460\nHonolulu, HI 96817',
-  phone: '(808) 848-1438',
-  phoneHref: 'tel:+18088481438',
+  phone: MAIN_PHONE,
+  phoneHref: MAIN_PHONE_HREF,
   email: 'admingroup@kphc.org',
   emailHref: 'mailto:admingroup@kphc.org',
 }
 
 const centerLinks: FooterLink[] = [
   { label: 'Services', to: '/services' },
-  { label: 'Directory', to: '/resources' },
+  { label: 'Directory', to: BOOK_APPOINTMENT_HREF },
   { label: 'Donate', to: '/donate' },
   { label: 'Careers', to: '/careers' },
 ]
@@ -28,7 +28,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Patient Portal', to: PATIENT_PORTAL_URL, target: '_blank' as const },
   { label: 'Language Assistance', to: '/resources' },
   { label: 'Community Resources', to: '/resources' },
-  { label: 'Nutrition', to: '/resources' },
+  { label: 'Nutrition', to: '/services/nutrition' },
 ]
 
 const socialLinks = [
