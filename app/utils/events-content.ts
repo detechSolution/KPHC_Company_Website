@@ -58,11 +58,35 @@ export const churchPartners = [
   },
 ]
 
-/** Add carousel images later under /images/events/gallery/ */
 export const eventPictures: EventPicture[] = [
-  { alt: 'KPHC Anniversary Gala stage performance' },
-  { alt: 'Guests celebrating at the KPHC Anniversary Gala' },
-  { alt: 'Cultural performance at the KPHC Anniversary Gala' },
+  {
+    src: '/images/events/gallery/gala-stage-music.webp',
+    alt: 'Musicians performing on the KPHC Anniversary Gala stage with illuminated marquee letters',
+  },
+  {
+    src: '/images/events/gallery/gala-cultural-dance.webp',
+    alt: 'Traditional Polynesian dance performance at the KPHC Anniversary Gala',
+  },
+  {
+    src: '/images/events/gallery/gala-lion-dance-banquet.webp',
+    alt: 'Lion dance performers greeting guests at banquet tables during the KPHC Anniversary Gala',
+  },
+  {
+    src: '/images/events/gallery/gala-lion-dance-guests.webp',
+    alt: 'Guests enjoying a lion dance cultural performance at the KPHC Anniversary Gala',
+  },
+  {
+    src: '/images/events/gallery/gala-lion-dance-hongbao.webp',
+    alt: 'Guest offering a red envelope during a lion dance at the KPHC Anniversary Gala',
+  },
+  {
+    src: '/images/events/gallery/gala-awards-ceremony-stage.webp',
+    alt: 'Honorees standing on stage with illuminated KPHC letters at the Anniversary Gala awards ceremony',
+  },
+  {
+    src: '/images/events/gallery/gala-awards-honorees.webp',
+    alt: 'Award recipients wearing leis and holding plaques on stage at the KPHC Anniversary Gala',
+  },
 ]
 
 export const tierSponsors: { tier: 'gold' | 'silver' | 'bronze', label: string, partners: EventPartner[] }[] = [

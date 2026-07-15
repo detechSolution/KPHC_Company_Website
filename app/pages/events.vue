@@ -156,7 +156,7 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
           Event Pictures
         </h2>
         <p class="mx-auto mt-stack max-w-2xl text-center text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
-          Moments from our Anniversary Gala — gallery photos coming soon.
+          Moments from our Anniversary Gala — stage performances, cultural celebrations, and awards on the evening we honored five decades of care.
         </p>
         <div class="mt-stack-lg sm:mt-stack-xl">
           <EventsPicturesCarousel :items="eventPictures" />

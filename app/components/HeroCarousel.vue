@@ -40,14 +40,21 @@ const offset = ref(0)
 const paused = ref(false)
 const reduceMotion = ref(false)
 
-useHead(() => ({
-  link: props.items.map((item, index) => ({
-    rel: 'preload',
-    as: 'image',
-    href: item.src,
-    fetchpriority: index === 0 ? 'high' : 'low',
-  })),
-}))
+// Preload the LCP slide in document head; remaining slides load via eager <img> + preloadImages().
+useHead(() => {
+  const first = props.items[0]
+  if (!first)
+    return {}
+
+  return {
+    link: [{
+      rel: 'preload',
+      as: 'image',
+      href: first.src,
+      fetchpriority: 'high',
+    }],
+  }
+})
 
 function itemAt(rel: number) {
   const count = props.items.length
@@ -127,9 +134,11 @@ function stop() {
   }
 }
 
+if (import.meta.client)
+  preloadImages()
+
 onMounted(() => {
   reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  preloadImages()
   start()
 })
 
@@ -170,7 +179,8 @@ watch(() => props.items, preloadImages, { deep: true })
             class="absolute inset-0 size-full object-cover"
             width="880"
             height="550"
-            :loading="slot.isCenter ? 'eager' : 'lazy'"
+            loading="eager"
+            :fetchpriority="slot.isCenter ? 'high' : 'auto'"
             decoding="async"
             draggable="false"
           >

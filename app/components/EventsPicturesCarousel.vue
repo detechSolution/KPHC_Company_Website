@@ -96,6 +96,8 @@ watch(paused, (isPaused) => {
             class="absolute inset-0 size-full object-cover"
             loading="lazy"
             decoding="async"
+            width="2560"
+            height="1978"
           >
           <div
             v-else
