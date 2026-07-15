@@ -214,14 +214,15 @@ watch(() => props.items, preloadImages, { deep: true })
   align-items: center;
   justify-content: center;
   gap: var(--spacing-stack-sm);
-  padding: var(--spacing-stack-sm) 0;
+  /* Top only — dots own the space below the slides for even rhythm. */
+  padding: var(--spacing-stack-sm) 0 0;
   min-height: calc(min(82vw, 36rem) * 10 / 16);
 }
 
 @media (min-width: 640px) {
   .hero-carousel__track {
     gap: var(--spacing-grid);
-    padding: var(--spacing-grid) 0;
+    padding-top: var(--spacing-grid);
     min-height: calc(40vw * 10 / 16);
   }
 }
@@ -296,6 +297,7 @@ watch(() => props.items, preloadImages, { deep: true })
   display: flex;
   justify-content: center;
   gap: var(--spacing-stack-sm);
+  /* Clear of slide shadows; keeps image→dots closer to dots→next-section rhythm. */
   margin-top: var(--spacing-stack-lg);
 }
 

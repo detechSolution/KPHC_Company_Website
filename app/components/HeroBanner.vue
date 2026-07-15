@@ -31,6 +31,7 @@ const props = withDefaults(defineProps<{
   images: () => [],
 })
 
+const slots = useSlots()
 const titleId = useId()
 
 const titleParts = computed(() => {
@@ -52,6 +53,9 @@ const titleParts = computed(() => {
 
 const isCentered = computed(() => props.align === 'center')
 
+/** Media closes the hero — keep modest bottom padding so the next section’s top padding isn’t doubled. */
+const hasMedia = computed(() => props.images.length > 0 || Boolean(slots.default))
+
 const sectionClass = computed(() => [
   'relative overflow-hidden',
   props.variant === 'soft' && 'bg-gradient-to-b from-green-50 via-green-50/40 to-white',
@@ -59,11 +63,20 @@ const sectionClass = computed(() => [
   props.variant === 'plain' && 'bg-white',
 ])
 
-const containerClass = computed(() => [
-  'relative z-10 mx-auto flex w-full max-w-(--ui-container) flex-col px-gutter sm:px-gutter-lg',
-  props.size === 'lg' ? 'py-section-sm sm:py-section-lg' : 'py-section-sm sm:py-section',
-  isCentered.value ? 'items-center text-center' : 'items-start text-left',
-])
+const containerClass = computed(() => {
+  const isLg = props.size === 'lg'
+  const top = isLg ? 'pt-section-sm sm:pt-section-lg' : 'pt-section-sm sm:pt-section'
+  const bottom = hasMedia.value
+    ? 'pb-stack-lg sm:pb-stack-xl'
+    : (isLg ? 'pb-section-sm sm:pb-section-lg' : 'pb-section-sm sm:pb-section')
+
+  return [
+    'relative z-10 mx-auto flex w-full max-w-(--ui-container) flex-col px-gutter sm:px-gutter-lg',
+    top,
+    bottom,
+    isCentered.value ? 'items-center text-center' : 'items-start text-left',
+  ]
+})
 
 const titleClass = computed(() => [
   'max-w-4xl font-semibold tracking-tight text-zinc-950 text-balance',
@@ -228,7 +241,8 @@ const descriptionClass = computed(() => [
 }
 
 .hero-media--soft {
-  --hero-carousel-fade: var(--color-green-50);
+  /* Soft hero fades to white; match carousel edge fades to the page surface. */
+  --hero-carousel-fade: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {
