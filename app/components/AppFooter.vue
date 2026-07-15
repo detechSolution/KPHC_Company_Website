@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { BOOK_APPOINTMENT_HREF, MAIN_PHONE, MAIN_PHONE_HREF, PATIENT_PORTAL_URL } from '~/utils/external-links'
+import {
+  BOOK_APPOINTMENT_HREF,
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  MAIN_PHONE,
+  MAIN_PHONE_HREF,
+  PATIENT_PORTAL_URL,
+} from '~/utils/external-links'
 
 const year = new Date().getFullYear()
 
@@ -35,13 +42,13 @@ const socialLinks = [
   {
     label: 'Instagram',
     icon: 'i-simple-icons-instagram',
-    to: 'https://www.kphc.org/',
+    to: INSTAGRAM_URL,
     target: '_blank' as const,
   },
   {
     label: 'Facebook',
     icon: 'i-simple-icons-facebook',
-    to: 'https://www.kphc.org/',
+    to: FACEBOOK_URL,
     target: '_blank' as const,
   },
 ]

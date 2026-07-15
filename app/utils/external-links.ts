@@ -15,3 +15,6 @@ export const NUTRITION_PHONE_HREF = 'tel:+18088437256'
 
 /** Clinic hours & locations accordion on Resources */
 export const BOOK_APPOINTMENT_HREF = '/resources#locations'
+
+export const INSTAGRAM_URL = 'https://www.instagram.com/kphc.hawaii/'
+export const FACEBOOK_URL = 'https://www.facebook.com/KalihiPalamaHealth'
