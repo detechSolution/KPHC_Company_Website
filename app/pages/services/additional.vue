@@ -91,8 +91,8 @@ const wicDocuments = [
       description="Wraparound support for every part of your life"
     />
 
-    <section class="bg-white py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <AccentTitle
             title="About Our Additional Services"
@@ -124,12 +124,12 @@ const wicDocuments = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-center text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Services & Offerings
         </h2>
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-stack-xl grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <OfferingCard
             v-for="item in offerings"
             :key="item.title"
@@ -139,7 +139,7 @@ const wicDocuments = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) space-y-14 px-gutter sm:px-gutter-lg">
         <div>
           <h3 class="text-2xl font-semibold text-zinc-950">
@@ -214,7 +214,7 @@ const wicDocuments = [
       </div>
     </section>
 
-    <section class="bg-green-50 py-section">
+    <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
           Women, Infants, & Children (WIC)
@@ -228,7 +228,7 @@ const wicDocuments = [
           </p>
         </div>
 
-        <h3 class="mt-8 text-lg font-semibold text-zinc-950">
+        <h3 class="mt-stack-lg text-lg font-semibold text-zinc-950">
           What to bring
         </h3>
         <ul class="mt-4 space-y-2.5 text-base text-zinc-600">
@@ -245,16 +245,17 @@ const wicDocuments = [
           </li>
         </ul>
 
-        <a
-          :href="MAIN_PHONE_HREF"
-          class="mt-10 inline-flex items-center gap-3 rounded-full bg-green-900 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-        >
-          <UIcon
-            name="i-lucide-phone"
-            class="size-5"
-          />
-          {{ MAIN_PHONE }}
-        </a>
+        <UButton
+          :to="MAIN_PHONE_HREF"
+          icon="i-lucide-phone"
+          :label="MAIN_PHONE"
+          size="xl"
+          color="neutral"
+          class="mt-stack-xl"
+          :ui="{
+            base: 'bg-green-900 text-white hover:bg-green-800 disabled:bg-green-900',
+          }"
+        />
       </div>
     </section>
 

@@ -90,7 +90,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
             accent="A Community Home"
             class="text-3xl sm:text-4xl"
           />
-          <p class="mt-5 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          <p class="mt-stack text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             Kalihi-Palama Health Center (KPHC) is an independent, 501(c)(3) non-profit organization that plays a crucial role in the Kalihi-Palama community as a provider of health and social services to patients who typically face significant barriers when accessing health care. KPHC is located in the heart of Kalihi-Palama; an urban, inner-city community that is home to approximately 63,820 residents, many of whom are vulnerable, underserved Asian, Native Hawaiian, and Pacific Island ethnic minorities. KPHC serves more than 20,000 patients annually.
           </p>
           <p class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
@@ -101,7 +101,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
             to="/services"
             color="primary"
             size="xl"
-            class="mt-8"
+            class="mt-stack-lg"
           />
         </div>
 
@@ -115,7 +115,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
             width="800"
             height="600"
           >
-          <div class="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl bg-green-900 px-4 py-3 text-white shadow-lg sm:bottom-6 sm:left-6">
+          <div class="absolute bottom-4 left-4 flex items-center gap-stack-sm rounded-card bg-green-900 px-4 py-3 text-white shadow-lg sm:bottom-6 sm:left-6">
             <UIcon
               name="i-lucide-phone"
               class="size-5 shrink-0"
@@ -136,7 +136,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <AccentTitle
           title="Kalihi-Palama History"
@@ -145,7 +145,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
           align="center"
         />
 
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           <article
             v-for="card in historyCards"
             :key="card.title"
@@ -212,7 +212,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
           </div>
 
           <div
-            class="mt-8"
+            class="mt-stack-lg"
             role="tabpanel"
           >
             <div class="flex size-12 items-center justify-center rounded-xl bg-primary text-white">
@@ -221,7 +221,7 @@ const missionContent: Record<MissionTab, { title: string, body: string, icon: st
                 class="size-6"
               />
             </div>
-            <h3 class="mt-5 text-2xl font-semibold text-zinc-950">
+            <h3 class="mt-stack text-2xl font-semibold text-zinc-950">
               {{ missionContent[activeTab].title }}
             </h3>
             <p class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">

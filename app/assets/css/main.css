@@ -53,6 +53,8 @@
 
   /* Card / media corners — matches --ui-radius (12px) */
   --radius-card: 0.75rem;
+
+  /* Icon wells use size-12 + rounded-xl; pills/buttons use rounded-full */
 }
 
 :root {

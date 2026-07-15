@@ -16,15 +16,15 @@ useSeoMeta({
       description="Join a team dedicated to health equity, cultural competence, and compassionate care for everyone in our community."
     />
 
-    <section class="bg-white py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <AccentTitle
             title="More Than a Job, Your Calling"
             accent="Your Calling"
             class="text-3xl sm:text-4xl"
           />
-          <div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          <div class="mt-stack space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             <p>
               Kalihi-Palama Health Center is a Federally Qualified Community Health Center in Honolulu, Hawaii. Every day, our team delivers medical, dental, behavioral health, and social services that help neighbors thrive.
             </p>
@@ -46,15 +46,15 @@ useSeoMeta({
       </div>
     </section>
 
-    <section class="bg-green-50 py-section">
+    <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Join Our Team Now
         </h2>
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+        <p class="mt-stack max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
           Browse current openings and apply online. We're always looking for passionate people to join our team.
         </p>
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div class="mt-stack-lg flex w-full flex-col items-stretch gap-stack-sm sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <UButton
             label="View Current Openings"
             :to="CAREERS_JOBS_URL"
@@ -62,6 +62,7 @@ useSeoMeta({
             rel="noopener noreferrer"
             color="primary"
             size="xl"
+            class="w-full sm:w-auto"
           />
           <UButton
             label="Learn About KPHC"
@@ -69,6 +70,7 @@ useSeoMeta({
             color="primary"
             variant="outline"
             size="xl"
+            class="w-full sm:w-auto"
           />
         </div>
       </div>

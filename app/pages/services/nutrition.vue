@@ -65,8 +65,8 @@ const resourceGroups = [
       description="Diabetes education and personalized nutrition counseling for healthier everyday living"
     />
 
-    <section class="bg-white py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <AccentTitle
             title="Nutrition & Diabetes Education at Kalihi-Palama Health Center"
@@ -114,7 +114,7 @@ const resourceGroups = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Diabetes Self-Management Classes
@@ -137,7 +137,7 @@ const resourceGroups = [
           </li>
         </ul>
 
-        <div class="mt-10 grid gap-8 lg:grid-cols-2">
+        <div class="mt-stack-xl grid gap-8 lg:grid-cols-2">
           <div>
             <h3 class="text-xl font-semibold text-zinc-950 sm:text-2xl">
               Typical class schedule
@@ -165,20 +165,21 @@ const resourceGroups = [
           </CalloutBox>
         </div>
 
-        <a
-          :href="NUTRITION_PHONE_HREF"
-          class="mt-10 inline-flex items-center gap-3 rounded-full bg-green-900 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-        >
-          <UIcon
-            name="i-lucide-phone"
-            class="size-5"
-          />
-          Call Maile at {{ NUTRITION_PHONE }}
-        </a>
+        <UButton
+          :to="NUTRITION_PHONE_HREF"
+          icon="i-lucide-phone"
+          :label="`Call Maile at ${NUTRITION_PHONE}`"
+          size="xl"
+          color="neutral"
+          class="mt-stack-xl"
+          :ui="{
+            base: 'bg-green-900 text-white hover:bg-green-800 disabled:bg-green-900',
+          }"
+        />
       </div>
     </section>
 
-    <section class="bg-green-50 py-section">
+    <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           What Is a Registered Dietitian?
@@ -197,7 +198,7 @@ const resourceGroups = [
       </div>
     </section>
 
-    <section class="bg-white py-section">
+    <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Resources
@@ -206,7 +207,7 @@ const resourceGroups = [
           Trusted organizations for diabetes, nutrition, heart health, and kidney care.
         </p>
 
-        <div class="mt-8 grid gap-8 sm:grid-cols-2">
+        <div class="mt-stack-lg grid gap-8 sm:grid-cols-2">
           <div
             v-for="group in resourceGroups"
             :key="group.title"

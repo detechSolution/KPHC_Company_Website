@@ -79,7 +79,7 @@ const reasons = [
       description="We offer accessible, compassionate healthcare programs designed to keep you and your family thriving."
     />
 
-    <section class="bg-white py-section">
+    <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
         <AccentTitle
           title="Committed To Providing Quality Integrated Health And Social Services"
@@ -87,7 +87,7 @@ const reasons = [
           class="max-w-3xl text-3xl sm:text-4xl"
           align="center"
         />
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+        <p class="mt-stack max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
           As your Patient-Centered Medical Home, we bring medical, dental, behavioral health, and social services together so you can get the right care at the right time — without navigating the system alone.
         </p>
       </div>
@@ -132,7 +132,7 @@ const reasons = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <AccentTitle
           title="Why Families Choose Kalihi-Palama"
@@ -141,7 +141,7 @@ const reasons = [
           align="center"
         />
 
-        <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <div class="mt-stack-xl grid gap-stack-lg sm:grid-cols-2 lg:grid-cols-4">
           <div
             v-for="reason in reasons"
             :key="reason.title"
@@ -153,7 +153,7 @@ const reasons = [
                 class="size-6"
               />
             </div>
-            <h3 class="mt-4 text-base font-semibold text-zinc-950">
+            <h3 class="mt-stack-sm text-base font-semibold text-zinc-950">
               {{ reason.title }}
             </h3>
             <p class="mt-2 text-sm leading-relaxed text-zinc-600 text-pretty">

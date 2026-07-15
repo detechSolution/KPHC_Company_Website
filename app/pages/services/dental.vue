@@ -48,8 +48,8 @@ const proofOfIncome = [
       description="Healthy smiles for the whole family"
     />
 
-    <section class="bg-white py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <AccentTitle
             title="About Our Dental Services"
@@ -84,7 +84,7 @@ const proofOfIncome = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl">
           Clinics follow ADA, OSHA, and CDC recommendations for infection control.

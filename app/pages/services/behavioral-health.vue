@@ -108,8 +108,8 @@ const homelessPrograms = [
       description="Caring for your mind, your emotions, and your whole life"
     />
 
-    <section class="bg-white py-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-10 px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-16">
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <AccentTitle
             title="Behavioral Health and Social Services at Kalihi-Palama Health Center"
@@ -144,12 +144,12 @@ const homelessPrograms = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-center text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Overall Health & Wellness
         </h2>
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-stack-xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
             v-for="item in offerings"
             :key="item.title"
@@ -159,7 +159,7 @@ const homelessPrograms = [
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
           Behavioral Health
@@ -181,7 +181,7 @@ const homelessPrograms = [
           </li>
         </ul>
 
-        <h3 class="mt-10 text-xl font-semibold text-zinc-950">
+        <h3 class="mt-stack-xl text-xl font-semibold text-zinc-950">
           What To Expect
         </h3>
         <div class="mt-5 grid gap-6 sm:grid-cols-2">
@@ -198,20 +198,21 @@ const homelessPrograms = [
           </div>
         </div>
 
-        <a
-          href="tel:+18088417981"
-          class="mt-10 inline-flex items-center gap-3 rounded-full bg-green-900 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-        >
-          <UIcon
-            name="i-lucide-phone"
-            class="size-5"
-          />
-          Make an appointment today by calling 808-841-7981
-        </a>
+        <UButton
+          to="tel:+18088417981"
+          icon="i-lucide-phone"
+          label="Make an appointment today by calling 808-841-7981"
+          size="xl"
+          color="neutral"
+          class="mt-stack-xl"
+          :ui="{
+            base: 'bg-green-900 text-white hover:bg-green-800 disabled:bg-green-900',
+          }"
+        />
       </div>
     </section>
 
-    <section class="bg-white pb-section">
+    <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
           Clinic Hours & Locations
@@ -219,7 +220,7 @@ const homelessPrograms = [
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
           Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.
         </p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-stack-lg grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ClinicCard
             v-for="clinic in clinics"
             :key="clinic.name"
@@ -229,7 +230,7 @@ const homelessPrograms = [
       </div>
     </section>
 
-    <section class="bg-green-50 py-section">
+    <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
           Healthcare For The Homeless
@@ -237,7 +238,7 @@ const homelessPrograms = [
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
           The Health Care for the Homeless Project (HCHP) has been providing accessible, quality care for individuals and families who are homeless or at risk for homelessness since 1988.
         </p>
-        <div class="mt-8 space-y-6">
+        <div class="mt-stack-lg space-y-6">
           <div
             v-for="program in homelessPrograms"
             :key="program.title"

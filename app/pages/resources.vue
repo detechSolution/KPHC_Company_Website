@@ -205,7 +205,7 @@ watch(() => route.hash, () => {
       description="Clinic locations, patient privacy, telemedicine options, appointment information, and more."
     />
 
-    <section class="bg-white py-section">
+    <section class="bg-white py-section-sm sm:py-section">
       <div
         id="resources-accordion"
         class="mx-auto w-full max-w-3xl scroll-mt-[calc(var(--ui-header-height)+1rem)] px-gutter sm:px-gutter-lg"
@@ -222,7 +222,7 @@ watch(() => route.hash, () => {
           }"
         >
           <template #leading="{ item }">
-            <span class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-green-50 text-primary">
+            <span class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-primary">
               <UIcon
                 :name="item.icon"
                 class="size-5"

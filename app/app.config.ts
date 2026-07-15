@@ -30,7 +30,7 @@ export default defineAppConfig({
     },
     card: {
       slots: {
-        root: 'rounded-2xl',
+        root: 'rounded-card',
       },
     },
   },
