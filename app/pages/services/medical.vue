@@ -1,103 +1,21 @@
 <script setup lang="ts">
+import {
+  clinicHoursNote,
+  defaultEligibilityCallout,
+  integratedCareIntro,
+  medicalAdultServices,
+  medicalClinics,
+  medicalOfferings,
+  medicalPediatricClinic,
+  medicalPediatricServices,
+  medicalWomensClinic,
+  medicalWomensServices,
+} from '~/utils/services-content'
+
 useSeoMeta({
   title: 'Medical Services | Kalihi-Palama Health Center',
   description: 'Comprehensive primary care for every stage of life — adult medicine, women\'s health, and pediatrics.',
 })
-
-const offerings = [
-  {
-    icon: 'i-lucide-user',
-    title: 'Adult Medicine',
-    description: 'Adult, pediatric, and family medicine with preventive care, wellness visits, immunizations, and care coordination.',
-  },
-  {
-    icon: 'i-lucide-heart',
-    title: 'Women\'s Health',
-    description: 'Reproductive health, prenatal care, screenings, and gynecological services across life stages.',
-  },
-  {
-    icon: 'i-lucide-baby',
-    title: 'Pediatric Medicine',
-    description: 'Well-baby and well-child care, developmental screening, teen medical care, and sick visits.',
-  },
-]
-
-const adultServices = [
-  'Preventative Care',
-  'Physical Exams',
-  'Annual Wellness Visits',
-  'Women\'s Health',
-  'Developmental Care',
-  'Immunizations',
-  'Care Coordination',
-]
-
-const womensServices = [
-  'Reproductive Health Services',
-  'Birth Control',
-  'Breast Checks',
-  'Breast Feeding',
-  'Other Gynecological Exams',
-  'PAP Smears',
-  'Pregnancy Testing and Counseling',
-  'Prenatal Care and Delivery Services',
-  'STD/HIV Testing and Treatment',
-]
-
-const pediatricServices = [
-  'Child Car Safety Education and Inspections',
-  'Developmental Screening',
-  'Health Education',
-  'Sick Child Care and Follow-Up',
-  'Teen Medical Care',
-  'Well Baby Care',
-  'Well-Child Check-Ups',
-]
-
-const clinics = [
-  {
-    name: 'Main Medical & Dental Center',
-    address: '915 North King Street, Honolulu, HI 96817',
-    phone: '(808) 848-1438',
-    hours: 'Mon, Tue, Thu, Fri, Sat 8:00 AM – 5:00 PM · Wed 8:00 AM – 7:00 PM',
-  },
-  {
-    name: 'Kaaahi Clinic',
-    address: '546 Kaaahi Street, Honolulu, HI 96817',
-    phone: '(808) 791-6342',
-    hours: 'Monday–Friday 8:00 AM – 4:00 PM',
-  },
-  {
-    name: 'Downtown Family Medical & Dental Center',
-    address: '89 South King Street, Honolulu, HI 96813',
-    phone: '(808) 792-5560',
-    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-  },
-  {
-    name: 'Comprehensive Primary Health Care & Dental Center',
-    address: '710 North King Street, Honolulu, HI 96817',
-    phone: '(808) 843-7575',
-    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-  },
-  {
-    name: 'Behavioral Health, Medical, Health Education & Pharmacy',
-    address: '952 North King Street, Honolulu, HI 96817',
-    phone: '(808) 791-6330',
-    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-  },
-  {
-    name: 'Women\'s Health — Comprehensive Primary Health Care & Dental Center',
-    address: '710 North King Street, Honolulu, HI 96817',
-    phone: '(808) 843-7550',
-    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-  },
-  {
-    name: 'Pediatrics — Comprehensive Primary Health Care & Dental Center',
-    address: '710 North King Street, Honolulu, HI 96817',
-    phone: '(808) 843-7552',
-    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-  },
-]
 </script>
 
 <template>
@@ -119,18 +37,18 @@ const clinics = [
             class="text-3xl sm:text-4xl"
           />
           <div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
-            <p>
-              Kalihi-Palama Health Center (KPHC) is committed to providing quality integrated health and social services to our community and all others in need of health care.
-            </p>
-            <p>
-              We provide access to comprehensive primary health care services. We are a patient-centered medical home, and our patients have access to evidence-based care and self-management support. Our focus is preventative primary health care provided in a respectful, caring, and culturally appropriate manner. Our patients have the ability to choose their Primary Care Provider (PCP). We provide care coordination and continuity of care to our patients.
+            <p
+              v-for="paragraph in integratedCareIntro"
+              :key="paragraph"
+            >
+              {{ paragraph }}
             </p>
           </div>
           <CalloutBox
             title="Who Is Eligible"
             class="mt-6"
           >
-            Everyone is welcome. We accept Medicaid, Medicare, and most private insurance, and offer sliding-fee discounts for qualifying patients. No one is turned away for inability to pay.
+            {{ defaultEligibilityCallout }}
           </CalloutBox>
         </div>
 
@@ -153,7 +71,7 @@ const clinics = [
         </h2>
         <div class="mt-stack-xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
-            v-for="item in offerings"
+            v-for="item in medicalOfferings"
             :key="item.title"
             v-bind="item"
           />
@@ -172,7 +90,7 @@ const clinics = [
           </p>
           <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
             <li
-              v-for="item in adultServices"
+              v-for="item in medicalAdultServices"
               :key="item"
               class="flex gap-2"
             >
@@ -191,7 +109,7 @@ const clinics = [
           </h3>
           <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
             <li
-              v-for="item in womensServices"
+              v-for="item in medicalWomensServices"
               :key="item"
               class="flex gap-2"
             >
@@ -204,10 +122,7 @@ const clinics = [
           </ul>
           <ClinicCard
             class="mt-6"
-            name="Comprehensive Primary Health Care & Dental Center"
-            address="710 North King Street, Honolulu, HI 96817"
-            phone="(808) 843-7550"
-            hours="Monday–Friday 8:00 AM – 5:00 PM"
+            v-bind="medicalWomensClinic"
           />
         </div>
 
@@ -217,7 +132,7 @@ const clinics = [
           </h3>
           <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
             <li
-              v-for="item in pediatricServices"
+              v-for="item in medicalPediatricServices"
               :key="item"
               class="flex gap-2"
             >
@@ -230,10 +145,7 @@ const clinics = [
           </ul>
           <ClinicCard
             class="mt-6"
-            name="Comprehensive Primary Health Care & Dental Center"
-            address="710 North King Street, Honolulu, HI 96817"
-            phone="(808) 843-7552"
-            hours="Monday–Friday 8:00 AM – 5:00 PM"
+            v-bind="medicalPediatricClinic"
           />
         </div>
       </div>
@@ -245,11 +157,11 @@ const clinics = [
           Clinic Hours & Locations
         </h2>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.
+          {{ clinicHoursNote }}
         </p>
         <div class="mt-stack-lg grid gap-grid sm:grid-cols-2 lg:grid-cols-3">
           <ClinicCard
-            v-for="clinic in clinics"
+            v-for="clinic in medicalClinics"
             :key="clinic.name"
             v-bind="clinic"
           />

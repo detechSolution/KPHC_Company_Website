@@ -8,67 +8,12 @@ const props = withDefaults(defineProps<{
   delay: 5500,
 })
 
-const offset = ref(0)
-const paused = ref(false)
-const reduceMotion = ref(false)
-
-const activeIndex = computed(() => {
-  const count = props.items.length
-  if (count === 0)
-    return 0
-  return ((offset.value % count) + count) % count
+const { paused, activeIndex, goTo, advance } = useCarousel({
+  itemCount: () => props.items.length,
+  delay: () => props.delay,
 })
 
 const active = computed(() => props.items[activeIndex.value])
-
-function goTo(index: number) {
-  if (props.items.length === 0)
-    return
-  offset.value = ((index % props.items.length) + props.items.length) % props.items.length
-}
-
-function advance(delta: 1 | -1) {
-  if (props.items.length < 2)
-    return
-  goTo(activeIndex.value + delta)
-}
-
-function nextFromAutoplay() {
-  if (paused.value)
-    return
-  advance(1)
-}
-
-let timer: ReturnType<typeof setInterval> | undefined
-
-function start() {
-  stop()
-  if (reduceMotion.value || props.items.length < 2)
-    return
-  timer = setInterval(nextFromAutoplay, props.delay)
-}
-
-function stop() {
-  if (timer) {
-    clearInterval(timer)
-    timer = undefined
-  }
-}
-
-onMounted(() => {
-  reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  start()
-})
-
-onBeforeUnmount(stop)
-
-watch(() => props.delay, start)
-watch(paused, (isPaused) => {
-  if (isPaused)
-    stop()
-  else
-    start()
-})
 </script>
 
 <template>

@@ -1,58 +1,15 @@
 <script setup lang="ts">
 import { BOOK_APPOINTMENT_HREF, NUTRITION_PHONE, NUTRITION_PHONE_HREF } from '~/utils/external-links'
+import {
+  nutritionClassSessions,
+  nutritionClassTopics,
+  nutritionResourceGroups,
+} from '~/utils/services-content'
 
 useSeoMeta({
   title: 'Nutrition | Kalihi-Palama Health Center',
   description: 'ADA-recognized diabetes self-management education and registered dietitian nutrition counseling at Kalihi-Palama Health Center.',
 })
-
-const classTopics = [
-  'Nutrition',
-  'Physical activity',
-  'Medications',
-  'Preventing diabetes complications',
-  'Goal setting',
-  'Stress management',
-]
-
-const classSessions = [
-  'January',
-  'March',
-  'May',
-  'August',
-  'October',
-]
-
-const resourceGroups = [
-  {
-    title: 'Diabetes',
-    links: [
-      { label: 'American Diabetes Association', href: 'https://www.diabetes.org' },
-      { label: 'Joslin Diabetes Center', href: 'https://www.joslin.org' },
-    ],
-  },
-  {
-    title: 'Nutrition',
-    links: [
-      { label: 'Eat Right (Academy of Nutrition and Dietetics)', href: 'https://www.eatright.org' },
-      { label: 'USDA', href: 'https://www.usda.gov' },
-      { label: 'MyPlate', href: 'https://www.myplate.gov' },
-    ],
-  },
-  {
-    title: 'Cardiovascular',
-    links: [
-      { label: 'American Heart Association', href: 'https://www.heart.org' },
-    ],
-  },
-  {
-    title: 'Kidney',
-    links: [
-      { label: 'National Kidney Foundation', href: 'https://www.kidney.org' },
-      { label: 'NIDDK', href: 'https://www.niddk.nih.gov' },
-    ],
-  },
-]
 </script>
 
 <template>
@@ -125,7 +82,7 @@ const resourceGroups = [
 
         <ul class="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
           <li
-            v-for="topic in classTopics"
+            v-for="topic in nutritionClassTopics"
             :key="topic"
             class="flex gap-2 text-base text-zinc-600"
           >
@@ -147,7 +104,7 @@ const resourceGroups = [
             </p>
             <ul class="mt-5 space-y-2.5 text-base text-zinc-600">
               <li
-                v-for="month in classSessions"
+                v-for="month in nutritionClassSessions"
                 :key="month"
                 class="flex gap-2"
               >
@@ -192,7 +149,7 @@ const resourceGroups = [
             A Registered Dietitian can help manage chronic diseases such as diabetes, high blood pressure, high cholesterol, kidney disease, cancer, heart failure, and more.
           </p>
           <p>
-            When you first see your RD, the last thing you’ll get is a one-size-fits-all diet. Your dietitian gets to know your eating habits and behaviors to make a tailored plan that will most effectively help you.
+            When you first see your RD, the last thing you'll get is a one-size-fits-all diet. Your dietitian gets to know your eating habits and behaviors to make a tailored plan that will most effectively help you.
           </p>
         </div>
       </div>
@@ -209,7 +166,7 @@ const resourceGroups = [
 
         <div class="mt-stack-lg grid gap-8 sm:grid-cols-2">
           <div
-            v-for="group in resourceGroups"
+            v-for="group in nutritionResourceGroups"
             :key="group.title"
           >
             <h3 class="text-lg font-semibold text-zinc-950">

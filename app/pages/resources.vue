@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import type { AccordionSection } from '~/utils/resources-content'
 import { HIPAA_NOTICE_PDF } from '~/utils/external-links'
 import {
-  accordionSections,
   afterHours,
   clinics,
   registrationItems,
   resourceAccordionItems,
   telehealthOptions,
 } from '~/utils/resources-content'
+import { sectionFromHash } from '~/utils/resources-hash'
 
 useSeoMeta({
   title: 'Resources | Kalihi-Palama Health Center',
@@ -20,11 +19,6 @@ const items = resourceAccordionItems
 const route = useRoute()
 // Default matches SSG HTML; hash is applied client-side (fragments are unavailable at prerender).
 const openItem = ref<string | undefined>('privacy')
-
-function sectionFromHash(hash: string): AccordionSection | undefined {
-  const id = hash.replace(/^#/, '')
-  return accordionSections.find(section => section === id)
-}
 
 function applyHashSection() {
   const section = sectionFromHash(route.hash)

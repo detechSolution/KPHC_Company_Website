@@ -1,8 +1,6 @@
 <script setup lang="ts">
-export interface HeroCarouselImage {
-  src: string
-  alt: string
-}
+import type { HeroCarouselImage } from '~/utils/carousel'
+import { normalizeCarouselIndex } from '~/utils/carousel'
 
 const props = withDefaults(defineProps<{
   items?: HeroCarouselImage[]
@@ -36,9 +34,10 @@ const props = withDefaults(defineProps<{
 
 const slotRels = [-2, -1, 0, 1, 2] as const
 
-const offset = ref(0)
-const paused = ref(false)
-const reduceMotion = ref(false)
+const { offset, paused, reduceMotion, activeIndex, goTo } = useCarousel({
+  itemCount: () => props.items.length,
+  delay: () => props.delay,
+})
 
 // Preload the LCP slide in document head; remaining slides load via eager <img> + preloadImages().
 useHead(() => {
@@ -60,7 +59,7 @@ function itemAt(rel: number) {
   const count = props.items.length
   if (count === 0)
     return undefined
-  const index = ((offset.value + rel) % count + count) % count
+  const index = normalizeCarouselIndex(offset.value + rel, count)
   return props.items[index]
 }
 
@@ -71,13 +70,6 @@ const visibleSlots = computed(() =>
     isCenter: rel === 0,
   })),
 )
-
-const activeIndex = computed(() => {
-  const count = props.items.length
-  if (count === 0)
-    return 0
-  return ((offset.value % count) + count) % count
-})
 
 function slotVisibilityClass(rel: number) {
   const abs = Math.abs(rel)
@@ -99,12 +91,6 @@ function slotSizeClass(rel: number) {
   return 'hero-carousel-slide--outer aspect-[6/7] w-[min(34vw,11rem)] sm:w-[14vw] lg:w-[12vw] lg:max-w-[12rem]'
 }
 
-function goTo(index: number) {
-  if (props.items.length === 0)
-    return
-  offset.value = ((index % props.items.length) + props.items.length) % props.items.length
-}
-
 function preloadImages() {
   for (const item of props.items) {
     const img = new Image()
@@ -112,39 +98,9 @@ function preloadImages() {
   }
 }
 
-function advance() {
-  if (paused.value || props.items.length < 2)
-    return
-  offset.value = (offset.value + 1) % props.items.length
-}
-
-let timer: ReturnType<typeof setInterval> | undefined
-
-function start() {
-  stop()
-  if (reduceMotion.value || props.items.length < 2)
-    return
-  timer = setInterval(advance, props.delay)
-}
-
-function stop() {
-  if (timer) {
-    clearInterval(timer)
-    timer = undefined
-  }
-}
-
 if (import.meta.client)
   preloadImages()
 
-onMounted(() => {
-  reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  start()
-})
-
-onBeforeUnmount(stop)
-
-watch(() => props.delay, start)
 watch(() => props.items, preloadImages, { deep: true })
 </script>
 

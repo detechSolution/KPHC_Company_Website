@@ -1,41 +1,10 @@
 <script setup lang="ts">
+import { dentalAppointmentSites, dentalProofOfIncome } from '~/utils/services-content'
+
 useSeoMeta({
   title: 'Dental Services | Kalihi-Palama Health Center',
   description: 'Healthy smiles for the whole family — preventive and restorative dental care at KPHC clinics.',
 })
-
-const appointmentSites = [
-  {
-    name: 'Main Medical and Dental Center',
-    phone: '(808) 845-0686',
-    address: '915 N. King St., Honolulu, HI 96817',
-  },
-  {
-    name: 'Family Dental Clinic, 1st Floor',
-    phone: '(808) 843-7502',
-    address: '710 N. King St., Honolulu, HI 96817',
-  },
-  {
-    name: 'Children\'s Dental Clinic, 2nd Floor',
-    phone: '(808) 843-7520',
-    address: '710 N. King St., Honolulu, HI 96817',
-  },
-  {
-    name: 'Downtown Family Dental Center',
-    phone: '(808) 792-5576',
-    address: '89 S. King St., Honolulu, HI 96813',
-  },
-]
-
-const proofOfIncome = [
-  'Pay Stubs (at least one month)',
-  'Determination letter from the Department of Human Services (Medicaid recipient)',
-  'Social Security Benefit Letter',
-  'Unemployment Insurance Benefit Stub',
-  'Bank or Savings Statement',
-  'Current Tax Return',
-  'Disability Award Letter',
-]
 </script>
 
 <template>
@@ -98,7 +67,7 @@ const proofOfIncome = [
         </h3>
         <ul class="mt-5 space-y-4">
           <li
-            v-for="site in appointmentSites"
+            v-for="site in dentalAppointmentSites"
             :key="site.name"
             class="flex flex-col gap-1 border-b border-zinc-100 pb-4 last:border-0 sm:flex-row sm:items-baseline sm:gap-3"
           >
@@ -123,7 +92,7 @@ const proofOfIncome = [
         </h3>
         <ol class="mt-5 list-decimal space-y-2 pl-5 text-base leading-relaxed text-zinc-600">
           <li
-            v-for="item in proofOfIncome"
+            v-for="item in dentalProofOfIncome"
             :key="item"
           >
             {{ item }}

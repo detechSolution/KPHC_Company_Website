@@ -9,7 +9,7 @@ export default defineAppConfig({
     },
     button: {
       slots: {
-        // Mockups use pill CTAs; merges over default rounded-md
+        // Brand uses pill CTAs; merges over default rounded-md
         base: 'rounded-full',
       },
       variants: {

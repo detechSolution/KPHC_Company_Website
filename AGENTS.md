@@ -19,6 +19,7 @@ This is the **KHPC company website**: a Nuxt 4 + Nuxt UI static marketing site.
 | `pnpm preview` | Preview the generated site |
 | `pnpm lint` | ESLint |
 | `pnpm typecheck` | `nuxt typecheck` |
+| `pnpm test` | Vitest unit tests |
 
 ## Rules & skills context
 

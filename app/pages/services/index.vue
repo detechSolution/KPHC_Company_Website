@@ -1,74 +1,10 @@
 <script setup lang="ts">
+import { servicesIndexCards, servicesIndexReasons } from '~/utils/services-content'
+
 useSeoMeta({
   title: 'Services | Kalihi-Palama Health Center',
   description: 'We offer accessible, compassionate healthcare programs designed to keep you and your family thriving.',
 })
-
-const services = [
-  {
-    title: 'Medical Services',
-    count: '3 Services',
-    description: 'Comprehensive primary care for adults, women, and children — including preventive visits, chronic disease management, and family medicine.',
-    to: '/services/medical',
-    image: '/images/services/medical-services.webp',
-    alt: 'Patient and provider in a consultation at Kalihi-Palama Health Center',
-  },
-  {
-    title: 'Behavioral Health and Social Services',
-    count: '3 Services',
-    description: 'Integrated counseling, case management, and healthcare for the homeless programs that support mind, emotions, and daily life.',
-    to: '/services/behavioral-health',
-    image: '/images/services/behavioral-health-services.webp',
-    alt: 'Kalihi-Palama Health Center community members gathered together',
-  },
-  {
-    title: 'Dental Services',
-    count: '4 Clinics',
-    description: 'Preventive and restorative dental care for the whole family, with clinics dedicated to adults and children across Honolulu.',
-    to: '/services/dental',
-    image: '/images/services/dental-services.webp',
-    alt: 'Dental provider caring for a patient at Kalihi-Palama Health Center',
-  },
-  {
-    title: 'Additional Services',
-    count: '4 Services',
-    description: 'Optometry, pharmacy, WIC, and wellness education that wrap around your primary care and keep your family supported.',
-    to: '/services/additional',
-    image: '/images/services/additional-services.webp',
-    alt: 'Healthcare provider administering a vaccination to a patient',
-  },
-  {
-    title: 'Nutrition',
-    count: 'ADA Recognized',
-    description: 'Diabetes self-management education and registered dietitian counseling to help you build healthier habits every day.',
-    to: '/services/nutrition',
-    image: '/images/home/wic.webp',
-    alt: 'Nutrition support and healthy eating education at Kalihi-Palama Health Center',
-  },
-]
-
-const reasons = [
-  {
-    icon: 'i-lucide-heart-handshake',
-    title: 'Patient-First Approach',
-    description: 'Care plans built around your goals, language, culture, and family — not a one-size-fits-all checklist.',
-  },
-  {
-    icon: 'i-lucide-sparkles',
-    title: 'Advanced Healthcare Innovation',
-    description: 'Telehealth options, coordinated referrals, and modern clinic tools that make care more accessible.',
-  },
-  {
-    icon: 'i-lucide-award',
-    title: 'Award-Winning Certified Quality',
-    description: 'Recognized for excellence as a Federally Qualified Health Center and Patient-Centered Medical Home.',
-  },
-  {
-    icon: 'i-lucide-users',
-    title: 'Compassionate Community Care',
-    description: 'Rooted in Kalihi-Palama, we serve neighbors with aloha — including those who need sliding-scale support.',
-  },
-]
 </script>
 
 <template>
@@ -94,7 +30,7 @@ const reasons = [
 
       <div class="mx-auto mt-stack-xl flex w-full max-w-(--ui-container) flex-col gap-stack-lg px-gutter sm:mt-12 sm:px-gutter-lg">
         <article
-          v-for="service in services"
+          v-for="service in servicesIndexCards"
           :key="service.title"
           class="grid overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm sm:grid-cols-[minmax(0,280px)_1fr] lg:grid-cols-[minmax(0,340px)_1fr]"
         >
@@ -143,7 +79,7 @@ const reasons = [
 
         <div class="mt-stack-xl grid gap-stack-lg sm:grid-cols-2 lg:grid-cols-4">
           <div
-            v-for="reason in reasons"
+            v-for="reason in servicesIndexReasons"
             :key="reason.title"
             class="text-center sm:text-left"
           >

@@ -2,7 +2,7 @@
 @import "@nuxt/ui";
 
 /**
- * KHPC brand tokens — sampled from mockups/
+ * KHPC brand tokens
  * Primary green: #23B473 | Mint surface: #EBFAF3 | Forest: #0F3C28 | Footer: #111113
  */
 @theme static {
@@ -35,7 +35,7 @@
   --color-zinc-900: #18181B;
   --color-zinc-950: #111113;
 
-  /* Section rhythm from mockups (~80–100px vertical, 24–32px gutters) */
+  /* Section rhythm (~80–100px vertical, 24–32px gutters) */
   --spacing-section-sm: 3.5rem;
   --spacing-section: 5rem;
   --spacing-section-lg: 6.25rem;

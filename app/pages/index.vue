@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { CAREERS_JOBS_URL } from '~/utils/external-links'
+import { DEFAULT_DESCRIPTION } from '~/utils/site'
 
 useSeoMeta({
   title: 'Kalihi-Palama Health Center',
-  description: 'Care when you need it most of all. Comprehensive medical, dental, and behavioral health services for our community.',
+  description: DEFAULT_DESCRIPTION,
 })
 
 const highlightCards = [

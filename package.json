@@ -4,14 +4,16 @@
   "private": true,
   "packageManager": "pnpm@11.9.0",
   "scripts": {
-    "build": "nuxt generate",
-    "generate": "nuxt generate",
+    "build": "nuxt generate && node scripts/write-sitemap.mjs",
+    "generate": "nuxt generate && node scripts/write-sitemap.mjs",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.114",
@@ -25,6 +27,7 @@
     "@nuxt/eslint": "^1.16.0",
     "eslint": "^10.6.0",
     "typescript": "^6.0.3",
+    "vitest": "^3.2.4",
     "vue-tsc": "^3.3.5"
   }
 }

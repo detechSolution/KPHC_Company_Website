@@ -35,6 +35,7 @@ pnpm preview
 ```bash
 pnpm lint
 pnpm typecheck
+pnpm test
 ```
 
 ## Agent / contributor notes
