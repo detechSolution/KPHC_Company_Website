@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { dentalAppointmentSites, dentalProofOfIncome } from '~/utils/services-content'
 
-useSeoMeta({
-  title: 'Dental Services | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Dental Services',
   description: 'Healthy smiles for the whole family — preventive and restorative dental care at KPHC clinics.',
 })
 </script>

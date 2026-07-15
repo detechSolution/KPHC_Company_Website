@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@nuxt/ui'
+import { splitAccentTitle } from '~/utils/accent-title'
 
 export type HeroBannerAlign = 'center' | 'start'
 export type HeroBannerVariant = 'soft' | 'solid' | 'plain'
@@ -34,22 +35,7 @@ const props = withDefaults(defineProps<{
 const slots = useSlots()
 const titleId = useId()
 
-const titleParts = computed(() => {
-  const { title, accent } = props
-  if (!accent || !title.includes(accent)) {
-    return [{ text: title, accent: false as const }]
-  }
-
-  const index = title.indexOf(accent)
-  const before = title.slice(0, index)
-  const after = title.slice(index + accent.length)
-
-  return [
-    { text: before, accent: false as const },
-    { text: accent, accent: true as const },
-    { text: after, accent: false as const },
-  ].filter(part => part.text.length > 0)
-})
+const titleParts = computed(() => splitAccentTitle(props.title, props.accent))
 
 const isCentered = computed(() => props.align === 'center')
 

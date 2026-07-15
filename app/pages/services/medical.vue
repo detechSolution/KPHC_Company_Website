@@ -12,8 +12,8 @@ import {
   medicalWomensServices,
 } from '~/utils/services-content'
 
-useSeoMeta({
-  title: 'Medical Services | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Medical Services',
   description: 'Comprehensive primary care for every stage of life — adult medicine, women\'s health, and pediatrics.',
 })
 </script>

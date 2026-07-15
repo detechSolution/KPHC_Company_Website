@@ -9,8 +9,8 @@ import {
   integratedCareIntro,
 } from '~/utils/services-content'
 
-useSeoMeta({
-  title: 'Behavioral Health & Social Services | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Behavioral Health & Social Services',
   description: 'Caring for your mind, your emotions, and your whole life with integrated behavioral health and social services.',
 })
 </script>

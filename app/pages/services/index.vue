@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { servicesIndexCards, servicesIndexReasons } from '~/utils/services-content'
 
-useSeoMeta({
-  title: 'Services | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Services',
   description: 'We offer accessible, compassionate healthcare programs designed to keep you and your family thriving.',
 })
 </script>

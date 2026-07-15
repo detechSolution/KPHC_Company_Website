@@ -10,8 +10,8 @@ import {
   tierSponsors,
 } from '~/utils/events-content'
 
-useSeoMeta({
-  title: 'Events | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Events',
   description: 'Thank you for making the Kalihi-Palama Health Center 50th Anniversary Gala a success — honoring our people, partners, and community.',
 })
 

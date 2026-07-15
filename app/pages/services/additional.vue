@@ -9,8 +9,8 @@ import {
   wicDocuments,
 } from '~/utils/services-content'
 
-useSeoMeta({
-  title: 'Additional Services | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Additional Services',
   description: 'Wraparound support for every part of your life — optometry, pharmacy, WIC, and wellness education.',
 })
 </script>

@@ -9,8 +9,8 @@ import {
 } from '~/utils/resources-content'
 import { sectionFromHash } from '~/utils/resources-hash'
 
-useSeoMeta({
-  title: 'Resources | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Resources',
   description: 'Clinic locations, patient privacy, telemedicine options, appointment information, and more.',
 })
 

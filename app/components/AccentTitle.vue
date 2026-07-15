@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { splitAccentTitle } from '~/utils/accent-title'
+
 const props = withDefaults(defineProps<{
   title: string
   accent: string
@@ -12,19 +14,7 @@ const props = withDefaults(defineProps<{
 
 const Tag = computed(() => props.as)
 
-const parts = computed(() => {
-  const { title, accent } = props
-  if (!title.includes(accent)) {
-    return [{ text: title, accent: false as const }]
-  }
-
-  const index = title.indexOf(accent)
-  return [
-    { text: title.slice(0, index), accent: false as const },
-    { text: accent, accent: true as const },
-    { text: title.slice(index + accent.length), accent: false as const },
-  ].filter(part => part.text.length > 0)
-})
+const parts = computed(() => splitAccentTitle(props.title, props.accent))
 </script>
 
 <template>

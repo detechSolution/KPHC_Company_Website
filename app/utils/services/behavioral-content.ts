@@ -1,0 +1,94 @@
+import type { ExpectItem, HomelessProgram, ServiceClinic, ServiceOffering } from './types'
+
+export const behavioralOfferings: ServiceOffering[] = [
+  {
+    icon: 'i-lucide-messages-square',
+    title: 'Behavioral Health',
+    description: 'Individual and group therapy, medication management, and consultation for patients of all ages.',
+  },
+  {
+    icon: 'i-lucide-users',
+    title: 'Social Services',
+    description: 'Case management and crisis support that connect you with essential community resources.',
+  },
+  {
+    icon: 'i-lucide-heart-handshake',
+    title: 'Healthcare for the Homeless',
+    description: 'Accessible medical care, behavioral health, and housing support for people experiencing homelessness.',
+  },
+]
+
+export const behavioralServices = [
+  'Behavioral Health Consultation',
+  'Diagnostic Evaluation',
+  'Medication Evaluation and Management',
+  'Short-term Psychotherapy',
+  'Tobacco Cessation',
+  'Substance Abuse Individual and Group Therapy',
+  'Individual Psychotherapy',
+  'Group Psychotherapy',
+  'Stress Management',
+  'Domestic Violence',
+  'Sex Trafficking',
+]
+
+export const behavioralExpectItems: ExpectItem[] = [
+  {
+    title: 'Patient Centered Care Team Approach',
+    body: 'As a patient at Kalihi-Palama Health Center, a team of healthcare professionals and support staff will assist you to meet your healthcare needs. Our goal is to provide you with integrated services to keep you healthy and/or achieve wellness. Our trained integrated care team will assist you to navigate your healthcare needs to include enrollment, financial qualifying, scheduling appointments, medical and specialty care visits, referrals for treatment to specialists or testing, getting prescriptions you need and providing education on important health topics.',
+  },
+  {
+    title: 'The Assessment Process',
+    body: 'When you first begin treatment with any healthcare professional at KPHC, you will first begin with an assessment. A healthcare professional will ask you many questions about your concerns, background, and goals so the best treatment/care plan can be developed.',
+  },
+  {
+    title: 'Your Plan of Care',
+    body: 'Based on your assessment and request, you and your care team will put together a "treatment plan" and develop self-management goals. With certain healthcare providers in Behavioral Health and Health Care for the Homeless Project, you will be asked to sign that you agree with your treatment plan. Remember, this is YOUR treatment plan so we encourage you to give frequent feedback on your treatment progress and what will be helpful to you to meet your goals.',
+  },
+  {
+    title: 'Self-Management Goals',
+    body: 'When working with your healthcare team you may be requested to participate in the development of self-management goals. Self-management goals are goals that you will develop in collaboration with your team of healthcare providers to manage chronic healthcare conditions on a daily basis. These goals are activities including learning, understanding and following medical regimens/recommendations, making changes in lifestyle such as exercise and diet, and dealing with emotions that arise from having a chronic healthcare condition.',
+  },
+  {
+    title: 'Recovery / Transition Plan',
+    body: 'When receiving services from certain healthcare providers, such as Behavioral Health and Health Care for the Homeless, as you make progress towards your treatment goals, you will be discussing with your team your next steps in recovery. This may include completion of treatment and discharge from our programs or the need for external specialized services. The eventual goal is to help you have the highest quality independent life possible within the community.',
+  },
+]
+
+export const behavioralClinics: ServiceClinic[] = [
+  {
+    name: 'Behavioral Health, Medical, Health Education & Pharmacy',
+    address: '952 North King Street, Honolulu, HI 96817',
+    phone: '(808) 841-7981',
+    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
+  },
+  {
+    name: 'Kaaahi Clinic',
+    address: '546 Kaaahi Street, Honolulu, HI 96817',
+    phone: '(808) 791-6342',
+    hours: 'Monday–Friday 8:00 AM – 4:00 PM',
+  },
+]
+
+export const homelessPrograms: HomelessProgram[] = [
+  {
+    title: 'Community-Based Case Management Service',
+    body: 'Case Management and 24-hour crisis intervention services are provided to clients with severe and persistent mental illness, alcohol or substance abuse issues, and/or chronic medical issues.',
+  },
+  {
+    title: 'Community Integrated Services (CIS)',
+    body: 'Community Integrated Services provides housing-focused support for eligible QUEST Integration (QI) members who are homeless, at risk of homelessness, or transitioning from institutions. The program is managed by Hawaii Med-QUEST and contracted health plans. CIS Case Managers assist clients with housing applications, securing housing, tenancy rights education, and developing skills for independent living.',
+  },
+  {
+    title: 'Ka\'a\'ahi Street Clinic',
+    body: 'Located at the IHS Homeless Shelter for Women and Families. Services include Behavioral Health Care, Medical Care, TB Screening, and Follow-up & Referral Service.',
+  },
+  {
+    title: 'Permanent Housing Program',
+    body: 'Permanent Housing is a supportive housing program that provides housing subsidies along with long-term case management services to homeless individuals and families with disabilities. Participants pay 30% of their income towards rent, and the program subsidy provides the remaining dollar amount.',
+  },
+  {
+    title: 'Housing First Program',
+    body: 'Housing First is a collaborative effort with U.S. VETS that provide case management, housing assistance, and supportive services to chronically homeless individuals and families. Services are provided with the immediate and primary focus on helping participants to quickly access and sustain permanent housing. The Housing First model is recognized as a Best Practice by the National Alliance to End Homelessness.',
+  },
+]

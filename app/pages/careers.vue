@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { CAREERS_JOBS_URL } from '~/utils/external-links'
 
-useSeoMeta({
-  title: 'Careers | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Careers',
   description: 'Join Kalihi-Palama Health Center and help deliver compassionate care to our community.',
 })
 </script>

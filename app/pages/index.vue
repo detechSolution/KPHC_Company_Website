@@ -2,9 +2,10 @@
 import { CAREERS_JOBS_URL } from '~/utils/external-links'
 import { DEFAULT_DESCRIPTION } from '~/utils/site'
 
-useSeoMeta({
+usePageSeo({
   title: 'Kalihi-Palama Health Center',
   description: DEFAULT_DESCRIPTION,
+  path: '/',
 })
 
 const highlightCards = [

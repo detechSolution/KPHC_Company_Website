@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { DEFAULT_DESCRIPTION, OG_IMAGE_URL, SITE_NAME, SITE_URL } from '~/utils/site'
+import { buildOrganizationJsonLd } from '~/utils/structured-data'
 
 useHead({
   meta: [
@@ -13,10 +14,17 @@ useHead({
     { rel: 'shortcut icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
     { rel: 'manifest', href: '/site.webmanifest' },
+    { rel: 'canonical', href: `${SITE_URL}/` },
   ],
   htmlAttrs: {
     lang: 'en',
   },
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(buildOrganizationJsonLd()),
+    },
+  ],
 })
 
 useSeoMeta({
@@ -26,7 +34,7 @@ useSeoMeta({
   ogDescription: DEFAULT_DESCRIPTION,
   ogImage: OG_IMAGE_URL,
   ogImageAlt: 'Kalihi-Palama Health Center care team with patients',
-  ogUrl: SITE_URL,
+  ogUrl: `${SITE_URL}/`,
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterImage: OG_IMAGE_URL,

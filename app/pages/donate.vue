@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { PAYPAL_DONATE_URL } from '~/utils/external-links'
 
-useSeoMeta({
-  title: 'Donate | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Donate',
   description: 'Donate now to make a difference in our programs, community, and someone\'s life.',
 })
 </script>

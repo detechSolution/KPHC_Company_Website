@@ -8,8 +8,8 @@ import {
 } from '~/utils/about-content'
 import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
 
-useSeoMeta({
-  title: 'About Us | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'About Us',
   description: 'We provide comprehensive, high-quality medical care to support the well-being of our community.',
 })
 

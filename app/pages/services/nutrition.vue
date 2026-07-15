@@ -6,8 +6,8 @@ import {
   nutritionResourceGroups,
 } from '~/utils/services-content'
 
-useSeoMeta({
-  title: 'Nutrition | Kalihi-Palama Health Center',
+usePageSeo({
+  title: 'Nutrition',
   description: 'ADA-recognized diabetes self-management education and registered dietitian nutrition counseling at Kalihi-Palama Health Center.',
 })
 </script>
@@ -185,7 +185,7 @@ useSeoMeta({
                 >
                   {{ link.label }}
                   <UIcon
-                    name="i-lucide-external-link"
+                    name="i-lucide-square-arrow-out-up-right"
                     class="size-3.5 shrink-0"
                   />
                 </a>
