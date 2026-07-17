@@ -81,17 +81,21 @@ const active = computed(() => props.items[activeIndex.value])
         :ui="{ base: 'rounded-full' }"
         @click="advance(-1)"
       />
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1">
         <button
           v-for="(item, index) in items"
           :key="index"
           type="button"
-          class="size-2.5 rounded-full transition-colors"
-          :class="index === activeIndex ? 'bg-primary' : 'bg-zinc-300 hover:bg-zinc-400'"
+          class="relative flex size-6 items-center justify-center rounded-full"
           :aria-label="`Go to event picture ${index + 1}`"
           :aria-current="index === activeIndex ? 'true' : undefined"
           @click="goTo(index)"
-        />
+        >
+          <span
+            class="size-2.5 rounded-full transition-colors"
+            :class="index === activeIndex ? 'bg-primary' : 'bg-zinc-300 hover:bg-zinc-400'"
+          />
+        </button>
       </div>
       <UButton
         icon="i-lucide-chevron-right"

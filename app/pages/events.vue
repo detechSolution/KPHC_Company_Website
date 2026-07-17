@@ -200,6 +200,8 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
                   class="max-h-24 w-full object-contain sm:max-h-28"
                   loading="lazy"
                   decoding="async"
+                  width="240"
+                  height="96"
                 >
               </li>
             </ul>
@@ -224,6 +226,8 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
                 :class="partner.large ? 'max-h-36 sm:max-h-40' : 'max-h-20 sm:max-h-24'"
                 loading="lazy"
                 decoding="async"
+                width="240"
+                :height="partner.large ? 160 : 96"
               >
             </li>
           </ul>

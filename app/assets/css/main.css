@@ -1,7 +1,21 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
-@import "@fontsource/caveat/400.css";
-@import "@fontsource/caveat/700.css";
+
+@font-face {
+  font-family: Caveat;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/caveat-latin-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Caveat;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/caveat-latin-700.woff2") format("woff2");
+}
 
 /**
  * KHPC brand tokens
@@ -66,6 +80,16 @@
   --ui-container: 82.5rem;
   /* Room for larger logo + pill CTAs */
   --ui-header-height: 6rem;
+  /*
+   * Accessible primary: brand green-500 (#23B473) stays for decorative accents;
+   * UI primary token uses green-700 for WCAG AA text and solid buttons.
+   */
+  --ui-color-primary-500: var(--color-green-700);
+}
+
+/* Caveat accent copy keeps brand green-500; other primary UI text stays accessible green-700 */
+.font-accent.text-primary {
+  color: var(--color-green-500);
 }
 
 /* Keyboard focus — visible on :focus-visible only; mouse clicks stay clean */

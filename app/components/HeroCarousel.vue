@@ -39,7 +39,7 @@ const { offset, paused, reduceMotion, activeIndex, goTo } = useCarousel({
   delay: () => props.delay,
 })
 
-// Preload the LCP slide in document head; remaining slides load via eager <img> + preloadImages().
+// Preload the LCP slide in document head; adjacent slides preload on idle after mount.
 useHead(() => {
   const first = props.items[0]
   if (!first)
@@ -91,17 +91,27 @@ function slotSizeClass(rel: number) {
   return 'hero-carousel-slide--outer aspect-[6/7] w-[min(34vw,11rem)] sm:w-[14vw] lg:w-[12vw] lg:max-w-[12rem]'
 }
 
-function preloadImages() {
-  for (const item of props.items) {
-    const img = new Image()
-    img.src = item.src
+function preloadAdjacentImages() {
+  if (!import.meta.client || props.items.length <= 1)
+    return
+
+  const preload = () => {
+    for (const rel of [-1, 1]) {
+      const item = itemAt(rel)
+      if (!item)
+        continue
+      const img = new Image()
+      img.src = item.src
+    }
   }
+
+  if ('requestIdleCallback' in window)
+    window.requestIdleCallback(preload, { timeout: 2000 })
+  else
+    setTimeout(preload, 1500)
 }
 
-if (import.meta.client)
-  preloadImages()
-
-watch(() => props.items, preloadImages, { deep: true })
+onMounted(preloadAdjacentImages)
 </script>
 
 <template>
@@ -135,7 +145,10 @@ watch(() => props.items, preloadImages, { deep: true })
             class="absolute inset-0 size-full object-cover"
             width="880"
             height="550"
-            loading="eager"
+            :sizes="slot.isCenter
+              ? '(min-width: 1024px) 42rem, (min-width: 640px) 40vw, 82vw'
+              : '(min-width: 1024px) 16rem, (min-width: 640px) 19vw, 46vw'"
+            :loading="slot.isCenter ? 'eager' : 'lazy'"
             :fetchpriority="slot.isCenter ? 'high' : 'auto'"
             decoding="async"
             draggable="false"
@@ -268,25 +281,39 @@ watch(() => props.items, preloadImages, { deep: true })
 }
 
 .hero-carousel__dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
   border: none;
   padding: 0;
   cursor: pointer;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.hero-carousel__dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
   background: var(--color-green-200);
   transition:
     width 0.3s ease,
-    background-color 0.3s ease,
-    transform 0.3s ease;
+    background-color 0.3s ease;
 }
 
 .hero-carousel__dot:hover {
-  background: var(--color-green-300);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-.hero-carousel__dot--active {
+.hero-carousel__dot:hover::before {
+  background: var(--color-green-300);
+}
+
+.hero-carousel__dot--active::before {
   width: 1.5rem;
   background: var(--color-green-500);
 }

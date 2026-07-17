@@ -25,6 +25,16 @@ export default defineNuxtConfig({
         'cache-control': 'public, max-age=31536000, immutable',
       },
     },
+    '/images/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable',
+      },
+    },
+    '/fonts/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable',
+      },
+    },
     '/**': {
       prerender: true,
       headers: {
@@ -40,7 +50,27 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true,
+    enabled: import.meta.dev,
+  },
+
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'preload',
+          as: 'font',
+          type: 'font/woff2',
+          href: '/fonts/caveat-latin-400.woff2',
+          crossorigin: 'anonymous',
+        },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/images/logo-header.webp',
+          fetchpriority: 'high',
+        },
+      ],
+    },
   },
 
   css: ['~/assets/css/main.css'],

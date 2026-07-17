@@ -81,6 +81,7 @@ const highlightCards = [
             decoding="async"
             width="640"
             height="480"
+            sizes="(min-width: 1024px) 28rem, (min-width: 640px) 50vw, 100vw"
           >
           <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-950/80 via-zinc-950/30 to-transparent p-5 sm:p-6">
             <h3 class="text-lg font-semibold text-white text-balance sm:text-xl">
@@ -128,6 +129,7 @@ const highlightCards = [
             decoding="async"
             width="480"
             height="480"
+            sizes="(min-width: 1024px) 22rem, 50vw"
           >
           <img
             src="/images/services/medical-services.webp"
@@ -137,6 +139,7 @@ const highlightCards = [
             decoding="async"
             width="480"
             height="480"
+            sizes="(min-width: 1024px) 22rem, 50vw"
           >
         </div>
       </div>
