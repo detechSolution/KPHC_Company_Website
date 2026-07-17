@@ -139,8 +139,9 @@ onBeforeUnmount(() => {
       title="Kalihi-Palama Health Center"
       to="/"
       mode="slideover"
+      toggle-side="left"
       :menu="{
-        side: 'right',
+        side: 'left',
       }"
       :toggle="{
         color: 'neutral',
@@ -149,25 +150,32 @@ onBeforeUnmount(() => {
       }"
       :ui="{
         root: 'border-0 bg-white/85 backdrop-blur-md shadow-[0_1px_0_0_var(--color-green-100)]',
-        container: 'gap-3 px-gutter sm:gap-4 sm:px-gutter-lg',
-        left: 'flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none!',
-        center: 'hidden shrink-0 items-center justify-center min-[1280px]:flex group-data-[compact]/nav:hidden!',
-        right: 'flex min-w-0 items-center justify-end gap-2.5 min-[1280px]:flex-1 group-data-[compact]/nav:flex-none!',
-        title: 'flex items-center shrink-0',
+        container: 'relative gap-3 px-gutter sm:gap-4 sm:px-gutter-lg [&_[data-slot=title]]:hidden [&_[data-slot=title]]:min-[1280px]:flex group-data-[compact]/nav:[&_[data-slot=title]]:hidden!',
+        center: 'pointer-events-none absolute inset-0 flex items-center justify-center min-[1280px]:pointer-events-auto min-[1280px]:static min-[1280px]:inset-auto min-[1280px]:flex min-[1280px]:flex-none min-[1280px]:shrink-0 group-data-[compact]/nav:pointer-events-none! group-data-[compact]/nav:absolute! group-data-[compact]/nav:inset-0!',
+        left: 'relative z-10 flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none!',
+        right: 'relative z-10 flex min-w-0 items-center justify-end gap-2.5 min-[1280px]:flex-1 group-data-[compact]/nav:flex-none!',
+        title: 'flex items-center shrink-0 min-w-0',
         toggle: 'flex! shrink-0 min-[1280px]:hidden! group-data-[compact]/nav:flex!',
         content: 'w-full max-w-sm',
-        body: 'flex flex-col gap-0 px-gutter py-4 sm:px-gutter-lg',
       }"
     >
       <template #title>
         <AppLogo />
       </template>
 
+      <ULink
+        to="/"
+        aria-label="Kalihi-Palama Health Center"
+        class="pointer-events-auto flex min-[1280px]:hidden group-data-[compact]/nav:flex!"
+      >
+        <AppLogo class="object-center" />
+      </ULink>
+
       <UNavigationMenu
         :items="items"
         variant="link"
         color="neutral"
-        class="w-fit shrink-0"
+        class="hidden w-fit shrink-0 min-[1280px]:flex group-data-[compact]/nav:hidden!"
         :ui="{
           root: 'w-fit justify-center',
           list: 'w-fit flex-nowrap gap-1',
@@ -195,61 +203,84 @@ onBeforeUnmount(() => {
         />
       </template>
 
-      <template #body>
-        <div class="mb-4 rounded-card border border-green-100 bg-green-50 p-4">
-          <p class="text-xs font-semibold tracking-wide text-primary uppercase">
-            Need care?
-          </p>
-          <a
-            :href="MAIN_PHONE_HREF"
-            class="mt-1.5 flex items-center gap-2.5 text-base font-semibold text-zinc-950 transition-colors hover:text-primary"
+      <template #content="{ close }">
+        <div class="flex h-(--ui-header-height) shrink-0 items-center justify-between gap-3 border-b border-zinc-100 px-gutter sm:px-gutter-lg">
+          <ULink
+            to="/"
+            aria-label="Kalihi-Palama Health Center"
+            class="flex min-w-0 flex-1 items-center"
+            @click="close?.()"
           >
-            <span class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
-              <UIcon
-                name="i-lucide-phone"
-                class="size-5"
-              />
-            </span>
-            <span>
-              {{ MAIN_PHONE }}
-              <span class="mt-0.5 block text-xs font-normal text-zinc-600">
-                Call to schedule or ask a question
-              </span>
-            </span>
-          </a>
+            <AppLogo />
+          </ULink>
+
+          <UButton
+            color="neutral"
+            variant="ghost"
+            size="md"
+            icon="i-lucide-x"
+            aria-label="Close menu"
+            class="-me-1.5 shrink-0"
+            @click="close?.()"
+          />
         </div>
 
-        <UNavigationMenu
-          :items="items"
-          orientation="vertical"
-          variant="link"
-          color="neutral"
-          class="-mx-1"
-          :ui="{
-            list: 'gap-0.5',
-            link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold',
-          }"
-        />
+        <div class="flex flex-col gap-0 px-gutter py-4 sm:px-gutter-lg">
+          <div class="mb-4 rounded-card border border-green-100 bg-green-50 p-4">
+            <p class="text-xs font-semibold tracking-wide text-primary uppercase">
+              Need care?
+            </p>
+            <a
+              :href="MAIN_PHONE_HREF"
+              class="mt-1.5 flex items-center gap-2.5 text-base font-semibold text-zinc-950 transition-colors hover:text-primary"
+            >
+              <span class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
+                <UIcon
+                  name="i-lucide-phone"
+                  class="size-5"
+                />
+              </span>
+              <span>
+                {{ MAIN_PHONE }}
+                <span class="mt-0.5 block text-xs font-normal text-zinc-600">
+                  Call to schedule or ask a question
+                </span>
+              </span>
+            </a>
+          </div>
 
-        <div class="mt-stack-lg flex flex-col gap-2.5 border-t border-zinc-100 pt-stack-lg">
-          <UButton
-            label="Patient Portal"
-            :to="PATIENT_PORTAL_URL"
-            target="_blank"
-            color="primary"
-            variant="outline"
-            size="lg"
-            block
-            icon="i-lucide-circle-user"
+          <UNavigationMenu
+            :items="items"
+            orientation="vertical"
+            variant="link"
+            color="neutral"
+            class="-mx-1"
+            :ui="{
+              list: 'gap-0.5',
+              link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold',
+            }"
           />
-          <UButton
-            label="Book an Appointment"
-            :to="appointmentHref"
-            color="primary"
-            size="lg"
-            block
-            icon="i-lucide-calendar-check"
-          />
+
+          <div class="mt-stack-lg flex flex-col gap-2.5 border-t border-zinc-100 pt-stack-lg">
+            <UButton
+              label="Patient Portal"
+              :to="PATIENT_PORTAL_URL"
+              target="_blank"
+              color="primary"
+              variant="outline"
+              size="lg"
+              block
+              icon="i-lucide-circle-user"
+            />
+            <UButton
+              label="Book an Appointment"
+              :to="appointmentHref"
+              color="primary"
+              size="lg"
+              block
+              icon="i-lucide-calendar-check"
+            />
+          </div>
         </div>
       </template>
     </UHeader>
