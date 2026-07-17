@@ -18,16 +18,16 @@ export interface LongServingEmployee {
 }
 
 export const longServingEmployees: LongServingEmployee[] = [
-  { year: '1992', name: 'Esther T. Galvez' },
-  { year: '1993', name: 'Lea A. Nakamura' },
-  { year: '1997', name: 'Corazon D. Manuel' },
-  { year: '2001', name: 'Joel C. Bolosan' },
-  { year: '2002', name: 'Rizal C. Hernandez' },
-  { year: '2003', name: 'Priscilla B. Baxa' },
-  { year: '2004', name: 'Phyllis C. Shing-Awa' },
-  { year: '2005', name: 'Phoebe M. Agcaoili-Minoza' },
-  { year: '2005', name: 'Catalina D. Hernandez' },
-  { year: '2009', name: 'Jessa C. Balicoco' },
+  { year: '1983', name: 'Julieta B. Saldana' },
+  { year: '1990', name: 'Glenn Hanada' },
+  { year: '1991', name: 'Corazon B. Luague' },
+  { year: '1991', name: 'Glenn Rediger' },
+  { year: '1992', name: 'Hue Thi Nettrour' },
+  { year: '1993', name: 'Massani B. Tauai' },
+  { year: '1993', name: 'My Linh Thi Nguyen' },
+  { year: '1994', name: 'Marilou Tagata-Mindo' },
+  { year: '1994', name: 'Blandina C. Mamaclay' },
+  { year: '1994', name: 'Nora C. Dimaya' },
 ]
 
 export const kphcPresidents = [
