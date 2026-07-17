@@ -46,3 +46,14 @@ export interface NutritionResourceGroup {
   title: string
   links: { label: string, href: string }[]
 }
+
+export interface BehavioralProvider {
+  name: string
+  specialty: string
+  locations: string[]
+  credentials: string
+  education?: string[]
+  professionalInterests?: string
+  personalInterests?: string
+  featured?: boolean
+}

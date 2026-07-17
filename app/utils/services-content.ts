@@ -11,6 +11,7 @@ export {
   behavioralClinics,
   behavioralExpectItems,
   behavioralOfferings,
+  behavioralProviders,
   behavioralServices,
   homelessPrograms,
 } from './services/behavioral-content'
@@ -49,6 +50,7 @@ export {
 
 export type {
   AppointmentSite,
+  BehavioralProvider,
   ExpectItem,
   HomelessProgram,
   NutritionResourceGroup,

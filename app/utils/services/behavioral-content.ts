@@ -1,4 +1,86 @@
-import type { ExpectItem, HomelessProgram, ServiceClinic, ServiceOffering } from './types'
+import type { BehavioralProvider, ExpectItem, HomelessProgram, ServiceClinic, ServiceOffering } from './types'
+
+export const behavioralProviders: BehavioralProvider[] = [
+  {
+    name: 'Camille Ambrose-Santos, LCSW',
+    specialty: 'Behavioral Health',
+    locations: ['Downtown (89 S King Street)', '952 N King Street'],
+    credentials: 'Licensed Clinical Social Worker',
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Social Work',
+    ],
+  },
+  {
+    name: 'Matthew Marchetto-Ryan, Psy.D',
+    specialty: 'Behavioral Health',
+    locations: ['952 N King Street', '915 N King Street', 'Downtown (89 S King Street)'],
+    credentials: 'Licensed Clinical Psychologist — Hawai\'i State',
+    education: [
+      'Hawai\'i School of Professional Psychology at Argosy University',
+      'Master of Science in Psychopharmacology — Alliant University',
+    ],
+    professionalInterests: 'Generalist — Community Mental Health Care',
+    personalInterests: 'Hiking, biking, gardening, reading (fiction), movies, and gaming',
+  },
+  {
+    name: 'Kesha Mimms, APRN',
+    specialty: 'Psychiatry',
+    locations: ['952 N King Street', 'Downtown (89 S King Street)', 'Ka\'a\'ahi Clinic'],
+    credentials: 'Psychiatric Mental Health Nurse Practitioner',
+    education: [
+      'Northeastern University',
+      'Salem State University',
+      'Northeast Behavioral Health / Lahey Haverhill Clinic / Cornerstone Day Program',
+    ],
+    professionalInterests: 'Adults, geriatrics, SUD, LGBTQ, SPMI',
+    personalInterests: 'Yoga, hiking, cooking, family, and dancing',
+  },
+  {
+    name: 'Rieko Nieto, LCSW',
+    specialty: 'Behavioral Health',
+    locations: ['710 N King Street', '952 N King Street'],
+    credentials: 'Licensed Clinical Social Worker / Certified Substance Abuse Counselor',
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Social Work',
+    ],
+    personalInterests: 'Tahitian dance, hula, surfing, hiking, and fishing',
+  },
+  {
+    name: 'Darrin Sato, LCSW',
+    specialty: 'Behavioral Health',
+    locations: ['Downtown (89 S King Street)', '915 N King Street'],
+    credentials: 'Licensed Clinical Social Worker',
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Social Work',
+    ],
+  },
+  {
+    name: 'Jermaine Turner, LCSW',
+    specialty: 'Behavioral Health',
+    locations: ['952 N King Street', '915 N King Street', 'Ka\'a\'ahi Clinic'],
+    credentials: 'Licensed Clinical Social Worker',
+    education: [
+      'Master of Social Work',
+    ],
+  },
+  {
+    name: 'Joanne Williams, APRN',
+    specialty: 'Psychiatry',
+    locations: ['952 N King Street'],
+    credentials: 'Board Certified ANCC',
+    featured: true,
+    education: [
+      'Saint John Fisher University — MSN, PMHNP',
+      'SUNY Brockport — BSN',
+      'SUNY Geneseo — BA in English',
+    ],
+    professionalInterests: 'Joanne is a board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) with extensive experience providing care across the lifespan. She brings strong clinical expertise in psychiatric evaluation, diagnosis, medication management, and evidence-based psychotherapy, along with advanced skills in crisis intervention and high-acuity care. Grounded in integrity and the principles of beneficence and non-maleficence, she delivers patient-centered, collaborative care. Passionate about reducing mental health stigma, she empowers patients to achieve lasting cognitive and behavioral change by fostering a safe and supportive environment that promotes growth and resilience. A diverse background in psychiatry, pediatrics, and education informs a holistic and compassionate approach to care.',
+    personalInterests: 'Joanne enjoys journaling about life, reading books with meaningful and transformative insights, and spending time outdoors surfing, hiking, and swimming in the ocean. She embraces adventure and values opportunities for exploration and personal growth.',
+  },
+]
 
 export const behavioralOfferings: ServiceOffering[] = [
   {

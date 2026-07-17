@@ -13,6 +13,10 @@ export const MAIN_PHONE_HREF = 'tel:+18088481438'
 export const NUTRITION_PHONE = '(808) 843-7256'
 export const NUTRITION_PHONE_HREF = 'tel:+18088437256'
 
+/** Behavioral health department */
+export const BEHAVIORAL_HEALTH_PHONE = '808-841-7981'
+export const BEHAVIORAL_HEALTH_PHONE_HREF = 'tel:+18088417981'
+
 /** Clinic hours & locations accordion on Resources */
 export const BOOK_APPOINTMENT_HREF = '/resources#locations'
 

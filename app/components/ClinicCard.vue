@@ -10,8 +10,8 @@ defineProps<{
 </script>
 
 <template>
-  <article class="rounded-card border border-zinc-200 bg-white p-5 sm:p-6">
-    <h3 class="text-base font-semibold text-zinc-950 sm:text-lg">
+  <article class="flex h-full flex-col rounded-card border border-zinc-200 bg-white p-5 sm:p-6">
+    <h3 class="min-h-[3.5rem] text-base font-semibold text-zinc-950 text-balance sm:min-h-[4rem] sm:text-lg">
       {{ name }}
     </h3>
 

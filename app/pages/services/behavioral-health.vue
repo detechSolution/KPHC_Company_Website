@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import {
+  BEHAVIORAL_HEALTH_PHONE,
+  BEHAVIORAL_HEALTH_PHONE_HREF,
+} from '~/utils/external-links'
+import {
   behavioralClinics,
   behavioralExpectItems,
   behavioralOfferings,
+  behavioralProviders,
   behavioralServices,
   clinicHoursNote,
   homelessPrograms,
@@ -116,40 +121,62 @@ usePageSeo({
         </div>
 
         <UButton
-          to="tel:+18088417981"
+          :to="BEHAVIORAL_HEALTH_PHONE_HREF"
           icon="i-lucide-phone"
-          label="Make an appointment today by calling 808-841-7981"
           size="xl"
           color="neutral"
-          class="mt-stack-xl"
+          class="mt-stack-xl w-full max-w-full sm:w-auto"
+          title="Make an appointment today by calling 808-841-7981"
           :ui="{
-            base: 'bg-green-900 text-white hover:bg-green-800 disabled:bg-green-900',
+            base: 'inline-flex max-w-full min-w-0 bg-green-900 text-white hover:bg-green-800 disabled:bg-green-900',
+            label: 'min-w-0 truncate',
           }"
-        />
-      </div>
-    </section>
-
-    <section class="bg-white pb-section-sm sm:pb-section">
-      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
-          Clinic Hours & Locations
-        </h2>
-        <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          {{ clinicHoursNote }}
-        </p>
-        <div class="mt-stack-lg grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <ClinicCard
-            v-for="clinic in behavioralClinics"
-            :key="clinic.name"
-            v-bind="clinic"
-          />
-        </div>
+        >
+          <span class="truncate">
+            <span class="sm:hidden">Call {{ BEHAVIORAL_HEALTH_PHONE }}</span>
+            <span class="hidden sm:inline">Make an appointment today by calling {{ BEHAVIORAL_HEALTH_PHONE }}</span>
+          </span>
+        </UButton>
       </div>
     </section>
 
     <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
+        <h2 class="text-center text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+          Meet Our Behavioral Health Team
+        </h2>
+        <p class="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-zinc-600 text-pretty">
+          Our licensed clinicians and psychiatric providers offer compassionate, culturally responsive care across Kalihi-Palama Health Center sites.
+        </p>
+        <div class="mt-stack-xl overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm divide-y divide-zinc-100">
+          <ProviderCard
+            v-for="provider in behavioralProviders"
+            :key="provider.name"
+            v-bind="provider"
+          />
+        </div>
+
+        <div class="mt-stack-xl">
+          <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            Clinic Hours & Locations
+          </h2>
+          <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
+            {{ clinicHoursNote }}
+          </p>
+          <div class="mt-stack-lg grid gap-6 sm:grid-cols-2">
+            <ClinicCard
+              v-for="clinic in behavioralClinics"
+              :key="clinic.name"
+              v-bind="clinic"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
+        <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Healthcare For The Homeless
         </h2>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
