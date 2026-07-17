@@ -16,6 +16,7 @@ export const PUBLIC_ROUTES = [
   '/careers',
   '/donate',
   '/events',
+  '/providers',
   '/resources',
   '/services',
   '/services/additional',

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-  BOOK_APPOINTMENT_HREF,
   FACEBOOK_URL,
   INSTAGRAM_URL,
   MAIN_PHONE,
@@ -26,7 +25,6 @@ const contact = {
 
 const centerLinks: FooterLink[] = [
   { label: 'Services', to: '/services' },
-  { label: 'Directory', to: BOOK_APPOINTMENT_HREF },
   { label: 'Events', to: '/events' },
   { label: 'Donate', to: '/donate' },
   { label: 'Careers', to: '/careers' },
@@ -34,8 +32,8 @@ const centerLinks: FooterLink[] = [
 
 const resourceLinks: FooterLink[] = [
   { label: 'Patient Portal', to: PATIENT_PORTAL_URL, target: '_blank' as const },
-  { label: 'Language Assistance', to: '/resources' },
-  { label: 'Community Resources', to: '/resources' },
+  { label: 'Our Providers', to: '/providers' },
+  { label: 'Resources', to: '/resources' },
   { label: 'Nutrition', to: '/services/nutrition' },
 ]
 
