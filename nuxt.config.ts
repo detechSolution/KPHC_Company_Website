@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { PUBLIC_ROUTES } from './app/utils/site'
+import { SECURITY_HEADERS } from './security-headers.mjs'
 
 export default defineNuxtConfig({
   modules: [
@@ -39,6 +40,7 @@ export default defineNuxtConfig({
       prerender: true,
       headers: {
         'cache-control': 'public, max-age=0, must-revalidate',
+        ...SECURITY_HEADERS,
       },
     },
   },

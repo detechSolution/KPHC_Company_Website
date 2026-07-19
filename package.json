@@ -4,8 +4,9 @@
   "private": true,
   "packageManager": "pnpm@11.9.0",
   "scripts": {
-    "build": "nuxt generate && node scripts/write-sitemap.mjs",
-    "generate": "nuxt generate && node scripts/write-sitemap.mjs",
+    "build": "node scripts/sync-vercel-security-headers.mjs && nuxt generate && node scripts/write-sitemap.mjs",
+    "generate": "node scripts/sync-vercel-security-headers.mjs && nuxt generate && node scripts/write-sitemap.mjs",
+    "sync:vercel-headers": "node scripts/sync-vercel-security-headers.mjs",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
