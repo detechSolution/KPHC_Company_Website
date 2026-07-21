@@ -14,6 +14,15 @@ usePageSeo({
       badge-icon="i-lucide-briefcase"
       title="Build a Career with KPHC"
       description="Join a team dedicated to health equity, cultural competence, and compassionate care for everyone in our community."
+      :links="[
+        {
+          label: 'View Current Openings',
+          to: CAREERS_JOBS_URL,
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          color: 'primary',
+        },
+      ]"
     />
 
     <section class="bg-white py-section-sm sm:py-section">
