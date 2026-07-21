@@ -4,7 +4,6 @@ export {
   pharmacyLocations,
   pharmacyServices,
   wellnessPrograms,
-  wicDocuments,
 } from './services/additional-content'
 
 export {
@@ -59,3 +58,16 @@ export type {
   ServiceOffering,
   ServiceReason,
 } from './services/types'
+
+export {
+  wicClinic,
+  wicDocumentGroups,
+  wicEnrollmentReminders,
+  wicFax,
+  wicIntro,
+  wicMailingAddress,
+  wicMessagingPrivacy,
+  wicMessagingTerms,
+  wicQualification,
+  wicServices,
+} from './services/wic-content'

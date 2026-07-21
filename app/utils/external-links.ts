@@ -17,6 +17,13 @@ export const NUTRITION_PHONE_HREF = 'tel:+18088437256'
 export const BEHAVIORAL_HEALTH_PHONE = '808-841-7981'
 export const BEHAVIORAL_HEALTH_PHONE_HREF = 'tel:+18088417981'
 
+/** Women, Infants, and Children (WIC) program */
+export const WIC_PHONE = '(808) 841-0011'
+export const WIC_PHONE_HREF = 'tel:+18088410011'
+
+/** Hawaii WIC online application (hiwic.org) */
+export const HI_WIC_APPLY_URL = 'https://www.hiwic.org/apply'
+
 /** Clinic hours & locations accordion on Resources */
 export const BOOK_APPOINTMENT_HREF = '/resources#locations'
 

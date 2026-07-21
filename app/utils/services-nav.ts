@@ -30,4 +30,9 @@ export const servicesNavLinks: ServiceNavLink[] = [
     to: '/services/nutrition',
     icon: 'i-lucide-salad',
   },
+  {
+    label: 'WIC',
+    to: '/services/wic',
+    icon: 'i-lucide-shopping-cart',
+  },
 ]

@@ -24,4 +24,5 @@ export const PUBLIC_ROUTES = [
   '/services/dental',
   '/services/medical',
   '/services/nutrition',
+  '/services/wic',
 ] as const

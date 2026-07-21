@@ -82,10 +82,10 @@ export const clinics: ClinicLocation[] = [
   },
   {
     name: 'Women, Infants & Children (WIC)',
-    address: '915 North King Street, Honolulu, HI 96817',
+    address: '710 North King Street, Honolulu, HI 96817',
     details: [
-      'Phone: (808) 848-1438',
-      'By appointment',
+      'Phone: (808) 841-0011',
+      'Monday–Friday 7:15 AM – 4:30 PM',
     ],
   },
   {
@@ -139,7 +139,7 @@ export const registrationItems: RegistrationItem[] = [
   },
   {
     title: 'WIC Requirements',
-    body: 'If enrolling in WIC, bring proof of identity, residency, and income for each applicant.',
+    body: 'If enrolling in WIC, bring proof of identity, residency, and income for each applicant. See our WIC program page for full enrollment details.',
   },
 ]
 

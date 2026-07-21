@@ -12,11 +12,6 @@ export const additionalOfferings: ServiceOffering[] = [
     description: 'On-site prescription filling, patient education, and financial assistance options.',
   },
   {
-    icon: 'i-lucide-shopping-cart',
-    title: 'Women, Infants, & Children (WIC)',
-    description: 'Nutrition education, breastfeeding support, and healthy food benefits for eligible families.',
-  },
-  {
     icon: 'i-lucide-heart-pulse',
     title: 'Wellness & Prevention Education',
     description: 'Classes and workshops that help you build healthy habits and prevent chronic illness.',
@@ -65,11 +60,4 @@ export const wellnessPrograms = [
   'Diabetes self-management',
   'Physical activity and healthy lifestyle workshops',
   'Chronic disease prevention classes',
-]
-
-export const wicDocuments = [
-  'Proof of identity for each applicant',
-  'Proof of Hawaii residency',
-  'Proof of income or adjunctive eligibility',
-  'Immunization records for children (when available)',
 ]

@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
+import { MAIN_PHONE } from '~/utils/external-links'
 import {
   additionalOfferings,
   optometryServices,
   pharmacyLocations,
   pharmacyServices,
   wellnessPrograms,
-  wicDocuments,
 } from '~/utils/services-content'
 
 usePageSeo({
   title: 'Additional Services',
-  description: 'Wraparound support for every part of your life — optometry, pharmacy, WIC, and wellness education.',
+  description: 'Wraparound support for every part of your life — optometry, pharmacy, and wellness education.',
 })
 </script>
 
@@ -34,10 +33,17 @@ usePageSeo({
           />
           <div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
             <p>
-              Health is more than a clinic visit. Our additional services — optometry, pharmacy, WIC, and wellness education — wrap around your primary care so your family gets practical support every day.
+              Health is more than a clinic visit. Our additional services — optometry, pharmacy, and wellness education — wrap around your primary care so your family gets practical support every day.
             </p>
             <p>
-              These programs work alongside your medical and dental teams to remove barriers and keep care connected.
+              These programs work alongside your medical and dental teams to remove barriers and keep care connected. For nutrition support through WIC, visit our
+              <NuxtLink
+                to="/services/wic"
+                class="font-medium text-primary hover:underline"
+              >
+                Women, Infants, and Children (WIC)
+              </NuxtLink>
+              program page.
             </p>
           </div>
           <CalloutBox class="mt-6">
@@ -62,7 +68,7 @@ usePageSeo({
         <h2 class="text-center text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
           Services & Offerings
         </h2>
-        <div class="mt-stack-xl grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-stack-xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
             v-for="item in additionalOfferings"
             :key="item.title"
@@ -144,51 +150,6 @@ usePageSeo({
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="bg-green-50 py-section-sm sm:py-section">
-      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <h2 class="text-3xl font-semibold tracking-tight text-zinc-950">
-          Women, Infants, & Children (WIC)
-        </h2>
-        <div class="mt-5 max-w-3xl space-y-4 text-base leading-relaxed text-zinc-600 text-pretty">
-          <p>
-            WIC provides nutrition education, breastfeeding support, and healthy food benefits for pregnant people, new parents, infants, and young children who qualify.
-          </p>
-          <p>
-            To become a client, bring documentation to your appointment. Staff will guide you through eligibility and enrollment.
-          </p>
-        </div>
-
-        <h3 class="mt-stack-lg text-lg font-semibold text-zinc-950">
-          What to bring
-        </h3>
-        <ul class="mt-4 space-y-2.5 text-base text-zinc-600">
-          <li
-            v-for="item in wicDocuments"
-            :key="item"
-            class="flex gap-2"
-          >
-            <UIcon
-              name="i-lucide-check"
-              class="mt-0.5 size-4 shrink-0 text-primary"
-            />
-            <span>{{ item }}</span>
-          </li>
-        </ul>
-
-        <UButton
-          :to="MAIN_PHONE_HREF"
-          icon="i-lucide-phone"
-          :label="MAIN_PHONE"
-          size="xl"
-          color="neutral"
-          class="mt-stack-xl"
-          :ui="{
-            base: 'bg-green-900 text-white hover:bg-green-800 disabled:bg-green-900',
-          }"
-        />
       </div>
     </section>
 

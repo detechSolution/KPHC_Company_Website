@@ -27,7 +27,7 @@ const highlightCards = [
   {
     title: 'Apply for WIC Services',
     action: 'Apply Now',
-    to: '/services/additional',
+    to: '/services/wic',
     image: '/images/home/wic.webp',
     alt: 'Smiling child receiving WIC nutrition support',
   },

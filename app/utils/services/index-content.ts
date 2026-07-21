@@ -27,8 +27,8 @@ export const servicesIndexCards: ServiceCard[] = [
   },
   {
     title: 'Additional Services',
-    count: '4 Services',
-    description: 'Optometry, pharmacy, WIC, and wellness education that wrap around your primary care and keep your family supported.',
+    count: '3 Services',
+    description: 'Optometry, pharmacy, and wellness education that wrap around your primary care and keep your family supported.',
     to: '/services/additional',
     image: '/images/services/additional-services.webp',
     alt: 'Healthcare provider administering a vaccination to a patient',
@@ -40,6 +40,14 @@ export const servicesIndexCards: ServiceCard[] = [
     to: '/services/nutrition',
     image: '/images/home/wic.webp',
     alt: 'Nutrition support and healthy eating education at Kalihi-Palama Health Center',
+  },
+  {
+    title: 'Women, Infants, & Children (WIC)',
+    count: 'Nutrition Support',
+    description: 'Nutrition education, breastfeeding support, and healthy food benefits for eligible pregnant people, new parents, infants, and young children.',
+    to: '/services/wic',
+    image: '/images/home/wic.webp',
+    alt: 'Smiling child receiving WIC nutrition support at Kalihi-Palama Health Center',
   },
 ]
 
