@@ -6,6 +6,7 @@ import {
   MAIN_PHONE_HREF,
   PATIENT_PORTAL_URL,
 } from '~/utils/external-links'
+import { servicesNavLinks } from '~/utils/services-nav'
 
 const route = useRoute()
 
@@ -21,6 +22,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     label: 'Services',
     to: '/services',
     active: route.path.startsWith('/services'),
+    children: servicesNavLinks.map(link => ({
+      label: link.label,
+      to: link.to,
+      active: route.path === link.to,
+    })),
   },
   {
     label: 'About Us',
@@ -249,17 +255,40 @@ onBeforeUnmount(() => {
             </a>
           </div>
 
-          <UNavigationMenu
-            :items="items"
-            orientation="vertical"
-            variant="link"
-            color="neutral"
-            class="-mx-1"
-            :ui="{
-              list: 'gap-0.5',
-              link: 'rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 data-[active]:bg-green-50 data-[active]:text-primary data-[active]:font-semibold',
-            }"
-          />
+          <nav
+            aria-label="Main navigation"
+            class="-mx-1 flex flex-col gap-0.5"
+          >
+            <template
+              v-for="item in items"
+              :key="item.label"
+            >
+              <ULink
+                :to="item.to"
+                class="rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60"
+                :class="item.active && 'bg-green-50 font-semibold text-primary'"
+                @click="close?.()"
+              >
+                {{ item.label }}
+              </ULink>
+
+              <div
+                v-if="item.children?.length"
+                class="mb-1 ms-3 flex flex-col gap-0.5 border-l border-green-100 ps-3"
+              >
+                <ULink
+                  v-for="child in item.children"
+                  :key="child.label"
+                  :to="child.to"
+                  class="rounded-card px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-green-50/60 hover:text-primary"
+                  :class="child.active && 'bg-green-50 font-semibold text-primary'"
+                  @click="close?.()"
+                >
+                  {{ child.label }}
+                </ULink>
+              </div>
+            </template>
+          </nav>
 
           <div class="mt-stack-lg flex flex-col gap-2.5 border-t border-zinc-100 pt-stack-lg">
             <UButton
