@@ -19,7 +19,7 @@ export const medicalOfferings: ServiceOffering[] = [
 ]
 
 export const medicalAdultServices = [
-  'Preventative Care',
+  'Preventive Care',
   'Physical Exams',
   'Annual Wellness Visits',
   'Women\'s Health',
@@ -32,9 +32,9 @@ export const medicalWomensServices = [
   'Reproductive Health Services',
   'Birth Control',
   'Breast Checks',
-  'Breast Feeding',
+  'Breastfeeding',
   'Other Gynecological Exams',
-  'PAP Smears',
+  'Pap Smears',
   'Pregnancy Testing and Counseling',
   'Prenatal Care and Delivery Services',
   'STD/HIV Testing and Treatment',
@@ -58,8 +58,8 @@ export const medicalClinics: ServiceClinic[] = [
     hours: 'Mon, Tue, Thu, Fri, Sat 8:00 AM – 5:00 PM · Wed 8:00 AM – 7:00 PM',
   },
   {
-    name: 'Kaaahi Clinic',
-    address: '546 Kaaahi Street, Honolulu, HI 96817',
+    name: 'Ka\'a\'ahi Clinic',
+    address: '546 Ka\'a\'ahi Street, Honolulu, HI 96817',
     phone: '(808) 791-6342',
     hours: 'Monday–Friday 8:00 AM – 4:00 PM',
   },

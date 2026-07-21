@@ -116,7 +116,7 @@ export const behavioralServices = [
 
 export const behavioralExpectItems: ExpectItem[] = [
   {
-    title: 'Patient Centered Care Team Approach',
+    title: 'Patient-Centered Care Team Approach',
     body: 'As a patient at Kalihi-Palama Health Center, a team of healthcare professionals and support staff will assist you to meet your healthcare needs. Our goal is to provide you with integrated services to keep you healthy and/or achieve wellness. Our trained integrated care team will assist you to navigate your healthcare needs to include enrollment, financial qualifying, scheduling appointments, medical and specialty care visits, referrals for treatment to specialists or testing, getting prescriptions you need and providing education on important health topics.',
   },
   {
@@ -145,8 +145,8 @@ export const behavioralClinics: ServiceClinic[] = [
     hours: 'Monday–Friday 8:00 AM – 5:00 PM',
   },
   {
-    name: 'Kaaahi Clinic',
-    address: '546 Kaaahi Street, Honolulu, HI 96817',
+    name: 'Ka\'a\'ahi Clinic',
+    address: '546 Ka\'a\'ahi Street, Honolulu, HI 96817',
     phone: '(808) 791-6342',
     hours: 'Monday–Friday 8:00 AM – 4:00 PM',
   },

@@ -126,7 +126,7 @@ export const providers: Provider[] = [
   {
     name: 'Jermaine Turner, LCSW',
     specialty: 'Behavioral Health',
-    locations: ['Behavioral Health & Medical — 952 N King St', 'Main Medical & Dental Center — 915 N King St', 'Kaaahi Clinic — 546 Kaaahi St'],
+    locations: ['Behavioral Health & Medical — 952 N King St', 'Main Medical & Dental Center — 915 N King St', 'Ka\'a\'ahi Clinic — 546 Ka\'a\'ahi St'],
     credentials: 'Licensed Clinical Social Worker',
     education: ['Master of Social Work'],
   },
@@ -135,7 +135,7 @@ export const providers: Provider[] = [
     specialty: 'Family Medicine',
     locations: ['Main Medical & Dental Center — 915 N King St'],
     credentials: 'American Board of Family Medicine',
-    education: ['University of the Philippines College of Arts and Sciences', 'University of the Philippines College of Medicine', 'Louisiana State University Health Sciences Center-Shreveport - Family Medicine', 'Ph.D in Physiology - Wayne State University'],
+    education: ['University of the Philippines College of Arts and Sciences', 'University of the Philippines College of Medicine', 'Louisiana State University Health Sciences Center-Shreveport - Family Medicine', 'Ph.D. in Physiology - Wayne State University'],
   },
   {
     name: 'Joanne Williams, APRN',
@@ -167,7 +167,7 @@ export const providers: Provider[] = [
   {
     name: 'Kesha Mimms, APRN',
     specialty: 'Psychiatry',
-    locations: ['Behavioral Health & Medical — 952 N King St', 'Downtown Family Medical & Dental — 89 S King St', 'Kaaahi Clinic — 546 Kaaahi St'],
+    locations: ['Behavioral Health & Medical — 952 N King St', 'Downtown Family Medical & Dental — 89 S King St', 'Ka\'a\'ahi Clinic — 546 Ka\'a\'ahi St'],
     credentials: 'Psychiatric Mental Health Nurse Practitioner',
     education: [
       'Northeastern University',
@@ -295,7 +295,7 @@ export const providers: Provider[] = [
   {
     name: 'Ritabelle Fernandes, MD, MPH',
     specialty: 'Internal Medicine',
-    locations: ['Main Medical & Dental Center — 915 N King St', 'Kaaahi Clinic — 546 Kaaahi St'],
+    locations: ['Main Medical & Dental Center — 915 N King St', 'Ka\'a\'ahi Clinic — 546 Ka\'a\'ahi St'],
     credentials: 'American Board of Internal Medicine - Internal Medicine, Geriatric Medicine, Hospice & Palliative Medicine',
     education: ['D. G. Ruparel College', 'Seth G. S. Medical College', 'St. Mary\'s Hospital - Internal Medicine', 'University of Hawaii - Geriatrics', 'Master of Public Health - University of Hawaii'],
     professionalInterests: 'Dementia, Geriatric Medicine',

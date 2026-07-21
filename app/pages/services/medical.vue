@@ -80,73 +80,73 @@ usePageSeo({
     </section>
 
     <section class="bg-white pb-section-sm sm:pb-section">
-      <div class="mx-auto grid w-full max-w-(--ui-container) gap-split px-gutter sm:px-gutter-lg lg:grid-cols-3 lg:gap-split-lg">
-        <div>
-          <h3 class="text-xl font-semibold text-zinc-950">
-            Adult Medicine
-          </h3>
-          <p class="mt-1 text-sm text-zinc-500">
-            Adult, Pediatric & Family Medicine
-          </p>
-          <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
-            <li
-              v-for="item in medicalAdultServices"
-              :key="item"
-              class="flex gap-2"
-            >
-              <UIcon
-                name="i-lucide-check"
-                class="mt-0.5 size-4 shrink-0 text-primary"
-              />
-              <span>{{ item }}</span>
-            </li>
-          </ul>
+      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
+        <div class="grid gap-split lg:grid-cols-3 lg:gap-split-lg">
+          <div>
+            <h3 class="text-xl font-semibold text-zinc-950">
+              Adult Medicine
+            </h3>
+            <p class="mt-1 text-sm text-zinc-500">
+              Adult, Pediatric & Family Medicine
+            </p>
+            <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
+              <li
+                v-for="item in medicalAdultServices"
+                :key="item"
+                class="flex gap-2"
+              >
+                <UIcon
+                  name="i-lucide-check"
+                  class="mt-0.5 size-4 shrink-0 text-primary"
+                />
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-zinc-950">
+              Women's Health
+            </h3>
+            <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
+              <li
+                v-for="item in medicalWomensServices"
+                :key="item"
+                class="flex gap-2"
+              >
+                <UIcon
+                  name="i-lucide-check"
+                  class="mt-0.5 size-4 shrink-0 text-primary"
+                />
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-zinc-950">
+              Pediatric Medicine
+            </h3>
+            <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
+              <li
+                v-for="item in medicalPediatricServices"
+                :key="item"
+                class="flex gap-2"
+              >
+                <UIcon
+                  name="i-lucide-check"
+                  class="mt-0.5 size-4 shrink-0 text-primary"
+                />
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h3 class="text-xl font-semibold text-zinc-950">
-            Women's Health
-          </h3>
-          <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
-            <li
-              v-for="item in medicalWomensServices"
-              :key="item"
-              class="flex gap-2"
-            >
-              <UIcon
-                name="i-lucide-check"
-                class="mt-0.5 size-4 shrink-0 text-primary"
-              />
-              <span>{{ item }}</span>
-            </li>
-          </ul>
-          <ClinicCard
-            class="mt-6"
-            v-bind="medicalWomensClinic"
-          />
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-zinc-950">
-            Pediatric Medicine
-          </h3>
-          <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-zinc-600">
-            <li
-              v-for="item in medicalPediatricServices"
-              :key="item"
-              class="flex gap-2"
-            >
-              <UIcon
-                name="i-lucide-check"
-                class="mt-0.5 size-4 shrink-0 text-primary"
-              />
-              <span>{{ item }}</span>
-            </li>
-          </ul>
-          <ClinicCard
-            class="mt-6"
-            v-bind="medicalPediatricClinic"
-          />
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <div class="hidden lg:block" />
+          <ClinicCard v-bind="medicalWomensClinic" />
+          <ClinicCard v-bind="medicalPediatricClinic" />
         </div>
       </div>
     </section>

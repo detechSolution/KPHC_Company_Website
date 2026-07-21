@@ -73,8 +73,8 @@ export const clinics: ClinicLocation[] = [
     ],
   },
   {
-    name: 'Kaaahi Clinic',
-    address: '546 Kaaahi Street, Honolulu, HI 96817',
+    name: 'Ka\'a\'ahi Clinic',
+    address: '546 Ka\'a\'ahi Street, Honolulu, HI 96817',
     details: [
       'Phone: (808) 791-6342',
       'Monday–Friday 8:00 AM – 4:00 PM',
@@ -146,7 +146,7 @@ export const registrationItems: RegistrationItem[] = [
 export const resourceAccordionItems = [
   {
     value: 'privacy',
-    label: 'Notice of Privacy Practice',
+    label: 'Notice of Privacy Practices',
     icon: 'i-lucide-shield',
     description: 'Effective Date: January 1, 2008 · Reviewed & Revised: April 8, 2013',
     slot: 'privacy' as const,

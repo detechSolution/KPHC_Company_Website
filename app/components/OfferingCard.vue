@@ -8,10 +8,11 @@ defineProps<{
 
 <template>
   <article class="flex flex-col items-center rounded-card border border-zinc-200 bg-white p-6 text-center shadow-sm sm:p-8">
-    <div class="flex size-12 items-center justify-center rounded-xl bg-green-50 text-primary">
+    <div class="flex size-12 items-center justify-center rounded-xl bg-green-50">
       <UIcon
         :name="icon"
-        class="size-6"
+        mode="svg"
+        class="size-6 text-primary"
       />
     </div>
     <h3 class="mt-stack text-lg font-semibold text-zinc-950">

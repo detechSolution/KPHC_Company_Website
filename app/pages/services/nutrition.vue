@@ -125,7 +125,7 @@ usePageSeo({
         <UButton
           :to="NUTRITION_PHONE_HREF"
           icon="i-lucide-phone"
-          :label="`Call Maile at ${NUTRITION_PHONE}`"
+          :label="`Call us at ${NUTRITION_PHONE}`"
           size="xl"
           color="neutral"
           class="mt-stack-xl"

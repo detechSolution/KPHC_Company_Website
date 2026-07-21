@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<{
     },
     {
       src: '/images/carousel/display/banner-2.webp',
-      alt: 'Community members receiving care at KHPC',
+      alt: 'Community members receiving care at KPHC',
     },
     {
       src: '/images/carousel/display/banner-3.webp',

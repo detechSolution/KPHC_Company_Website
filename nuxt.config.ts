@@ -82,6 +82,19 @@ export default defineNuxtConfig({
     colorMode: false,
   },
 
+  // Bundle icons from content data (dynamic :name props) and static templates
+  icon: {
+    clientBundle: {
+      scan: {
+        globInclude: [
+          'app/components/**/*.vue',
+          'app/pages/**/*.vue',
+          'app/utils/**/*.ts',
+        ],
+      },
+    },
+  },
+
   compatibilityDate: '2026-06-30',
 
   eslint: {
