@@ -6,6 +6,7 @@ import {
   historyCards,
   missionContent,
   missionTabs,
+  providersCta,
 } from '~/utils/about-content'
 import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
 
@@ -229,7 +230,7 @@ const activeTab = ref<MissionTab>('mission')
       </div>
     </section>
 
-    <section class="bg-white py-section-sm sm:py-section">
+    <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <SectionTitle
           title="Executive Team"
@@ -253,6 +254,40 @@ const activeTab = ref<MissionTab>('mission')
               {{ member.role }}
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
+        <img
+          :src="providersCta.image"
+          :alt="providersCta.imageAlt"
+          class="aspect-[4/3] w-full rounded-card object-cover"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
+        >
+
+        <div>
+          <p class="text-sm font-semibold tracking-wide text-primary uppercase">
+            {{ providersCta.eyebrow }}
+          </p>
+          <SectionTitle
+            :title="providersCta.title"
+            class="mt-stack-sm text-3xl sm:text-4xl"
+          />
+          <p class="mt-stack text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+            {{ providersCta.description }}
+          </p>
+          <UButton
+            :label="providersCta.buttonLabel"
+            to="/providers"
+            color="primary"
+            size="xl"
+            class="mt-stack-lg"
+          />
         </div>
       </div>
     </section>

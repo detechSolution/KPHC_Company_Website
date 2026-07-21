@@ -24,6 +24,24 @@ export interface LeadershipMember {
   role: string
 }
 
+export interface ProvidersCtaContent {
+  eyebrow: string
+  title: string
+  description: string
+  buttonLabel: string
+  image: string
+  imageAlt: string
+}
+
+export const providersCta: ProvidersCtaContent = {
+  eyebrow: 'Our Care Team',
+  title: 'Meet Our Providers',
+  description: 'Doctors, nurse practitioners, and specialists across medical, dental, behavioral health, and more — delivering compassionate, culturally competent care at KPHC.',
+  buttonLabel: 'View Our Providers',
+  image: '/images/services/medical-services.webp',
+  imageAlt: 'Healthcare provider in consultation with a patient at Kalihi-Palama Health Center',
+}
+
 export const boardOfDirectors: LeadershipMember[] = [
   { name: 'Vernon Nakamura', role: 'President' },
   { name: 'Russell Kaupu', role: 'Vice President' },
