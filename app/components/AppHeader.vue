@@ -210,105 +210,107 @@ onBeforeUnmount(() => {
       </template>
 
       <template #content="{ close }">
-        <div class="flex h-(--ui-header-height) shrink-0 items-center justify-between gap-3 border-b border-zinc-100 px-gutter sm:px-gutter-lg">
-          <ULink
-            to="/"
-            aria-label="Kalihi-Palama Health Center"
-            class="flex min-w-0 flex-1 items-center"
-            @click="close?.()"
-          >
-            <AppLogo />
-          </ULink>
-
-          <UButton
-            color="neutral"
-            variant="ghost"
-            size="md"
-            icon="i-lucide-x"
-            aria-label="Close menu"
-            class="-me-1.5 shrink-0"
-            @click="close?.()"
-          />
-        </div>
-
-        <div class="flex flex-col gap-0 px-gutter py-4 sm:px-gutter-lg">
-          <div class="mb-4 rounded-card border border-green-100 bg-green-50 p-4">
-            <p class="text-xs font-semibold tracking-wide text-primary uppercase">
-              Need care?
-            </p>
-            <a
-              :href="MAIN_PHONE_HREF"
-              class="mt-1.5 flex items-center gap-2.5 text-base font-semibold text-zinc-950 transition-colors hover:text-primary"
+        <div class="flex h-full min-h-0 flex-col overflow-hidden">
+          <div class="flex h-(--ui-header-height) shrink-0 items-center justify-between gap-3 border-b border-zinc-100 px-gutter sm:px-gutter-lg">
+            <ULink
+              to="/"
+              aria-label="Kalihi-Palama Health Center"
+              class="flex min-w-0 flex-1 items-center"
+              @click="close?.()"
             >
-              <span class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
-                <UIcon
-                  name="i-lucide-phone"
-                  class="size-5"
-                />
-              </span>
-              <span>
-                {{ MAIN_PHONE }}
-                <span class="mt-0.5 block text-xs font-normal text-zinc-600">
-                  Call to schedule or ask a question
-                </span>
-              </span>
-            </a>
+              <AppLogo />
+            </ULink>
+
+            <UButton
+              color="neutral"
+              variant="ghost"
+              size="md"
+              icon="i-lucide-x"
+              aria-label="Close menu"
+              class="-me-1.5 shrink-0"
+              @click="close?.()"
+            />
           </div>
 
-          <nav
-            aria-label="Main navigation"
-            class="-mx-1 flex flex-col gap-0.5"
-          >
-            <template
-              v-for="item in items"
-              :key="item.label"
-            >
-              <ULink
-                :to="item.to"
-                class="rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60"
-                :class="item.active && 'bg-green-50 font-semibold text-primary'"
-                @click="close?.()"
+          <div class="flex min-h-0 flex-1 flex-col gap-0 overflow-y-auto overscroll-y-contain px-gutter py-4 sm:px-gutter-lg">
+            <div class="mb-4 rounded-card border border-green-100 bg-green-50 p-4">
+              <p class="text-xs font-semibold tracking-wide text-primary uppercase">
+                Need care?
+              </p>
+              <a
+                :href="MAIN_PHONE_HREF"
+                class="mt-1.5 flex items-center gap-2.5 text-base font-semibold text-zinc-950 transition-colors hover:text-primary"
               >
-                {{ item.label }}
-              </ULink>
+                <span class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
+                  <UIcon
+                    name="i-lucide-phone"
+                    class="size-5"
+                  />
+                </span>
+                <span>
+                  {{ MAIN_PHONE }}
+                  <span class="mt-0.5 block text-xs font-normal text-zinc-600">
+                    Call to schedule or ask a question
+                  </span>
+                </span>
+              </a>
+            </div>
 
-              <div
-                v-if="item.children?.length"
-                class="mb-1 ms-3 flex flex-col gap-0.5 border-l border-green-100 ps-3"
+            <nav
+              aria-label="Main navigation"
+              class="-mx-1 flex flex-col gap-0.5"
+            >
+              <template
+                v-for="item in items"
+                :key="item.label"
               >
                 <ULink
-                  v-for="child in item.children"
-                  :key="child.label"
-                  :to="child.to"
-                  class="rounded-card px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-green-50/60 hover:text-primary"
-                  :class="child.active && 'bg-green-50 font-semibold text-primary'"
+                  :to="item.to"
+                  class="rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60"
+                  :class="item.active && 'bg-green-50 font-semibold text-primary'"
                   @click="close?.()"
                 >
-                  {{ child.label }}
+                  {{ item.label }}
                 </ULink>
-              </div>
-            </template>
-          </nav>
 
-          <div class="mt-stack-lg flex flex-col gap-2.5 border-t border-zinc-100 pt-stack-lg">
-            <UButton
-              label="Patient Portal"
-              :to="PATIENT_PORTAL_URL"
-              target="_blank"
-              color="primary"
-              variant="outline"
-              size="lg"
-              block
-              icon="i-lucide-circle-user"
-            />
-            <UButton
-              label="Book an Appointment"
-              :to="appointmentHref"
-              color="primary"
-              size="lg"
-              block
-              icon="i-lucide-calendar-check"
-            />
+                <div
+                  v-if="item.children?.length"
+                  class="mb-1 ms-3 flex flex-col gap-0.5 border-l border-green-100 ps-3"
+                >
+                  <ULink
+                    v-for="child in item.children"
+                    :key="child.label"
+                    :to="child.to"
+                    class="rounded-card px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-green-50/60 hover:text-primary"
+                    :class="child.active && 'bg-green-50 font-semibold text-primary'"
+                    @click="close?.()"
+                  >
+                    {{ child.label }}
+                  </ULink>
+                </div>
+              </template>
+            </nav>
+
+            <div class="mt-stack-lg flex flex-col gap-2.5 border-t border-zinc-100 pt-stack-lg">
+              <UButton
+                label="Patient Portal"
+                :to="PATIENT_PORTAL_URL"
+                target="_blank"
+                color="primary"
+                variant="outline"
+                size="lg"
+                block
+                icon="i-lucide-circle-user"
+              />
+              <UButton
+                label="Book an Appointment"
+                :to="appointmentHref"
+                color="primary"
+                size="lg"
+                block
+                icon="i-lucide-calendar-check"
+              />
+            </div>
           </div>
         </div>
       </template>
