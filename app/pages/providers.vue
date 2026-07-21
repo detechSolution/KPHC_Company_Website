@@ -34,7 +34,7 @@ const specialtyOptions = computed(() => [
       badge="Our Care Team"
       badge-icon="i-lucide-stethoscope"
       title="Meet Our Providers"
-      description="Doctors, nurse practitioners, and specialists committed to compassionate, culturally responsive care for our community."
+      description="Doctors, nurse practitioners, and specialists committed to compassionate, culturally competent care for our community."
     />
 
     <section class="bg-white py-section-sm sm:py-section">

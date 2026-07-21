@@ -15,10 +15,10 @@ describe('splitAccentTitle', () => {
   })
 
   it('splits around the accent substring', () => {
-    expect(splitAccentTitle('Modern Healthcare Solutions That Put You First.', 'Healthcare Solutions')).toEqual([
-      { text: 'Modern ', accent: false },
-      { text: 'Healthcare Solutions', accent: true },
-      { text: ' That Put You First.', accent: false },
+    expect(splitAccentTitle('Quality Healthcare That Puts You First.', 'Puts You First')).toEqual([
+      { text: 'Quality Healthcare That ', accent: false },
+      { text: 'Puts You First', accent: true },
+      { text: '.', accent: false },
     ])
   })
 

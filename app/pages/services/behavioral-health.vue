@@ -146,7 +146,7 @@ usePageSeo({
           Meet Our Behavioral Health Team
         </h2>
         <p class="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-zinc-600 text-pretty">
-          Our licensed clinicians and psychiatric providers offer compassionate, culturally responsive care across Kalihi-Palama Health Center sites.
+          Our licensed clinicians and psychiatric providers offer compassionate, culturally competent care across Kalihi-Palama Health Center sites.
         </p>
         <div class="mt-stack-xl overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm divide-y divide-zinc-100">
           <ProviderCard

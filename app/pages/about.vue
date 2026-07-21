@@ -4,7 +4,6 @@ import {
   historyCards,
   missionContent,
   missionTabs,
-  qualityBadges,
 } from '~/utils/about-content'
 import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
 
@@ -171,38 +170,6 @@ const activeTab = ref<MissionTab>('mission')
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="bg-white py-section-sm sm:py-section">
-      <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
-        <AccentTitle
-          title="Quality & Accreditation Recognition"
-          accent="Recognition"
-          class="text-3xl sm:text-4xl"
-          align="center"
-        />
-        <p class="mt-stack max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
-          Kalihi-Palama Health Center is recognized by HRSA for clinical quality, access, and health information technology, and holds NCQA Patient-Centered Medical Home and CARF accreditations.
-        </p>
-
-        <ul class="mt-stack-xl flex w-full list-none flex-wrap items-center justify-center gap-4 sm:gap-5 lg:gap-6">
-          <li
-            v-for="badge in qualityBadges"
-            :key="badge.src"
-            class="flex size-28 shrink-0 items-center justify-center sm:size-[7.5rem] lg:size-32"
-          >
-            <img
-              :src="badge.src"
-              :alt="badge.alt"
-              class="size-full object-contain transition-transform duration-300 ease-out hover:scale-105"
-              loading="lazy"
-              decoding="async"
-              width="320"
-              height="320"
-            >
-          </li>
-        </ul>
       </div>
     </section>
 
