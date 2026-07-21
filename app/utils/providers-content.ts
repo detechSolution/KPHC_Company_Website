@@ -4,6 +4,7 @@ export interface Provider {
   locations: string[]
   credentials: string
   education?: string[]
+  residencyTraining?: string[]
   professionalInterests?: string
   personalInterests?: string
   featured?: boolean
@@ -38,21 +39,33 @@ export const providers: Provider[] = [
     specialty: 'Pediatrics',
     locations: ['Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'Pediatric Nurse Practitioner - Board Certified',
-    education: ['Hawaii Loa College', 'University of Hawaii at Manoa'],
+    education: [
+      'Hawaii Loa College',
+      'University of Hawaii at Manoa',
+    ],
   },
   {
     name: 'Ann Chang, MD, MPH',
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'American Board of Obstetrics & Gynecology',
-    education: ['Harvard College', 'Harvard Medical School', 'University of Hawaii - Obstetrics & Gynecology', 'Master of Public Health - University of Hawaii'],
+    education: [
+      'Harvard College',
+      'Harvard Medical School',
+      'Master of Public Health - University of Hawaii',
+    ],
+    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Asia Ayabe, MD',
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'American Board of Obstetrics & Gynecology',
-    education: ['Pomona College', 'University of Hawaii John A. Burns School of Medicine', 'University of Hawaii - Obstetrics & Gynecology'],
+    education: [
+      'Pomona College',
+      'University of Hawaii John A. Burns School of Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Blandina Mamaclay, APRN',
@@ -67,7 +80,6 @@ export const providers: Provider[] = [
     specialty: 'Behavioral Health',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Behavioral Health & Medical — 952 N King St'],
     credentials: 'Licensed Clinical Social Worker',
-    education: ['University of Hawaii at Manoa', 'Master of Social Work'],
   },
   {
     name: 'Carmen Linhares, CNM',
@@ -80,7 +92,10 @@ export const providers: Provider[] = [
     specialty: 'Internal Medicine',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Behavioral Health & Medical — 952 N King St'],
     credentials: 'Adult Nurse Practitioner - Board Certified',
-    education: ['University of Tennessee, Knoxville', 'Ph.D. in Biochemistry - University of Tennessee, Knoxville'],
+    education: [
+      'University of Tennessee, Knoxville',
+      'Ph.D. in Biochemistry - University of Tennessee, Knoxville',
+    ],
   },
   {
     name: 'Christina Ho, APRN',
@@ -94,7 +109,6 @@ export const providers: Provider[] = [
     specialty: 'Behavioral Health',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Main Medical & Dental Center — 915 N King St'],
     credentials: 'Licensed Clinical Social Worker',
-    education: ['University of Hawaii at Manoa', 'Master of Social Work'],
   },
   {
     name: 'Erean Larryfiakpuyi, LCSW',
@@ -107,14 +121,22 @@ export const providers: Provider[] = [
     specialty: 'Internal Medicine',
     locations: ['Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'American Board of Internal Medicine',
-    education: ['Taylor University', 'Indiana University', 'University of Hawaii - Internal Medicine', 'Prince Leopold Institute of Tropical Medicine'],
+    education: [
+      'Taylor University',
+      'Indiana University',
+      'Prince Leopold Institute of Tropical Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Internal Medicine'],
   },
   {
     name: 'Hanh Le-Scott, APRN',
     specialty: 'Family Medicine',
     locations: ['Main Medical & Dental Center — 915 N King St'],
     credentials: 'Family Nurse Practitioner - Board Certified',
-    education: ['University of Hawaii at Manoa', 'Master of Business Administration - Chaminade University of Honolulu'],
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Business Administration - Chaminade University of Honolulu',
+    ],
   },
   {
     name: 'Jackie Hui, APRN',
@@ -128,26 +150,30 @@ export const providers: Provider[] = [
     specialty: 'Behavioral Health',
     locations: ['Behavioral Health & Medical — 952 N King St', 'Main Medical & Dental Center — 915 N King St', 'Ka\'a\'ahi Clinic — 546 Ka\'a\'ahi St'],
     credentials: 'Licensed Clinical Social Worker',
-    education: ['Master of Social Work'],
   },
   {
     name: 'Jesus Lucas, MD, PhD',
     specialty: 'Family Medicine',
     locations: ['Main Medical & Dental Center — 915 N King St'],
     credentials: 'American Board of Family Medicine',
-    education: ['University of the Philippines College of Arts and Sciences', 'University of the Philippines College of Medicine', 'Louisiana State University Health Sciences Center-Shreveport - Family Medicine', 'Ph.D. in Physiology - Wayne State University'],
+    education: [
+      'University of the Philippines College of Arts and Sciences',
+      'University of the Philippines College of Medicine',
+      'Ph.D in Physiology - Wayne State University',
+    ],
+    residencyTraining: ['Louisiana State University Health Sciences Center-Shreveport - Family Medicine'],
   },
   {
     name: 'Joanne Williams, APRN',
     specialty: 'Psychiatry',
     locations: ['Behavioral Health & Medical — 952 N King St'],
     credentials: 'Board Certified ANCC',
-    featured: true,
     education: [
       'Saint John Fisher University — MSN, PMHNP',
       'SUNY Brockport — BSN',
       'SUNY Geneseo — BA in English',
     ],
+    featured: true,
     professionalInterests: 'Joanne is a board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) with extensive experience providing care across the lifespan. She brings strong clinical expertise in psychiatric evaluation, diagnosis, medication management, and evidence-based psychotherapy, along with advanced skills in crisis intervention and high-acuity care. Grounded in integrity and the principles of beneficence and non-maleficence, she delivers patient-centered, collaborative care. Passionate about reducing mental health stigma, she empowers patients to achieve lasting cognitive and behavioral change by fostering a safe and supportive environment that promotes growth and resilience. A diverse background in psychiatry, pediatrics, and education informs a holistic and compassionate approach to care.',
     personalInterests: 'Joanne enjoys journaling about life, reading books with meaningful and transformative insights, and spending time outdoors surfing, hiking, and swimming in the ocean. She embraces adventure and values opportunities for exploration and personal growth.',
   },
@@ -162,7 +188,11 @@ export const providers: Provider[] = [
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'American Board of Obstetrics & Gynecology',
-    education: ['University of Washington', 'University of Hawaii John A. Burns School of Medicine', 'University of Hawaii - Obstetrics & Gynecology'],
+    education: [
+      'University of Washington',
+      'University of Hawaii John A. Burns School of Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Kesha Mimms, APRN',
@@ -182,7 +212,11 @@ export const providers: Provider[] = [
     specialty: 'Internal Medicine',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'American Board of Internal Medicine',
-    education: ['Ateneo de Manila University', 'University of Santo Tomas', 'University of Hawaii - Internal Medicine'],
+    education: [
+      'Ateneo de Manila University',
+      'University of Santo Tomas',
+    ],
+    residencyTraining: ['University of Hawaii - Internal Medicine'],
     personalInterests: 'I enjoy traveling to different parts of the world to experience new cultures and new cuisines. I love spending time with my family and friends, as well as reading comic books, playing video games, and watching movies.',
     featured: true,
   },
@@ -191,7 +225,12 @@ export const providers: Provider[] = [
     specialty: 'Preventive Medicine',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Main Medical & Dental Center — 915 N King St'],
     credentials: 'American Board of Preventive Medicine',
-    education: ['Grand Valley State University', 'Michigan State University College of Osteopathic Medicine', 'Madigan Army Medical Center - Preventive Medicine', 'Master of Public Health - University of Washington'],
+    education: [
+      'Grand Valley State University',
+      'Michigan State University College of Osteopathic Medicine',
+      'Master of Public Health - University of Washington',
+    ],
+    residencyTraining: ['Madigan Army Medical Center - Preventive Medicine'],
     professionalInterests: 'Preventive Medicine, Lifestyle Medicine',
     personalInterests: 'Hiking, Snorkeling, Reading',
   },
@@ -200,7 +239,11 @@ export const providers: Provider[] = [
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'American Board of Obstetrics & Gynecology',
-    education: ['Willamette University', 'University of Hawaii John A. Burns School of Medicine', 'University of Hawaii - Obstetrics & Gynecology'],
+    education: [
+      'Willamette University',
+      'University of Hawaii John A. Burns School of Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Maile Ishikawa, RD',
@@ -229,14 +272,22 @@ export const providers: Provider[] = [
     specialty: 'Pediatrics',
     locations: ['Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'American Board of Pediatrics',
-    education: ['The University of North Texas', 'The University of Texas Medical Branch at Galveston', 'Austin Pediatric Education Program - Pediatrics', 'Master of Public Health - University of Hawaii'],
+    education: [
+      'The University of North Texas',
+      'The University of Texas Medical Branch at Galveston',
+      'Master of Public Health - University of Hawaii',
+    ],
+    residencyTraining: ['Austin Pediatric Education Program - Pediatrics'],
   },
   {
     name: 'Milani Kyaw, APRN',
     specialty: 'Women\'s Health',
     locations: ['Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'Women\'s Health Nurse Practitioner - Board Certified',
-    education: ['Saint Mary\'s College of California', 'Vanderbilt University'],
+    education: [
+      'Saint Mary\'s College of California',
+      'Vanderbilt University',
+    ],
     professionalInterests: 'Preconception and prenatal care, sexual health education, family planning',
     personalInterests: 'Pilates, hiking, beach sunsets, cooking shows',
   },
@@ -261,35 +312,53 @@ export const providers: Provider[] = [
     specialty: 'Pediatrics',
     locations: ['Main Medical & Dental Center — 915 N King St'],
     credentials: 'American Board of Pediatrics',
-    education: ['Columbia University', 'Mount Sinai School of Medicine', 'Robert Wood Johnson Medical School - Pediatrics'],
+    education: [
+      'Columbia University',
+      'Mount Sinai School of Medicine',
+    ],
+    residencyTraining: ['Robert Wood Johnson Medical School - Pediatrics'],
   },
   {
     name: 'Narelie Domingo Calley, APRN',
     specialty: 'Family Medicine',
     locations: ['Main Medical & Dental Center — 915 N King St'],
     credentials: 'Family Nurse Practitioner - Board Certified',
-    education: ['University of Phoenix', 'University of Hawaii at Manoa'],
+    education: [
+      'University of Phoenix',
+      'University of Hawaii at Manoa',
+    ],
   },
   {
     name: 'Ricardo Molero Bravo, MD',
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'American Board of Obstetrics & Gynecology',
-    education: ['University of South Florida', 'University of Central Florida, College of Medicine', 'University of Hawaii - Obstetrics & Gynecology'],
+    education: [
+      'University of South Florida',
+      'University of Central Florida, College of Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Richard Ricardo, MD',
     specialty: 'Pediatrics',
     locations: ['Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'American Board of Pediatrics',
-    education: ['University of California, Los Angeles', 'University of Hawaii John A. Burns School of Medicine', 'University of Hawaii - Pediatrics'],
+    education: [
+      'University of California, Los Angeles',
+      'University of Hawaii John A. Burns School of Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Pediatrics'],
   },
   {
     name: 'Rieko Nieto, LCSW',
     specialty: 'Behavioral Health',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Behavioral Health & Medical — 952 N King St'],
     credentials: 'Licensed Clinical Social Worker / Certified Substance Abuse Counselor',
-    education: ['University of Hawaii at Manoa', 'Master of Social Work'],
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Social Work',
+    ],
     personalInterests: 'Tahitian dance, hula, surfing, hiking, and fishing',
   },
   {
@@ -297,7 +366,15 @@ export const providers: Provider[] = [
     specialty: 'Internal Medicine',
     locations: ['Main Medical & Dental Center — 915 N King St', 'Ka\'a\'ahi Clinic — 546 Ka\'a\'ahi St'],
     credentials: 'American Board of Internal Medicine - Internal Medicine, Geriatric Medicine, Hospice & Palliative Medicine',
-    education: ['D. G. Ruparel College', 'Seth G. S. Medical College', 'St. Mary\'s Hospital - Internal Medicine', 'University of Hawaii - Geriatrics', 'Master of Public Health - University of Hawaii'],
+    education: [
+      'D. G. Ruparel College',
+      'Seth G. S. Medical College',
+      'Master of Public Health - University of Hawaii',
+    ],
+    residencyTraining: [
+      'St. Mary\'s Hospital - Internal Medicine',
+      'University of Hawaii - Geriatrics',
+    ],
     professionalInterests: 'Dementia, Geriatric Medicine',
     personalInterests: 'Music and Arts',
   },
@@ -306,7 +383,11 @@ export const providers: Provider[] = [
     specialty: 'Family Medicine',
     locations: ['Behavioral Health & Medical — 952 N King St'],
     credentials: 'Family Nurse Practitioner - Board Certified',
-    education: ['Boston College', 'Emory University', 'Master of Public Health - Emory University'],
+    education: [
+      'Boston College',
+      'Emory University',
+      'Master of Public Health - Emory University',
+    ],
     professionalInterests: 'Culturally sensitive chronic disease management, diabetes prevention and management',
     personalInterests: 'Hiking, camping, crocheting, chasing my 2 rambunctious toddlers around',
   },
@@ -315,21 +396,31 @@ export const providers: Provider[] = [
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'American Board of Obstetrics & Gynecology',
-    education: ['University of Hawaii at Manoa', 'University of Hawaii John A. Burns School of Medicine', 'University of Hawaii - Obstetrics & Gynecology'],
+    education: [
+      'University of Hawaii at Manoa',
+      'University of Hawaii John A. Burns School of Medicine',
+    ],
+    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Susan Sims, CNM',
     specialty: 'Women\'s Health',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'Certified Nurse-Midwife',
-    education: ['University of Missouri', 'Frontier School of Midwifery and Family Nursing'],
+    education: [
+      'University of Missouri',
+      'Frontier School of Midwifery and Family Nursing',
+    ],
   },
   {
     name: 'Tracey Yamamoto-Kubo, OD',
     specialty: 'Optometry',
     locations: ['Optometry — 915 N King St'],
     credentials: 'Doctor of Optometry',
-    education: ['University of Hawaii at Manoa', 'Pacific University College of Optometry'],
+    education: [
+      'University of Hawaii at Manoa',
+      'Pacific University College of Optometry',
+    ],
     professionalInterests: 'Primary Eye Care',
   },
   {
@@ -337,21 +428,33 @@ export const providers: Provider[] = [
     specialty: 'Family Medicine',
     locations: ['Main Medical & Dental Center — 915 N King St'],
     credentials: 'American Board of Family Medicine',
-    education: ['Massachusetts Institute of Technology', 'University of Hawaii John A. Burns School of Medicine', 'Montefiore Medical Center - Family Medicine', 'MA Psychology - UC San Diego'],
+    education: [
+      'Massachusetts Institute of Technology',
+      'University of Hawaii John A. Burns School of Medicine',
+      'MA Psychology - UC San Diego',
+    ],
+    residencyTraining: ['Montefiore Medical Center - Family Medicine'],
   },
   {
     name: 'Wen-Chun Yang, OD',
     specialty: 'Optometry',
     locations: ['Optometry — 915 N King St', 'Main Medical & Dental Center — 915 N King St'],
     credentials: 'Doctor of Optometry',
-    education: ['University of Hawaii at Manoa', 'Inter-American University of Puerto Rico'],
+    education: [
+      'University of Hawaii at Manoa',
+      'Inter-American University of Puerto Rico',
+    ],
   },
   {
     name: 'Yitong Ma, MD',
     specialty: 'Pediatrics',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Comprehensive Primary Health Care — 710 N King St'],
     credentials: 'American Board of Pediatrics',
-    education: ['Creighton University', 'Creighton University School of Medicine', 'Texas Tech University Health Sciences Center - Pediatrics'],
+    education: [
+      'Creighton University',
+      'Creighton University School of Medicine',
+    ],
+    residencyTraining: ['Texas Tech University Health Sciences Center - Pediatrics'],
     professionalInterests: 'General Pediatrics',
     personalInterests: 'Cats and kittens',
   },

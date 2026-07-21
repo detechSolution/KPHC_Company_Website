@@ -5,14 +5,18 @@ const props = defineProps<{
   locations: string[]
   credentials: string
   education?: string[]
+  residencyTraining?: string[]
   professionalInterests?: string
   personalInterests?: string
   featured?: boolean
 }>()
 
+const isPhysician = computed(() => /,\s*(?:MD|DO)\b/.test(props.name))
+
 const hasDetails = computed(() =>
   Boolean(
     props.education?.length
+    || (isPhysician.value && props.residencyTraining?.length)
     || props.professionalInterests
     || props.personalInterests,
   ),
@@ -62,7 +66,7 @@ const hasDetails = computed(() =>
       >
         <div v-if="education?.length">
           <p class="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
-            Education & Training
+            Education
           </p>
           <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-zinc-600">
             <li
@@ -72,6 +76,25 @@ const hasDetails = computed(() =>
             >
               <UIcon
                 name="i-lucide-graduation-cap"
+                class="mt-0.5 size-3.5 shrink-0 text-primary"
+              />
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div v-if="isPhysician && residencyTraining?.length">
+          <p class="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
+            Residency Training
+          </p>
+          <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-zinc-600">
+            <li
+              v-for="item in residencyTraining"
+              :key="item"
+              class="flex gap-2"
+            >
+              <UIcon
+                name="i-lucide-stethoscope"
                 class="mt-0.5 size-3.5 shrink-0 text-primary"
               />
               <span>{{ item }}</span>
@@ -105,7 +128,7 @@ const hasDetails = computed(() =>
     >
       <div v-if="education?.length">
         <p class="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
-          Education & Training
+          Education
         </p>
         <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-zinc-600">
           <li
@@ -115,6 +138,25 @@ const hasDetails = computed(() =>
           >
             <UIcon
               name="i-lucide-graduation-cap"
+              class="mt-0.5 size-3.5 shrink-0 text-primary"
+            />
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="isPhysician && residencyTraining?.length">
+        <p class="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
+          Residency Training
+        </p>
+        <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-zinc-600">
+          <li
+            v-for="item in residencyTraining"
+            :key="item"
+            class="flex gap-2"
+          >
+            <UIcon
+              name="i-lucide-stethoscope"
               class="mt-0.5 size-3.5 shrink-0 text-primary"
             />
             <span>{{ item }}</span>
