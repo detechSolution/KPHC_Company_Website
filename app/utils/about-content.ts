@@ -18,6 +18,33 @@ export interface MissionContent {
   icon: string
 }
 
+export interface LeadershipMember {
+  name: string
+  role: string
+}
+
+export const boardOfDirectors: LeadershipMember[] = [
+  { name: 'Vernon Nakamura', role: 'President' },
+  { name: 'Russell Kaupu', role: 'Vice President' },
+  { name: 'Peter Hanashiro', role: 'Immediate Past President / Treasurer' },
+  { name: 'Louise Li', role: 'Secretary' },
+  { name: 'Clifford Chang', role: 'Director at Large' },
+  { name: 'Richard Keene', role: 'Director at Large' },
+  { name: 'Rosemarie Mendoza', role: 'Director at Large' },
+  { name: 'Christopher Pating', role: 'Director at Large' },
+  { name: 'Tanya Suapaia', role: 'Director at Large' },
+  { name: 'Liane Sugimoto', role: 'Director at Large' },
+  { name: 'Kahu Heather Barfield', role: 'Director at Large' },
+]
+
+export const executiveTeam: LeadershipMember[] = [
+  { name: 'Emmanuel Kintu', role: 'CEO / Executive Director' },
+  { name: 'Darrin Sato', role: 'COO' },
+  { name: 'Diana Carris', role: 'CFO' },
+  { name: 'Keith Larson', role: 'Dental Director' },
+  { name: 'Leanna Gordon', role: 'Medical Director' },
+]
+
 export const historyCards: HistoryCard[] = [
   {
     year: null,

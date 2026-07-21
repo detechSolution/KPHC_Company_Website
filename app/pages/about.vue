@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { MissionTab } from '~/utils/about-content'
 import {
+  boardOfDirectors,
+  executiveTeam,
   historyCards,
   missionContent,
   missionTabs,
@@ -167,6 +169,62 @@ const activeTab = ref<MissionTab>('mission')
               {{ missionContent[activeTab].body }}
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
+        <SectionTitle
+          title="Board of Directors"
+          class="text-3xl sm:text-4xl"
+          align="center"
+        />
+        <p class="mx-auto mt-stack max-w-3xl text-center text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          Our volunteer board provides governance and community oversight, guiding KPHC's mission to serve Kalihi-Palama and beyond.
+        </p>
+
+        <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <article
+            v-for="member in boardOfDirectors"
+            :key="member.name"
+            class="rounded-card border border-zinc-200 bg-white p-5 shadow-sm sm:p-6"
+          >
+            <h3 class="font-semibold text-zinc-950">
+              {{ member.name }}
+            </h3>
+            <p class="mt-1 text-sm font-medium text-primary">
+              {{ member.role }}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-section-sm sm:py-section">
+      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
+        <SectionTitle
+          title="Executive Team"
+          class="text-3xl sm:text-4xl"
+          align="center"
+        />
+        <p class="mx-auto mt-stack max-w-3xl text-center text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+          Our executive leadership oversees day-to-day operations and ensures high-quality, integrated care across all KPHC programs and sites.
+        </p>
+
+        <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <article
+            v-for="member in executiveTeam"
+            :key="member.name"
+            class="rounded-card border border-zinc-200 bg-white p-5 shadow-sm sm:p-6"
+          >
+            <h3 class="font-semibold text-zinc-950">
+              {{ member.name }}
+            </h3>
+            <p class="mt-1 text-sm font-medium text-primary">
+              {{ member.role }}
+            </p>
+          </article>
         </div>
       </div>
     </section>
