@@ -17,9 +17,8 @@ usePageSeo({
 
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Committed To Providing Quality Integrated Health And Social Services"
-          accent="Quality Integrated"
           class="max-w-3xl text-3xl sm:text-4xl"
           align="center"
         />
@@ -70,9 +69,8 @@ usePageSeo({
 
     <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Why Families Choose Kalihi-Palama"
-          accent="Kalihi-Palama"
           class="text-3xl sm:text-4xl"
           align="center"
         />

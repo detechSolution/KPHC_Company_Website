@@ -28,15 +28,13 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
       badge="50th Anniversary"
       badge-icon="i-lucide-sparkles"
       title="Kalihi-Palama Health Center Anniversary Gala"
-      accent="Anniversary Gala"
       description="Celebrating 50 years of compassion, community, and care."
     />
 
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto flex w-full max-w-3xl flex-col items-center px-gutter text-center sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Thank You for Making Our Gala a Success"
-          accent="Thank You"
           align="center"
           class="text-3xl sm:text-4xl"
         />
@@ -59,9 +57,8 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
 
     <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Honoring Our People"
-          accent="Honoring"
           align="center"
           class="text-3xl sm:text-4xl"
         />
@@ -110,9 +107,8 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
 
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Church Partners"
-          accent="Partners"
           align="center"
           class="text-3xl sm:text-4xl"
         />
@@ -166,9 +162,8 @@ const tierLabelClass: Record<'gold' | 'silver' | 'bronze', string> = {
 
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Mahalo to Our Sponsors"
-          accent="Mahalo"
           align="center"
           class="text-3xl sm:text-4xl"
         />

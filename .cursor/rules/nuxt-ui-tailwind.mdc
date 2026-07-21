@@ -13,7 +13,6 @@ alwaysApply: false
 - Theme tokens live in `app/assets/css/main.css` (`@theme`) + `app/app.config.ts` (`ui.colors`) — extend there, don’t hardcode brand colors ad hoc
 - Brand primary is green-500 `#23B473`; mint surfaces use `bg-green-50`; forest accents use `text-green-900` / `bg-green-900`
 - Section spacing: `py-section` / `py-section-lg`; grid gaps: `gap-gutter` / `gap-gutter-lg`
-- Script emphasis in headings: `font-accent text-primary`
 - Keep marketing sections focused: one purpose, one headline, light supporting copy
 
 ## Styling

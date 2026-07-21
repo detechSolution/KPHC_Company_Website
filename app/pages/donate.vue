@@ -18,9 +18,8 @@ usePageSeo({
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-start gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
-          <AccentTitle
+          <SectionTitle
             title="Your Gift Powers Quality Care for All"
-            accent="Quality Care for All"
             class="text-3xl sm:text-4xl"
           />
           <div class="mt-stack space-y-4 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">

@@ -45,7 +45,7 @@ useSeoMeta({
   <UApp>
     <AppHeader />
 
-    <UMain>
+    <UMain class="pt-(--ui-header-height)">
       <NuxtPage />
     </UMain>
 

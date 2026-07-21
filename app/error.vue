@@ -72,7 +72,7 @@ function goBack() {
       </p>
 
       <p
-        class="mt-stack-sm font-accent text-7xl leading-none font-normal text-primary sm:text-8xl"
+        class="mt-stack-sm text-7xl leading-none font-bold tracking-tight text-primary sm:text-8xl"
         aria-hidden="true"
       >
         {{ isNotFound ? '404' : statusLabel }}

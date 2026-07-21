@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@nuxt/ui'
-import { splitAccentTitle } from '~/utils/accent-title'
 
 export type HeroBannerAlign = 'center' | 'start'
 export type HeroBannerVariant = 'soft' | 'solid' | 'plain'
@@ -14,8 +13,6 @@ const props = withDefaults(defineProps<{
   eyebrow?: string
   eyebrowIcon?: string
   title: string
-  /** Substring of `title` rendered in Caveat + primary green */
-  accent?: string
   description?: string
   links?: ButtonProps[]
   align?: HeroBannerAlign
@@ -34,8 +31,6 @@ const props = withDefaults(defineProps<{
 
 const slots = useSlots()
 const titleId = useId()
-
-const titleParts = computed(() => splitAccentTitle(props.title, props.accent))
 
 const isCentered = computed(() => props.align === 'center')
 
@@ -127,21 +122,7 @@ const descriptionClass = computed(() => [
         class="hero-enter hero-enter-delay-1"
         :class="titleClass"
       >
-        <template
-          v-for="(part, index) in titleParts"
-          :key="index"
-        >
-          <span
-            v-if="part.accent"
-            class="font-accent font-normal text-primary"
-            :class="size === 'lg' ? 'text-[1.12em]' : 'text-[1.08em]'"
-          >
-            {{ part.text }}
-          </span>
-          <template v-else>
-            {{ part.text }}
-          </template>
-        </template>
+        {{ title }}
       </h1>
 
       <p

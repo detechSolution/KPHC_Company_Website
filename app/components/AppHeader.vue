@@ -105,7 +105,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="headerRootRef"
-    class="group/nav"
+    class="group/nav fixed inset-x-0 top-0 z-50 w-full bg-white/75 hover:bg-white/65 backdrop-blur-md"
     :data-compact="isCompact ? '' : undefined"
   >
     <!-- Probe mirrors desktop row: logo | spaced links | CTAs -->
@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
         size: 'md',
       }"
       :ui="{
-        root: 'border-0 bg-white/85 backdrop-blur-md shadow-[0_1px_0_0_var(--color-green-100)]',
+        root: 'border-0 bg-transparent shadow-none',
         container: 'relative gap-3 px-gutter sm:gap-4 sm:px-gutter-lg [&_[data-slot=title]]:hidden [&_[data-slot=title]]:min-[1280px]:flex group-data-[compact]/nav:[&_[data-slot=title]]:hidden!',
         center: 'pointer-events-none absolute inset-0 flex items-center justify-center min-[1280px]:pointer-events-auto min-[1280px]:static min-[1280px]:inset-auto min-[1280px]:flex min-[1280px]:flex-none min-[1280px]:shrink-0 group-data-[compact]/nav:pointer-events-none! group-data-[compact]/nav:absolute! group-data-[compact]/nav:inset-0!',
         left: 'relative z-10 flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none!',

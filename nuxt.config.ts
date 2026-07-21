@@ -60,13 +60,6 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'preload',
-          as: 'font',
-          type: 'font/woff2',
-          href: '/fonts/caveat-latin-400.woff2',
-          crossorigin: 'anonymous',
-        },
-        {
-          rel: 'preload',
           as: 'image',
           href: '/images/logo-header.webp',
           fetchpriority: 'high',

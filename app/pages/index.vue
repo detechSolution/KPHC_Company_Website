@@ -38,9 +38,8 @@ const highlightCards = [
   <div>
     <HeroBanner
       size="lg"
-      variant="soft"
+      variant="plain"
       title="Quality Healthcare That Puts You First"
-      accent="Puts You First"
       description="Kalihi-Palama Health Center is a Federally Qualified Health Center (FQHC) providing accessible medical, dental, and behavioral health care for our community."
     >
       <HeroCarousel />
@@ -48,9 +47,8 @@ const highlightCards = [
 
     <section class="bg-white pt-stack-lg pb-section-sm sm:pt-stack-xl sm:pb-section">
       <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="We Provide Comprehensive Healthcare for Our Patients."
-          accent="Comprehensive Healthcare"
           class="max-w-3xl text-3xl sm:text-4xl"
           align="center"
         />

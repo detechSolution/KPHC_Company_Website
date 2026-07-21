@@ -5,9 +5,8 @@ import { qualityBadges } from '~/utils/quality-badges'
 <template>
   <section class="bg-white pb-section-sm sm:pb-section">
     <div class="mx-auto flex w-full max-w-(--ui-container) flex-col items-center px-gutter text-center sm:px-gutter-lg">
-      <AccentTitle
+      <SectionTitle
         title="Quality & Accreditation Recognition"
-        accent="Recognition"
         class="text-3xl sm:text-4xl"
         align="center"
       />

@@ -26,9 +26,8 @@ const activeTab = ref<MissionTab>('mission')
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
-          <AccentTitle
+          <SectionTitle
             title="More Than a Clinic - A Community Home"
-            accent="A Community Home"
             class="text-3xl sm:text-4xl"
           />
           <p class="mt-stack text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
@@ -79,9 +78,8 @@ const activeTab = ref<MissionTab>('mission')
 
     <section class="bg-white pb-section-sm sm:pb-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <AccentTitle
+        <SectionTitle
           title="Kalihi-Palama History"
-          accent="History"
           class="text-3xl sm:text-4xl"
           align="center"
         />
