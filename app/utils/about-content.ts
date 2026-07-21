@@ -14,7 +14,8 @@ export interface MissionTabItem {
 
 export interface MissionContent {
   title: string
-  body: string
+  body: string | string[]
+  items?: string[]
   icon: string
 }
 
@@ -94,16 +95,26 @@ export const missionContent: Record<MissionTab, MissionContent> = {
   mission: {
     title: 'Our Mission',
     icon: 'i-lucide-hand-heart',
-    body: 'Kalihi-Palama Health Center (KPHC) is committed to providing quality integrated health and social services to our community and all others in need of health care.',
+    body: [
+      'To provide quality integrated health and social services to our community and all others in need of health care.',
+      'Our focus is preventative primary health care provided in a respectful, caring, and culturally appropriate manner.',
+    ],
   },
   vision: {
     title: 'Our Vision',
     icon: 'i-lucide-eye',
-    body: 'A healthier Honolulu where every person — regardless of income, language, or background — can thrive with dignity, compassion, and comprehensive care close to home.',
+    body: 'To be a leader in community-based health care utilizing innovation and resourcefulness in our development of CULTURALLY SENSITIVE programs and services to improve the overall health and well-being of our patients and community.',
   },
   values: {
     title: 'Our Values',
     icon: 'i-lucide-heart',
-    body: 'We lead with aloha, equity, integrity, and collaboration. We honor culture, listen first, and partner with patients and community to remove barriers to wellness.',
+    body: '',
+    items: [
+      'Performance Excellence',
+      'Respect & Recognition',
+      'Integrity',
+      'Dedication',
+      'Equality & Education',
+    ],
   },
 }

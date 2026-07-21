@@ -165,9 +165,37 @@ const activeTab = ref<MissionTab>('mission')
             <h3 class="mt-stack text-2xl font-semibold text-zinc-950">
               {{ missionContent[activeTab].title }}
             </h3>
-            <p class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg">
+            <template v-if="Array.isArray(missionContent[activeTab].body)">
+              <p
+                v-for="(paragraph, index) in missionContent[activeTab].body"
+                :key="index"
+                class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg"
+              >
+                {{ paragraph }}
+              </p>
+            </template>
+            <p
+              v-else-if="missionContent[activeTab].body"
+              class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty sm:text-lg"
+            >
               {{ missionContent[activeTab].body }}
             </p>
+            <ul
+              v-if="missionContent[activeTab].items?.length"
+              class="mt-3 space-y-2 text-base leading-relaxed text-zinc-600 sm:text-lg"
+            >
+              <li
+                v-for="item in missionContent[activeTab].items"
+                :key="item"
+                class="flex items-start gap-2 text-pretty"
+              >
+                <UIcon
+                  name="i-lucide-check"
+                  class="mt-1 size-4 shrink-0 text-primary"
+                />
+                <span>{{ item }}</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
