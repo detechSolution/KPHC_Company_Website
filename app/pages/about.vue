@@ -49,15 +49,13 @@ const activeTab = ref<MissionTab>('mission')
         </div>
 
         <div class="relative">
-          <img
+          <ContentImage
             src="/images/home/hiring.webp"
             alt="Kalihi-Palama Health Center care team"
-            class="aspect-[4/3] w-full rounded-card object-cover"
-            loading="lazy"
-            decoding="async"
-            width="800"
-            height="600"
-          >
+            :width="880"
+            :height="680"
+            sizes="(min-width: 1024px) 40rem, 100vw"
+          />
           <div class="absolute bottom-4 left-4 flex items-center gap-stack-sm rounded-card bg-green-900 px-4 py-3 text-white shadow-lg sm:bottom-6 sm:left-6">
             <UIcon
               name="i-lucide-phone"
@@ -85,6 +83,16 @@ const activeTab = ref<MissionTab>('mission')
           title="Kalihi-Palama History"
           class="text-3xl sm:text-4xl"
           align="center"
+        />
+
+        <ContentImage
+          src="/images/about-us/history.webp"
+          alt="Historical view of Kalihi-Palama and Kalihi-Palama Health Center"
+          aspect-class="aspect-21/9"
+          class="mt-stack-xl"
+          :width="2560"
+          :height="1097"
+          sizes="(min-width: 82.5rem) 82.5rem, 100vw"
         />
 
         <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -121,15 +129,13 @@ const activeTab = ref<MissionTab>('mission')
 
     <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
-        <img
-          src="/images/bod.webp"
+        <ContentImage
+          src="/images/about-us/bod.webp"
           alt="Kalihi-Palama Health Center mission in action"
-          class="aspect-[4/3] w-full rounded-card object-cover"
-          loading="lazy"
-          decoding="async"
-          width="800"
-          height="600"
-        >
+          :width="880"
+          :height="680"
+          sizes="(min-width: 1024px) 40rem, 100vw"
+        />
 
         <div>
           <div
@@ -260,15 +266,13 @@ const activeTab = ref<MissionTab>('mission')
 
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
-        <img
+        <ContentImage
           :src="providersCta.image"
           :alt="providersCta.imageAlt"
-          class="aspect-[4/3] w-full rounded-card object-cover"
-          loading="lazy"
-          decoding="async"
-          width="800"
-          height="600"
-        >
+          :width="880"
+          :height="680"
+          sizes="(min-width: 1024px) 40rem, 100vw"
+        />
 
         <div>
           <p class="text-sm font-semibold tracking-wide text-primary uppercase">
