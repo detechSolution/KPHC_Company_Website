@@ -122,7 +122,7 @@ const activeTab = ref<MissionTab>('mission')
     <section class="bg-green-50 py-section-sm sm:py-section">
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <img
-          src="/images/mission.webp"
+          src="/images/bod.webp"
           alt="Kalihi-Palama Health Center mission in action"
           class="aspect-[4/3] w-full rounded-card object-cover"
           loading="lazy"
