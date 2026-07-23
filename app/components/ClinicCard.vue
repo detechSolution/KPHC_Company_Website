@@ -1,12 +1,19 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   name: string
   address: string
   phone?: string
   phoneHref?: string
-  hours?: string
+  hours?: string | string[]
   details?: string[]
 }>()
+
+const hourLines = computed(() => {
+  if (!props.hours)
+    return []
+
+  return Array.isArray(props.hours) ? props.hours : [props.hours]
+})
 </script>
 
 <template>
@@ -41,14 +48,15 @@ defineProps<{
       </li>
 
       <li
-        v-if="hours"
+        v-for="(hour, index) in hourLines"
+        :key="index"
         class="flex gap-2.5"
       >
         <UIcon
           name="i-lucide-clock"
           class="mt-0.5 size-4 shrink-0 text-primary"
         />
-        <span>{{ hours }}</span>
+        <span>{{ hour }}</span>
       </li>
 
       <li

@@ -93,7 +93,9 @@ export const clinics: ClinicLocation[] = [
     address: '915 North King Street, Honolulu, HI 96817',
     details: [
       'Phone: (808) 848-1438',
-      'By appointment',
+      'Monday–Friday 8:00 AM – 4:30 PM',
+      'Saturday 8:00 AM – 12:00 PM',
+      'Sunday: Closed',
     ],
   },
 ]

@@ -18,6 +18,17 @@ export const additionalOfferings: ServiceOffering[] = [
   },
 ]
 
+export const optometryLocation = {
+  name: 'Optometry',
+  address: '915 North King Street, Honolulu, HI 96817',
+  phone: '(808) 848-1438',
+  hours: [
+    'Monday–Friday 8:00 AM – 4:30 PM',
+    'Saturday 8:00 AM – 12:00 PM',
+  ],
+  details: ['Sunday: Closed'],
+}
+
 export const optometryServices = [
   'Comprehensive eye exams',
   'Diabetic eye screening',

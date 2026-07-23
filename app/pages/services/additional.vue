@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { MAIN_PHONE } from '~/utils/external-links'
 import {
   additionalOfferings,
+  optometryLocation,
   optometryServices,
   pharmacyLocations,
   pharmacyServices,
@@ -99,10 +99,7 @@ usePageSeo({
           </ul>
           <ClinicCard
             class="mt-6 max-w-lg"
-            name="Main Medical & Dental Center"
-            address="915 North King Street, Honolulu, HI 96817"
-            :phone="MAIN_PHONE"
-            hours="By appointment"
+            v-bind="optometryLocation"
           />
         </div>
 

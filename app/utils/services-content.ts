@@ -1,5 +1,6 @@
 export {
   additionalOfferings,
+  optometryLocation,
   optometryServices,
   pharmacyLocations,
   pharmacyServices,
