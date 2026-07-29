@@ -71,11 +71,20 @@ const items = computed<NavigationMenuItem[]>(() => [
 const probeRef = ref<HTMLElement | null>(null)
 const headerRootRef = ref<HTMLElement | null>(null)
 const isCompact = ref(false)
+/** Bound to UHeader — Nuxt UI’s default lg:hidden on the panel does not match our 1280px / compact toggle. */
+const menuOpen = ref(false)
 
 const COMFORT_GAP_PX = 64
 const MIN_DESKTOP_VIEWPORT_PX = 1280
 
 let cleanup: (() => void) | undefined
+
+function closeMenuIfDesktopNavVisible() {
+  if (window.innerWidth >= MIN_DESKTOP_VIEWPORT_PX && !isCompact.value) {
+    menuOpen.value = false
+    resetMobileNavGroups()
+  }
+}
 
 function updateCompactNav() {
   const probe = probeRef.value
@@ -96,6 +105,7 @@ function updateCompactNav() {
   const padX = Number.parseFloat(styles.paddingLeft) + Number.parseFloat(styles.paddingRight)
   const available = container.clientWidth - padX
   isCompact.value = probe.scrollWidth + COMFORT_GAP_PX > available
+  closeMenuIfDesktopNavVisible()
 }
 
 onMounted(() => {
@@ -161,6 +171,7 @@ function resetMobileNavGroups() {
 
 function closeMobileMenu(close?: () => void) {
   resetMobileNavGroups()
+  menuOpen.value = false
   close?.()
 }
 </script>
@@ -199,6 +210,7 @@ function closeMobileMenu(close?: () => void) {
     </div>
 
     <UHeader
+      v-model:open="menuOpen"
       title="Kalihi-Palama Health Center"
       to="/"
       mode="slideover"
@@ -218,8 +230,10 @@ function closeMobileMenu(close?: () => void) {
         left: 'relative z-20 flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none! group-data-[compact]/nav:z-20!',
         right: 'relative z-20 flex min-w-0 shrink-0 items-center justify-end gap-2.5 min-[1280px]:flex-1 group-data-[compact]/nav:flex-none! group-data-[compact]/nav:z-20!',
         title: 'flex items-center shrink-0 min-w-0',
+        // Override Nuxt UI lg:hidden (1024px) so the panel matches our 1280px / data-compact toggle.
         toggle: 'flex! shrink-0 min-[1280px]:hidden! group-data-[compact]/nav:flex!',
-        content: 'w-full max-w-sm',
+        content: 'w-full max-w-sm lg:flex!',
+        overlay: 'lg:block!',
       }"
     >
       <template #title>
@@ -409,12 +423,17 @@ function closeMobileMenu(close?: () => void) {
 </template>
 
 <style>
-/* Keep the menu toggle above the full-width mobile logo layer. */
+/* Keep the menu toggle above the full-width mobile / compact logo layer. */
 @media (max-width: 1279px) {
   .app-header-shell [data-slot='toggle'] {
     position: relative;
     z-index: 30;
   }
+}
+
+.app-header-shell[data-compact] [data-slot='toggle'] {
+  position: relative;
+  z-index: 30;
 }
 
 /* Desktop wide layout: grid beats default UHeader flex (see app.config header slots). */

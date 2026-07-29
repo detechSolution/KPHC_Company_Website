@@ -36,15 +36,16 @@ export default defineAppConfig({
         root: 'rounded-card',
       },
     },
-    // Base layout; AppHeader uses min-[1280px] + data-compact for show/hide (avoids hamburger flash)
+    // Base layout; AppHeader uses min-[1280px] + data-compact for show/hide (avoids hamburger flash).
+    // Neutralize default lg:hidden on content/overlay — that breakpoint (1024) does not match the toggle.
     header: {
       slots: {
         left: 'flex items-center gap-1.5',
         center: 'flex min-w-0 items-center justify-center',
         right: 'flex items-center justify-end gap-2.5 min-w-0',
         toggle: 'shrink-0',
-        content: 'w-full max-w-sm',
-        overlay: '',
+        content: 'w-full max-w-sm lg:flex!',
+        overlay: 'lg:block!',
       },
     },
   },
