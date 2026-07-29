@@ -8,7 +8,7 @@ export interface ServiceClinic {
   name: string
   address: string
   phone: string
-  hours: string
+  hours: string | string[]
 }
 
 export interface AppointmentSite {

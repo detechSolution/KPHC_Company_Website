@@ -8,7 +8,6 @@ export {
 } from './services/additional-content'
 
 export {
-  behavioralClinics,
   behavioralExpectItems,
   behavioralOfferings,
   behavioralProviders,
@@ -21,6 +20,7 @@ export {
   dentalEmergencyWalkInBody,
   dentalEmergencyWalkInSite,
   dentalProofOfIncome,
+  main915DentalClinicHours,
 } from './services/dental-content'
 
 export {
@@ -30,7 +30,6 @@ export {
 
 export {
   medicalAdultServices,
-  medicalClinics,
   medicalOfferings,
   medicalPediatricClinic,
   medicalPediatricServices,
@@ -45,7 +44,6 @@ export {
 } from './services/nutrition-content'
 
 export {
-  clinicHoursNote,
   defaultEligibilityCallout,
   integratedCareIntro,
 } from './services/shared'

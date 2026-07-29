@@ -1,4 +1,8 @@
 import type { AppointmentSite } from './types'
+import { main915DentalHours } from '~/utils/locations-content'
+
+/** Main Medical and Dental Center (915) — scheduled dental clinic hours */
+export const main915DentalClinicHours = main915DentalHours
 
 export const dentalAppointmentSites: AppointmentSite[] = [
   {

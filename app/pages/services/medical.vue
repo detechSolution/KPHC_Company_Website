@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import { BOOK_APPOINTMENT_HREF, MAKE_APPOINTMENT_HREF } from '~/utils/external-links'
 import {
-  clinicHoursNote,
   defaultEligibilityCallout,
   integratedCareIntro,
   medicalAdultServices,
-  medicalClinics,
   medicalOfferings,
   medicalPediatricClinic,
   medicalPediatricServices,
@@ -150,24 +149,10 @@ usePageSeo({
       </div>
     </section>
 
-    <section class="bg-green-50 py-section-sm sm:py-section">
-      <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
-          Clinic Hours & Locations
-        </h2>
-        <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          {{ clinicHoursNote }}
-        </p>
-        <div class="mt-stack-lg grid gap-grid sm:grid-cols-2 lg:grid-cols-3">
-          <ClinicCard
-            v-for="clinic in medicalClinics"
-            :key="clinic.name"
-            v-bind="clinic"
-          />
-        </div>
-      </div>
-    </section>
-
-    <PageCta />
+    <PageCta
+      :primary-to="MAKE_APPOINTMENT_HREF"
+      footer-link-label="View clinic hours & locations"
+      :footer-link-to="BOOK_APPOINTMENT_HREF"
+    />
   </div>
 </template>

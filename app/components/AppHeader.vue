@@ -42,6 +42,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     })),
   },
   {
+    label: 'Locations',
+    to: '/locations',
+    active: route.path.startsWith('/locations'),
+  },
+  {
     label: 'Resources',
     to: '/resources',
     active: route.path.startsWith('/resources'),
@@ -163,7 +168,7 @@ function closeMobileMenu(close?: () => void) {
 <template>
   <div
     ref="headerRootRef"
-    class="group/nav fixed inset-x-0 top-0 z-50 w-full bg-white/75 hover:bg-white/65 backdrop-blur-md"
+    class="app-header-shell group/nav fixed inset-x-0 top-0 z-50 w-full bg-white/75 hover:bg-white/65 backdrop-blur-md"
     :data-compact="isCompact ? '' : undefined"
   >
     <!-- Probe mirrors desktop row: logo | spaced links | CTAs -->
@@ -208,10 +213,10 @@ function closeMobileMenu(close?: () => void) {
       }"
       :ui="{
         root: 'border-0 bg-transparent shadow-none',
-        container: 'relative gap-3 px-gutter sm:gap-4 sm:px-gutter-lg [&_[data-slot=title]]:hidden [&_[data-slot=title]]:min-[1280px]:flex group-data-[compact]/nav:[&_[data-slot=title]]:hidden!',
-        center: 'pointer-events-none absolute inset-0 flex items-center justify-center min-[1280px]:pointer-events-auto min-[1280px]:static min-[1280px]:inset-auto min-[1280px]:flex min-[1280px]:flex-none min-[1280px]:shrink-0 group-data-[compact]/nav:pointer-events-none! group-data-[compact]/nav:absolute! group-data-[compact]/nav:inset-0!',
-        left: 'relative z-10 flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none!',
-        right: 'relative z-10 flex min-w-0 items-center justify-end gap-2.5 min-[1280px]:flex-1 group-data-[compact]/nav:flex-none!',
+        container: 'relative gap-3 px-gutter sm:gap-4 sm:px-gutter-lg [&_[data-slot=title]]:hidden min-[1280px]:[&_[data-slot=title]]:flex group-data-[compact]/nav:[&_[data-slot=title]]:hidden!',
+        center: 'pointer-events-none absolute inset-0 z-0 flex items-center justify-center min-[1280px]:pointer-events-auto min-[1280px]:static min-[1280px]:z-auto min-[1280px]:inset-auto min-[1280px]:flex min-[1280px]:flex-none min-[1280px]:shrink-0 group-data-[compact]/nav:pointer-events-none! group-data-[compact]/nav:absolute! group-data-[compact]/nav:inset-0! group-data-[compact]/nav:z-0!',
+        left: 'relative z-20 flex shrink-0 items-center gap-1.5 min-[1280px]:min-w-0 min-[1280px]:flex-1 group-data-[compact]/nav:min-w-0! group-data-[compact]/nav:flex-none! group-data-[compact]/nav:z-20!',
+        right: 'relative z-20 flex min-w-0 shrink-0 items-center justify-end gap-2.5 min-[1280px]:flex-1 group-data-[compact]/nav:flex-none! group-data-[compact]/nav:z-20!',
         title: 'flex items-center shrink-0 min-w-0',
         toggle: 'flex! shrink-0 min-[1280px]:hidden! group-data-[compact]/nav:flex!',
         content: 'w-full max-w-sm',
@@ -226,7 +231,7 @@ function closeMobileMenu(close?: () => void) {
         aria-label="Kalihi-Palama Health Center"
         class="pointer-events-auto flex min-[1280px]:hidden group-data-[compact]/nav:flex!"
       >
-        <AppLogo class="object-center" />
+        <AppLogo />
       </ULink>
 
       <UNavigationMenu
@@ -402,3 +407,33 @@ function closeMobileMenu(close?: () => void) {
     </UHeader>
   </div>
 </template>
+
+<style>
+/* Keep the menu toggle above the full-width mobile logo layer. */
+@media (max-width: 1279px) {
+  .app-header-shell [data-slot='toggle'] {
+    position: relative;
+    z-index: 30;
+  }
+}
+
+/* Desktop wide layout: grid beats default UHeader flex (see app.config header slots). */
+@media (min-width: 1280px) {
+  .app-header-shell:not([data-compact]) [data-slot='container'] {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  .app-header-shell:not([data-compact]) [data-slot='center'] {
+    display: flex !important;
+    position: static !important;
+    inset: auto !important;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    pointer-events: auto !important;
+  }
+}
+</style>

@@ -24,8 +24,11 @@ export const WIC_PHONE_HREF = 'tel:+18088410011'
 /** Hawaii WIC online application (hiwic.org) */
 export const HI_WIC_APPLY_URL = 'https://www.hiwic.org/apply'
 
-/** Clinic hours & locations accordion on Resources */
-export const BOOK_APPOINTMENT_HREF = '/resources#locations'
+/** Clinic hours & locations — maps, phones, and site hours */
+export const BOOK_APPOINTMENT_HREF = '/locations'
+
+/** Resources accordion — how to schedule (telehealth, in-person) */
+export const MAKE_APPOINTMENT_HREF = '/resources#appointment'
 
 export const INSTAGRAM_URL = 'https://www.instagram.com/kphc.hawaii/'
 export const FACEBOOK_URL = 'https://www.facebook.com/KalihiPalamaHealth'

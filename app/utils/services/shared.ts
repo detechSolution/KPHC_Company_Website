@@ -5,5 +5,3 @@ export const integratedCareIntro = [
 ] as const
 
 export const defaultEligibilityCallout = 'Everyone is welcome. We accept Medicaid, Medicare, and most private insurance, and offer sliding-fee discounts for qualifying patients. No one is turned away for inability to pay.'
-
-export const clinicHoursNote = 'Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.'

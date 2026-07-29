@@ -25,6 +25,7 @@ const contact = {
 
 const centerLinks: FooterLink[] = [
   { label: 'Services', to: '/services' },
+  { label: 'Clinic Hours & Locations', to: '/locations' },
   { label: 'Events', to: '/events' },
   { label: 'Donate', to: '/donate' },
   { label: 'Careers', to: '/careers' },

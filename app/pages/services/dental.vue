@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { BOOK_APPOINTMENT_HREF, MAKE_APPOINTMENT_HREF } from '~/utils/external-links'
 import {
   dentalAppointmentSites,
   dentalEmergencyWalkInBody,
   dentalEmergencyWalkInSite,
   dentalProofOfIncome,
+  main915DentalClinicHours,
 } from '~/utils/services-content'
 
 usePageSeo({
@@ -85,6 +87,10 @@ usePageSeo({
           <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
             {{ dentalEmergencyWalkInBody }}
           </p>
+          <p class="mt-3 text-sm font-medium text-zinc-950">
+            Scheduled clinic hours (915 location):
+            <span class="font-normal text-zinc-600">{{ main915DentalClinicHours }}</span>
+          </p>
         </div>
 
         <h3 class="mt-12 text-xl font-semibold text-zinc-950 sm:text-2xl">
@@ -129,6 +135,10 @@ usePageSeo({
       </div>
     </section>
 
-    <PageCta />
+    <PageCta
+      :primary-to="MAKE_APPOINTMENT_HREF"
+      footer-link-label="View clinic hours & locations"
+      :footer-link-to="BOOK_APPOINTMENT_HREF"
+    />
   </div>
 </template>

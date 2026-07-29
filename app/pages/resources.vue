@@ -2,8 +2,6 @@
 import type { AccordionSection } from '~/utils/resources-content'
 import { HIPAA_NOTICE_PDF } from '~/utils/external-links'
 import {
-  afterHours,
-  clinics,
   registrationItems,
   resourceAccordionItems,
   resourcesSectionClass,
@@ -14,7 +12,7 @@ import { scrollElementIntoView, smoothScrollToElementId } from '~/utils/smooth-s
 
 usePageSeo({
   title: 'Resources',
-  description: 'Clinic locations, patient privacy, telemedicine options, appointment information, and more.',
+  description: 'Patient privacy, telemedicine options, appointment information, registration, and more.',
 })
 
 const sectionScrollMargin = 'scroll-mt-[calc(var(--ui-header-height)+1rem)]'
@@ -60,8 +58,11 @@ async function scrollToSection(section: AccordionSection) {
 
 async function handleRouteHash() {
   const section = sectionFromHash(route.hash)
-  if (!section)
+  if (!section) {
+    if (route.hash.replace(/^#/, '') === 'locations')
+      await router.replace('/locations')
     return
+  }
 
   applyingHash = true
   try {
@@ -113,7 +114,7 @@ watch(openItems, async (current, previous) => {
     <HeroBanner
       badge="Patient Resources"
       title="Everything You Need to Know"
-      description="Clinic locations, patient privacy, telemedicine options, appointment information, and more."
+      description="Patient privacy, telemedicine options, appointment information, registration, and more."
     />
 
     <section class="bg-white py-section-sm sm:py-section">
@@ -200,47 +201,19 @@ watch(openItems, async (current, previous) => {
             </div>
           </template>
 
-          <template #locations-body>
-            <div class="space-y-6">
-              <p class="text-sm leading-relaxed text-zinc-600 sm:text-base">
-                Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.
-              </p>
-
-              <CalloutBox title="After Hours Assistance">
-                <ul class="mt-1 space-y-2">
-                  <li
-                    v-for="row in afterHours"
-                    :key="row.label"
-                    class="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4"
-                  >
-                    <span>{{ row.label }}</span>
-                    <a
-                      :href="`tel:${row.value.replace(/\D/g, '')}`"
-                      class="font-medium text-primary hover:underline"
-                    >
-                      {{ row.value }}
-                    </a>
-                  </li>
-                </ul>
-              </CalloutBox>
-
-              <div class="grid gap-4 sm:grid-cols-2">
-                <ClinicCard
-                  v-for="(clinic, index) in clinics"
-                  :key="`${clinic.name}-${index}`"
-                  :name="clinic.name"
-                  :address="clinic.address"
-                  :details="clinic.details"
-                />
-              </div>
-            </div>
-          </template>
-
           <template #appointment-body>
             <div class="space-y-5 text-sm leading-relaxed text-zinc-600 sm:text-base">
               <p>
                 You can schedule in-person visits or use telemedicine when appropriate. Ask the clinic which options are available for your provider and visit type.
               </p>
+              <UButton
+                label="View Clinic Hours & Locations"
+                color="primary"
+                variant="outline"
+                size="lg"
+                to="/locations"
+                icon="i-lucide-map-pin"
+              />
               <div class="grid gap-4 sm:grid-cols-3">
                 <article
                   v-for="option in telehealthOptions"

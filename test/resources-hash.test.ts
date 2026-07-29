@@ -9,8 +9,11 @@ describe('sectionFromHash', () => {
   })
 
   it('maps known accordion section hashes', () => {
-    expect(sectionFromHash('#locations')).toBe('locations')
     expect(sectionFromHash('#privacy')).toBe('privacy')
     expect(sectionFromHash('appointment')).toBe('appointment')
+  })
+
+  it('no longer treats locations as a resources accordion section', () => {
+    expect(sectionFromHash('#locations')).toBeUndefined()
   })
 })

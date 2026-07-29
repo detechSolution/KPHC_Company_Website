@@ -2,14 +2,14 @@
 import {
   BEHAVIORAL_HEALTH_PHONE,
   BEHAVIORAL_HEALTH_PHONE_HREF,
+  BOOK_APPOINTMENT_HREF,
+  MAKE_APPOINTMENT_HREF,
 } from '~/utils/external-links'
 import {
-  behavioralClinics,
   behavioralExpectItems,
   behavioralOfferings,
   behavioralProviders,
   behavioralServices,
-  clinicHoursNote,
   homelessPrograms,
   integratedCareIntro,
 } from '~/utils/services-content'
@@ -154,22 +154,6 @@ usePageSeo({
             v-bind="provider"
           />
         </div>
-
-        <div class="mt-stack-xl">
-          <h2 class="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
-            Clinic Hours & Locations
-          </h2>
-          <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-            {{ clinicHoursNote }}
-          </p>
-          <div class="mt-stack-lg grid gap-6 sm:grid-cols-2">
-            <ClinicCard
-              v-for="clinic in behavioralClinics"
-              :key="clinic.name"
-              v-bind="clinic"
-            />
-          </div>
-        </div>
       </div>
     </section>
 
@@ -197,6 +181,10 @@ usePageSeo({
       </div>
     </section>
 
-    <PageCta />
+    <PageCta
+      :primary-to="MAKE_APPOINTMENT_HREF"
+      footer-link-label="View clinic hours & locations"
+      :footer-link-to="BOOK_APPOINTMENT_HREF"
+    />
   </div>
 </template>

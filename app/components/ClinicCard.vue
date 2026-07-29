@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { phoneToTelHref, splitPhoneSegments } from '~/utils/linkify-phone'
+
 const props = defineProps<{
   name: string
   address: string
@@ -68,7 +70,19 @@ const hourLines = computed(() => {
           name="i-lucide-info"
           class="mt-0.5 size-4 shrink-0 text-primary"
         />
-        <span>{{ detail }}</span>
+        <span>
+          <template
+            v-for="(segment, segmentIndex) in splitPhoneSegments(detail)"
+            :key="segmentIndex"
+          >
+            <a
+              v-if="segment.type === 'phone'"
+              :href="phoneToTelHref(segment.value)"
+              class="text-primary transition-colors hover:text-primary/80"
+            >{{ segment.value }}</a>
+            <template v-else>{{ segment.value }}</template>
+          </template>
+        </span>
       </li>
     </ul>
   </article>

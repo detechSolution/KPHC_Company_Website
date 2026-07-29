@@ -8,6 +8,8 @@ withDefaults(defineProps<{
   primaryTo?: string
   secondaryLabel?: string
   secondaryHref?: string
+  footerLinkLabel?: string
+  footerLinkTo?: string
 }>(), {
   title: 'Ready to Take Control of Your Health?',
   description: 'Schedule your appointment today. We accept most insurance plans and offer a sliding fee scale for those who qualify. No one is turned away.',
@@ -44,6 +46,21 @@ withDefaults(defineProps<{
           class="w-full justify-center sm:w-auto"
         />
       </div>
+      <p
+        v-if="footerLinkLabel && footerLinkTo"
+        class="mt-stack-lg text-sm text-zinc-600"
+      >
+        <ULink
+          :to="footerLinkTo"
+          class="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-primary/80"
+        >
+          <UIcon
+            name="i-lucide-map-pin"
+            class="size-4 shrink-0"
+          />
+          {{ footerLinkLabel }}
+        </ULink>
+      </p>
     </div>
   </section>
 </template>

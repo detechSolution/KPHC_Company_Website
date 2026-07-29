@@ -1,4 +1,4 @@
-import type { BehavioralProvider, ExpectItem, HomelessProgram, ServiceClinic, ServiceOffering } from './types'
+import type { BehavioralProvider, ExpectItem, HomelessProgram, ServiceOffering } from './types'
 
 export const behavioralProviders: BehavioralProvider[] = [
   {
@@ -134,21 +134,6 @@ export const behavioralExpectItems: ExpectItem[] = [
   {
     title: 'Recovery / Transition Plan',
     body: 'When receiving services from certain healthcare providers, such as Behavioral Health and Health Care for the Homeless, as you make progress towards your treatment goals, you will be discussing with your team your next steps in recovery. This may include completion of treatment and discharge from our programs or the need for external specialized services. The eventual goal is to help you have the highest quality independent life possible within the community.',
-  },
-]
-
-export const behavioralClinics: ServiceClinic[] = [
-  {
-    name: 'Behavioral Health, Medical, Health Education & Pharmacy',
-    address: '952 North King Street, Honolulu, HI 96817',
-    phone: '(808) 841-7981',
-    hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-  },
-  {
-    name: 'Ka\'a\'ahi Clinic',
-    address: '546 Ka\'a\'ahi Street, Honolulu, HI 96817',
-    phone: '(808) 791-6342',
-    hours: 'Monday–Friday 8:00 AM – 4:00 PM',
   },
 ]
 
