@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { dentalAppointmentSites, dentalProofOfIncome } from '~/utils/services-content'
+import {
+  dentalAppointmentSites,
+  dentalEmergencyWalkInBody,
+  dentalEmergencyWalkInSite,
+  dentalProofOfIncome,
+} from '~/utils/services-content'
 
 usePageSeo({
   title: 'Dental Services',
@@ -60,6 +65,27 @@ usePageSeo({
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
           A scheduled comprehensive examination with complete x-ray series is required prior to beginning any permanent restorative or rehabilitative dental care.
         </p>
+
+        <div class="mt-12 border-b border-zinc-100 pb-4">
+          <div class="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-3">
+            <span class="text-xl font-semibold text-zinc-950 sm:text-2xl">
+              Emergency Dental Walk-ins
+            </span>
+            <span class="font-medium text-zinc-950">{{ dentalEmergencyWalkInSite.name }}</span>
+            <span class="hidden text-zinc-300 sm:inline">·</span>
+            <a
+              :href="`tel:${dentalEmergencyWalkInSite.phone.replace(/\D/g, '')}`"
+              class="text-primary hover:underline"
+            >
+              {{ dentalEmergencyWalkInSite.phone }}
+            </a>
+            <span class="hidden text-zinc-300 sm:inline">·</span>
+            <span class="text-sm text-zinc-600">{{ dentalEmergencyWalkInSite.address }}</span>
+          </div>
+          <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
+            {{ dentalEmergencyWalkInBody }}
+          </p>
+        </div>
 
         <h3 class="mt-12 text-xl font-semibold text-zinc-950 sm:text-2xl">
           For an appointment at one of our clinics, please call:

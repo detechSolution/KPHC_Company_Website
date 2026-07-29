@@ -18,6 +18,8 @@ export {
 
 export {
   dentalAppointmentSites,
+  dentalEmergencyWalkInBody,
+  dentalEmergencyWalkInSite,
   dentalProofOfIncome,
 } from './services/dental-content'
 

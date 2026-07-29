@@ -23,6 +23,12 @@ export const dentalAppointmentSites: AppointmentSite[] = [
   },
 ]
 
+/** Walk-in emergency dental care at Main Medical and Dental Center */
+export const dentalEmergencyWalkInSite = dentalAppointmentSites[0]!
+
+export const dentalEmergencyWalkInBody
+  = 'Our clinic welcomes emergency dental walk-in patients Monday-Friday during the morning hours, beginning at 7:45AM. Walk-in services are first come, first served and are subject to availability. We may need to close walk-in hours early if patient capacity has been reached, to ensure each patient receives the care they need. We appreciate your patience and look forward to caring for you during your visit.'
+
 export const dentalProofOfIncome = [
   'Pay Stubs (at least one month)',
   'Determination letter from the Department of Human Services (Medicaid recipient)',
