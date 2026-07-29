@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { aboutNavLinks } from '~/utils/about-nav'
 import {
   BOOK_APPOINTMENT_HREF,
   MAIN_PHONE,
@@ -20,7 +21,6 @@ const items = computed<NavigationMenuItem[]>(() => [
   },
   {
     label: 'Services',
-    to: '/services',
     active: route.path.startsWith('/services'),
     children: servicesNavLinks.map(link => ({
       label: link.label,
@@ -30,8 +30,16 @@ const items = computed<NavigationMenuItem[]>(() => [
   },
   {
     label: 'About Us',
-    to: '/about',
-    active: route.path.startsWith('/about'),
+    active: route.path.startsWith('/about') || route.path === '/providers',
+    children: aboutNavLinks.map(link => ({
+      label: link.label,
+      to: link.to,
+      active: link.to === '/about'
+        ? route.path === '/about' && !route.hash
+        : link.to.startsWith('/about#')
+          ? route.fullPath === link.to
+          : route.path === link.to,
+    })),
   },
   {
     label: 'Resources',
@@ -106,6 +114,50 @@ onMounted(() => {
 onBeforeUnmount(() => {
   cleanup?.()
 })
+
+const expandedMobileGroups = ref<Set<string>>(new Set())
+/** User collapsed a group while a child route was active — keep closed until menu reset. */
+const collapsedMobileGroups = ref<Set<string>>(new Set())
+
+function mobileGroupHasActiveChild(item: NavigationMenuItem): boolean {
+  return item.children?.some(child => child.active) ?? false
+}
+
+function mobileGroupExpanded(item: NavigationMenuItem): boolean {
+  const label = item.label
+  if (!label)
+    return false
+  if (collapsedMobileGroups.value.has(label))
+    return false
+  if (expandedMobileGroups.value.has(label))
+    return true
+  return mobileGroupHasActiveChild(item)
+}
+
+function toggleMobileGroup(item: NavigationMenuItem) {
+  const label = item.label
+  if (!label)
+    return
+
+  if (mobileGroupExpanded(item)) {
+    expandedMobileGroups.value.delete(label)
+    collapsedMobileGroups.value.add(label)
+    return
+  }
+
+  collapsedMobileGroups.value.delete(label)
+  expandedMobileGroups.value = new Set([label])
+}
+
+function resetMobileNavGroups() {
+  expandedMobileGroups.value = new Set()
+  collapsedMobileGroups.value = new Set()
+}
+
+function closeMobileMenu(close?: () => void) {
+  resetMobileNavGroups()
+  close?.()
+}
 </script>
 
 <template>
@@ -216,7 +268,7 @@ onBeforeUnmount(() => {
               to="/"
               aria-label="Kalihi-Palama Health Center"
               class="flex min-w-0 flex-1 items-center"
-              @click="close?.()"
+              @click="closeMobileMenu(close)"
             >
               <AppLogo />
             </ULink>
@@ -228,7 +280,7 @@ onBeforeUnmount(() => {
               icon="i-lucide-x"
               aria-label="Close menu"
               class="-me-1.5 shrink-0"
-              @click="close?.()"
+              @click="closeMobileMenu(close)"
             />
           </div>
 
@@ -264,30 +316,63 @@ onBeforeUnmount(() => {
                 v-for="item in items"
                 :key="item.label"
               >
+                <template v-if="item.children?.length">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-2 rounded-card px-3 py-2.5 text-left text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60"
+                    :class="[
+                      item.active && !mobileGroupHasActiveChild(item) && 'font-semibold text-primary',
+                      mobileGroupExpanded(item) && !mobileGroupHasActiveChild(item) && 'bg-green-50/80',
+                    ]"
+                    :aria-expanded="mobileGroupExpanded(item)"
+                    @click="toggleMobileGroup(item)"
+                  >
+                    <span>{{ item.label }}</span>
+                    <UIcon
+                      name="i-lucide-chevron-down"
+                      class="size-5 shrink-0 text-zinc-500 transition-transform duration-200 ease-out"
+                      :class="[
+                        mobileGroupExpanded(item) && 'rotate-180',
+                        mobileGroupExpanded(item) && !mobileGroupHasActiveChild(item) && 'text-primary',
+                      ]"
+                    />
+                  </button>
+
+                  <Transition
+                    enter-active-class="transition duration-200 ease-out"
+                    enter-from-class="opacity-0 -translate-y-1"
+                    enter-to-class="opacity-100 translate-y-0"
+                    leave-active-class="transition duration-150 ease-in"
+                    leave-from-class="opacity-100 translate-y-0"
+                    leave-to-class="opacity-0 -translate-y-1"
+                  >
+                    <div
+                      v-if="mobileGroupExpanded(item)"
+                      class="mb-1 ms-1 flex flex-col gap-0.5 border-l-2 border-green-200 ps-3"
+                    >
+                      <ULink
+                        v-for="child in item.children"
+                        :key="child.label"
+                        :to="child.to"
+                        class="rounded-card px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-green-50/60 hover:text-primary"
+                        :class="child.active && 'bg-green-50 font-semibold text-primary'"
+                        @click="closeMobileMenu(close)"
+                      >
+                        {{ child.label }}
+                      </ULink>
+                    </div>
+                  </Transition>
+                </template>
+
                 <ULink
+                  v-else
                   :to="item.to"
                   class="rounded-card px-3 py-2.5 text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60"
                   :class="item.active && 'bg-green-50 font-semibold text-primary'"
-                  @click="close?.()"
+                  @click="closeMobileMenu(close)"
                 >
                   {{ item.label }}
                 </ULink>
-
-                <div
-                  v-if="item.children?.length"
-                  class="mb-1 ms-3 flex flex-col gap-0.5 border-l border-green-100 ps-3"
-                >
-                  <ULink
-                    v-for="child in item.children"
-                    :key="child.label"
-                    :to="child.to"
-                    class="rounded-card px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-green-50/60 hover:text-primary"
-                    :class="child.active && 'bg-green-50 font-semibold text-primary'"
-                    @click="close?.()"
-                  >
-                    {{ child.label }}
-                  </ULink>
-                </div>
               </template>
             </nav>
 

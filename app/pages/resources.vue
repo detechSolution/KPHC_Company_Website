@@ -8,6 +8,7 @@ import {
   telehealthOptions,
 } from '~/utils/resources-content'
 import { sectionFromHash } from '~/utils/resources-hash'
+import { smoothScrollToElementId } from '~/utils/smooth-scroll'
 
 usePageSeo({
   title: 'Resources',
@@ -20,30 +21,22 @@ const route = useRoute()
 // Default matches SSG HTML; hash is applied client-side (fragments are unavailable at prerender).
 const openItem = ref<string | undefined>('privacy')
 
-function applyHashSection() {
+async function handleRouteHash() {
   const section = sectionFromHash(route.hash)
-  if (section) {
-    openItem.value = section
-  }
-}
-
-function scrollToAccordion() {
-  if (!sectionFromHash(route.hash)) {
+  if (!section)
     return
-  }
-  nextTick(() => {
-    document.getElementById('resources-accordion')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  })
+
+  openItem.value = section
+  await nextTick()
+  await smoothScrollToElementId('resources-accordion', { settleMs: 280 })
 }
 
 onMounted(() => {
-  applyHashSection()
-  scrollToAccordion()
+  void handleRouteHash()
 })
 
 watch(() => route.hash, () => {
-  applyHashSection()
-  scrollToAccordion()
+  void handleRouteHash()
 })
 </script>
 

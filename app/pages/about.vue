@@ -8,14 +8,39 @@ import {
   missionTabs,
   providersCta,
 } from '~/utils/about-content'
+import { aboutTargetFromHash } from '~/utils/about-hash'
 import { MAIN_PHONE, MAIN_PHONE_HREF } from '~/utils/external-links'
+import { smoothScrollToElementId } from '~/utils/smooth-scroll'
 
 usePageSeo({
   title: 'About Us',
   description: 'We provide comprehensive, high-quality medical care to support the well-being of our community.',
 })
 
+const route = useRoute()
 const activeTab = ref<MissionTab>('mission')
+
+async function handleRouteHash() {
+  const target = aboutTargetFromHash(route.hash)
+  if (!target)
+    return
+
+  if (target.tab)
+    activeTab.value = target.tab
+
+  await nextTick()
+  await smoothScrollToElementId(target.sectionId, {
+    settleMs: target.tab ? 120 : 0,
+  })
+}
+
+onMounted(() => {
+  void handleRouteHash()
+})
+
+watch(() => route.hash, () => {
+  void handleRouteHash()
+})
 </script>
 
 <template>
@@ -26,7 +51,10 @@ const activeTab = ref<MissionTab>('mission')
       description="We provide comprehensive, high-quality medical care to support the well-being of our community."
     />
 
-    <section class="bg-white py-section-sm sm:py-section">
+    <section
+      id="community"
+      class="scroll-mt-[calc(var(--ui-header-height)+1rem)] bg-white py-section-sm sm:py-section"
+    >
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <div>
           <SectionTitle
@@ -77,7 +105,10 @@ const activeTab = ref<MissionTab>('mission')
       </div>
     </section>
 
-    <section class="bg-white pb-section-sm sm:pb-section">
+    <section
+      id="history"
+      class="scroll-mt-[calc(var(--ui-header-height)+1rem)] bg-white pb-section-sm sm:pb-section"
+    >
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <SectionTitle
           title="Kalihi-Palama History"
@@ -127,7 +158,10 @@ const activeTab = ref<MissionTab>('mission')
       </div>
     </section>
 
-    <section class="bg-green-50 py-section-sm sm:py-section">
+    <section
+      id="mission"
+      class="scroll-mt-[calc(var(--ui-header-height)+1rem)] bg-green-50 py-section-sm sm:py-section"
+    >
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <ContentImage
           src="/images/about-us/bod.webp"
@@ -208,7 +242,10 @@ const activeTab = ref<MissionTab>('mission')
       </div>
     </section>
 
-    <section class="bg-white py-section-sm sm:py-section">
+    <section
+      id="board"
+      class="scroll-mt-[calc(var(--ui-header-height)+1rem)] bg-white py-section-sm sm:py-section"
+    >
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <SectionTitle
           title="Board of Directors"
@@ -236,7 +273,10 @@ const activeTab = ref<MissionTab>('mission')
       </div>
     </section>
 
-    <section class="bg-green-50 py-section-sm sm:py-section">
+    <section
+      id="executive-team"
+      class="scroll-mt-[calc(var(--ui-header-height)+1rem)] bg-green-50 py-section-sm sm:py-section"
+    >
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
         <SectionTitle
           title="Executive Team"
@@ -264,7 +304,10 @@ const activeTab = ref<MissionTab>('mission')
       </div>
     </section>
 
-    <section class="bg-white py-section-sm sm:py-section">
+    <section
+      id="providers"
+      class="scroll-mt-[calc(var(--ui-header-height)+1rem)] bg-white py-section-sm sm:py-section"
+    >
       <div class="mx-auto grid w-full max-w-(--ui-container) items-center gap-split px-gutter sm:px-gutter-lg lg:grid-cols-2 lg:gap-split-lg">
         <ContentImage
           :src="providersCta.image"
