@@ -19,6 +19,14 @@ export const main915DentalHours = 'Monday–Friday 7:45 AM – 4:30 PM'
 export const locationsIntro
   = 'Please call the health center nearest to you to make an appointment. Clinic hours and services vary for each site.'
 
+export const locationsCta = {
+  title: 'Planning your visit?',
+  description:
+    'Use the phone number on the clinic card for the site you plan to visit—hours and services vary by location. For telehealth, new patients, insurance, and what to bring, see patient resources.',
+  primaryLabel: 'How to schedule an appointment',
+  secondaryLabel: 'Patient resources',
+} as const
+
 export const afterHours: AfterHoursContact[] = [
   { label: 'In Case of Emergency Dial', value: '911' },
   { label: 'Care & Advice After Clinical Hours — Physician\'s Exchange', value: '(808) 524-2575' },

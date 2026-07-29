@@ -3,6 +3,7 @@ import { MAKE_APPOINTMENT_HREF } from '~/utils/external-links'
 import {
   afterHours,
   clinicLocations,
+  locationsCta,
   locationsIntro,
 } from '~/utils/locations-content'
 
@@ -52,6 +53,15 @@ usePageSeo({
       </div>
     </section>
 
-    <PageCta :primary-to="MAKE_APPOINTMENT_HREF" />
+    <PageCta
+      :title="locationsCta.title"
+      :description="locationsCta.description"
+      :primary-label="locationsCta.primaryLabel"
+      :primary-to="MAKE_APPOINTMENT_HREF"
+      :secondary-label="locationsCta.secondaryLabel"
+      secondary-href="/resources"
+      footer-link-label="Explore our services"
+      footer-link-to="/services"
+    />
   </div>
 </template>
