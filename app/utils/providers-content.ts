@@ -178,12 +178,6 @@ export const providers: Provider[] = [
     personalInterests: 'Joanne enjoys journaling about life, reading books with meaningful and transformative insights, and spending time outdoors surfing, hiking, and swimming in the ocean. She embraces adventure and values opportunities for exploration and personal growth.',
   },
   {
-    name: 'Julika Kaplan, MD',
-    specialty: 'Internal Medicine & Pediatrics',
-    locations: ['Main Medical & Dental Center — 915 N King St'],
-    credentials: 'Medical Doctor',
-  },
-  {
     name: 'Kaitlynn Ebisutani, MD',
     specialty: 'Obstetrics & Gynecology',
     locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
@@ -422,18 +416,6 @@ export const providers: Provider[] = [
       'Pacific University College of Optometry',
     ],
     professionalInterests: 'Primary Eye Care',
-  },
-  {
-    name: 'Victor Inada, MD',
-    specialty: 'Family Medicine',
-    locations: ['Main Medical & Dental Center — 915 N King St'],
-    credentials: 'American Board of Family Medicine',
-    education: [
-      'Massachusetts Institute of Technology',
-      'University of Hawaii John A. Burns School of Medicine',
-      'MA Psychology - UC San Diego',
-    ],
-    residencyTraining: ['Montefiore Medical Center - Family Medicine'],
   },
   {
     name: 'Wen-Chun Yang, OD',
