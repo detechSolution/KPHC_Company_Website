@@ -1,34 +1,82 @@
 <script setup lang="ts">
+import type { AccordionSection } from '~/utils/resources-content'
 import { HIPAA_NOTICE_PDF } from '~/utils/external-links'
 import {
   afterHours,
   clinics,
   registrationItems,
   resourceAccordionItems,
+  resourcesSectionClass,
   telehealthOptions,
 } from '~/utils/resources-content'
 import { sectionFromHash } from '~/utils/resources-hash'
-import { smoothScrollToElementId } from '~/utils/smooth-scroll'
+import { scrollElementIntoView, smoothScrollToElementId } from '~/utils/smooth-scroll'
 
 usePageSeo({
   title: 'Resources',
   description: 'Clinic locations, patient privacy, telemedicine options, appointment information, and more.',
 })
 
-const items = resourceAccordionItems
+const sectionScrollMargin = 'scroll-mt-[calc(var(--ui-header-height)+1rem)]'
+
+const items = resourceAccordionItems.map(item => ({
+  ...item,
+  class: `${resourcesSectionClass(item.value as AccordionSection)} ${sectionScrollMargin}`,
+}))
 
 const route = useRoute()
+const router = useRouter()
 // Default matches SSG HTML; hash is applied client-side (fragments are unavailable at prerender).
-const openItem = ref<string | undefined>('privacy')
+const openItems = ref<AccordionSection[]>(['privacy'])
+/** Suppress `openItems` watcher while hash navigation updates panels and scrolls. */
+let applyingHash = false
+/** Hash changed because the user opened a panel in the accordion (keep other panels open). */
+let hashUpdateFromAccordion = false
+
+function ensureSectionOpen(section: AccordionSection) {
+  if (!openItems.value.includes(section))
+    openItems.value = [...openItems.value, section]
+}
+
+function openOnlySection(section: AccordionSection) {
+  openItems.value = [section]
+}
+
+async function scrollToSection(section: AccordionSection) {
+  await nextTick()
+  await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())))
+  await new Promise<void>(resolve => setTimeout(resolve, 280))
+
+  const el = document.querySelector(
+    `#resources-accordion .${resourcesSectionClass(section)}`,
+  )
+  if (el instanceof HTMLElement) {
+    scrollElementIntoView(el)
+    return
+  }
+
+  await smoothScrollToElementId('resources-accordion', { settleMs: 0 })
+}
 
 async function handleRouteHash() {
   const section = sectionFromHash(route.hash)
   if (!section)
     return
 
-  openItem.value = section
-  await nextTick()
-  await smoothScrollToElementId('resources-accordion', { settleMs: 280 })
+  applyingHash = true
+  try {
+    if (hashUpdateFromAccordion) {
+      ensureSectionOpen(section)
+      hashUpdateFromAccordion = false
+    }
+    else {
+      openOnlySection(section)
+    }
+    await scrollToSection(section)
+  }
+  finally {
+    applyingHash = false
+  }
 }
 
 onMounted(() => {
@@ -38,6 +86,26 @@ onMounted(() => {
 watch(() => route.hash, () => {
   void handleRouteHash()
 })
+
+watch(openItems, async (current, previous) => {
+  if (applyingHash)
+    return
+
+  const prev = previous ?? []
+  const opened = current.filter(section => !prev.includes(section))
+  if (opened.length === 0)
+    return
+
+  const section = opened[opened.length - 1]!
+  const hashSection = sectionFromHash(route.hash)
+  if (hashSection !== section) {
+    hashUpdateFromAccordion = true
+    await router.replace({ path: route.path, hash: `#${section}` })
+    return
+  }
+
+  await scrollToSection(section)
+}, { deep: true })
 </script>
 
 <template>
@@ -54,8 +122,8 @@ watch(() => route.hash, () => {
         class="mx-auto w-full max-w-3xl scroll-mt-[calc(var(--ui-header-height)+1rem)] px-gutter sm:px-gutter-lg"
       >
         <UAccordion
-          v-model="openItem"
-          type="single"
+          v-model="openItems"
+          type="multiple"
           collapsible
           :items="items"
           :ui="{

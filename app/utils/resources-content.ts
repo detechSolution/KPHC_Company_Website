@@ -23,6 +23,11 @@ export interface RegistrationItem {
 export const accordionSections = ['privacy', 'locations', 'appointment', 'registration', 'hipaa'] as const
 export type AccordionSection = typeof accordionSections[number]
 
+/** Accordion item root class — used for scroll-into-view when multiple panels are open. */
+export function resourcesSectionClass(section: AccordionSection): string {
+  return `resources-section-${section}`
+}
+
 export const afterHours: AfterHoursContact[] = [
   { label: 'In Case of Emergency Dial', value: '911' },
   { label: 'Care & Advice After Clinical Hours — Physician\'s Exchange', value: '(808) 524-2575' },
