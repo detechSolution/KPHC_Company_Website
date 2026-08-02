@@ -45,9 +45,7 @@ usePageSeo({
           <ClinicCard
             v-for="(clinic, index) in clinicLocations"
             :key="`${clinic.name}-${index}`"
-            :name="clinic.name"
-            :address="clinic.address"
-            :details="clinic.details"
+            v-bind="clinic"
           />
         </div>
       </div>

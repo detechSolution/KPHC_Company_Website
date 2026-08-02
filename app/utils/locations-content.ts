@@ -3,15 +3,64 @@ export interface AfterHoursContact {
   value: string
 }
 
+export interface ClinicHoursLine {
+  days: string
+  time: string
+}
+
+export interface ClinicMedicalHours {
+  standard: ClinicHoursLine
+  extended: {
+    heading: string
+    lines: ClinicHoursLine[]
+  }
+}
+
+export interface ClinicExtendedHoursNote {
+  intro: string
+  extended: {
+    heading: string
+    lines: ClinicHoursLine[]
+  }
+  scheduling: string
+}
+
 export interface ClinicLocation {
   name: string
   address: string
-  details: string[]
+  details?: string[]
+  medicalHours?: ClinicMedicalHours
+  dentalHours?: string
+  extendedHoursNote?: ClinicExtendedHoursNote
 }
 
 /** Main Medical & Dental Center (915) — medical clinic hours */
-export const main915MedicalHours
-  = 'Mon, Tue, Thu, Fri, Sat 8:00 AM – 5:00 PM · Wed 8:00 AM – 7:00 PM'
+export const main915MedicalHours: ClinicMedicalHours = {
+  standard: {
+    days: 'Monday–Friday',
+    time: '8:00am – 5:00pm',
+  },
+  extended: {
+    heading: 'Extended Hours',
+    lines: [
+      { days: 'Saturday', time: '8:00am – 5:00pm' },
+      { days: 'Wednesday', time: '5:00pm – 7:00pm' },
+    ],
+  },
+}
+
+/** Main Medical & Dental Center (915) — extended hours scheduling note */
+export const main915ExtendedHoursNote: ClinicExtendedHoursNote = {
+  intro: 'The 915 North King Street clinic provides extended clinical hours to care for patients from all KPHC clinical sites outside of standard business hours.',
+  extended: {
+    heading: 'Extended Hours',
+    lines: [
+      { days: 'Saturday', time: '8:00am – 5:00pm' },
+      { days: 'Wednesday', time: '5:00pm – 7:00pm' },
+    ],
+  },
+  scheduling: 'To schedule an appointment during the extended hours, call (808) 848-1438.',
+}
 
 /** Main Medical & Dental Center (915) — dental clinic hours */
 export const main915DentalHours = 'Monday–Friday 7:45 AM – 4:30 PM'
@@ -42,9 +91,10 @@ export const clinicLocations: ClinicLocation[] = [
     details: [
       'Medical: (808) 848-1438',
       'Dental: (808) 845-0686',
-      `Medical hours: ${main915MedicalHours}`,
-      `Dental hours: ${main915DentalHours}`,
     ],
+    medicalHours: main915MedicalHours,
+    dentalHours: main915DentalHours,
+    extendedHoursNote: main915ExtendedHoursNote,
   },
   {
     name: 'Downtown Family Medical & Dental Center',
@@ -99,7 +149,6 @@ export const clinicLocations: ClinicLocation[] = [
       'Phone: (808) 848-1438',
       'Monday–Friday 8:00 AM – 4:30 PM',
       'Saturday 8:00 AM – 12:00 PM',
-      'Sunday: Closed',
     ],
   },
 ]

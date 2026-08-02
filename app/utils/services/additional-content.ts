@@ -26,7 +26,6 @@ export const optometryLocation = {
     'Monday–Friday 8:00 AM – 4:30 PM',
     'Saturday 8:00 AM – 12:00 PM',
   ],
-  details: ['Sunday: Closed'],
 }
 
 export const optometryServices = [

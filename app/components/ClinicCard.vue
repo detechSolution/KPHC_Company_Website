@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ClinicExtendedHoursNote, ClinicMedicalHours } from '~/utils/locations-content'
+import { splitHoursLine } from '~/utils/format-hours-line'
 import { phoneToTelHref, splitPhoneSegments } from '~/utils/linkify-phone'
 
 const props = defineProps<{
@@ -8,6 +10,9 @@ const props = defineProps<{
   phoneHref?: string
   hours?: string | string[]
   details?: string[]
+  medicalHours?: ClinicMedicalHours
+  dentalHours?: string
+  extendedHoursNote?: ClinicExtendedHoursNote
 }>()
 
 const hourLines = computed(() => {
@@ -58,7 +63,49 @@ const hourLines = computed(() => {
           name="i-lucide-clock"
           class="mt-0.5 size-4 shrink-0 text-primary"
         />
-        <span>{{ hour }}</span>
+        <span><ClinicHoursLine :text="hour" /></span>
+      </li>
+
+      <li
+        v-if="medicalHours"
+        class="flex gap-2.5"
+      >
+        <UIcon
+          name="i-lucide-clock"
+          class="mt-0.5 size-4 shrink-0 text-primary"
+        />
+        <div class="space-y-1">
+          <p class="font-medium text-zinc-700">
+            Medical hours:
+          </p>
+          <div class="space-y-0.5">
+            <p>
+              <span class="font-semibold text-zinc-950">{{ medicalHours.standard.days }}</span>: {{ medicalHours.standard.time }}
+            </p>
+            <p class="pt-1 font-medium text-zinc-700">
+              {{ medicalHours.extended.heading }}:
+            </p>
+            <p
+              v-for="line in medicalHours.extended.lines"
+              :key="line.days"
+            >
+              <span class="font-semibold text-zinc-950">{{ line.days }}</span>: {{ line.time }}
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <li
+        v-if="dentalHours"
+        class="flex gap-2.5"
+      >
+        <UIcon
+          name="i-lucide-clock"
+          class="mt-0.5 size-4 shrink-0 text-primary"
+        />
+        <span>
+          <span class="font-medium text-zinc-700">Dental hours:</span>{{ ' ' }}<ClinicHoursLine :text="dentalHours" />
+        </span>
       </li>
 
       <li
@@ -67,23 +114,60 @@ const hourLines = computed(() => {
         class="flex gap-2.5"
       >
         <UIcon
-          name="i-lucide-info"
+          :name="splitHoursLine(detail) ? 'i-lucide-clock' : 'i-lucide-info'"
           class="mt-0.5 size-4 shrink-0 text-primary"
         />
         <span>
-          <template
-            v-for="(segment, segmentIndex) in splitPhoneSegments(detail)"
-            :key="segmentIndex"
-          >
-            <a
-              v-if="segment.type === 'phone'"
-              :href="phoneToTelHref(segment.value)"
-              class="text-primary transition-colors hover:text-primary/80"
-            >{{ segment.value }}</a>
-            <template v-else>{{ segment.value }}</template>
+          <ClinicHoursLine
+            v-if="splitHoursLine(detail)"
+            :text="detail"
+          />
+          <template v-else>
+            <template
+              v-for="(segment, segmentIndex) in splitPhoneSegments(detail)"
+              :key="segmentIndex"
+            >
+              <a
+                v-if="segment.type === 'phone'"
+                :href="phoneToTelHref(segment.value)"
+                class="text-primary transition-colors hover:text-primary/80"
+              >{{ segment.value }}</a>
+              <template v-else>{{ segment.value }}</template>
+            </template>
           </template>
         </span>
       </li>
     </ul>
+
+    <div
+      v-if="extendedHoursNote"
+      class="mt-4 space-y-2 border-t border-zinc-100 pt-4 text-sm leading-relaxed text-zinc-600"
+    >
+      <p>{{ extendedHoursNote.intro }}</p>
+      <div class="space-y-0.5">
+        <p class="font-medium text-zinc-700">
+          {{ extendedHoursNote.extended.heading }}:
+        </p>
+        <p
+          v-for="line in extendedHoursNote.extended.lines"
+          :key="line.days"
+        >
+          <span class="font-semibold text-zinc-950">{{ line.days }}</span>: {{ line.time }}
+        </p>
+      </div>
+      <p>
+        <template
+          v-for="(segment, segmentIndex) in splitPhoneSegments(extendedHoursNote.scheduling)"
+          :key="segmentIndex"
+        >
+          <a
+            v-if="segment.type === 'phone'"
+            :href="phoneToTelHref(segment.value)"
+            class="text-primary transition-colors hover:text-primary/80"
+          >{{ segment.value }}</a>
+          <template v-else>{{ segment.value }}</template>
+        </template>
+      </p>
+    </div>
   </article>
 </template>
