@@ -5,9 +5,7 @@ import {
   integratedCareIntro,
   medicalAdultServices,
   medicalOfferings,
-  medicalPediatricClinic,
   medicalPediatricServices,
-  medicalWomensClinic,
   medicalWomensServices,
 } from '~/utils/services-content'
 
@@ -139,12 +137,6 @@ usePageSeo({
               </li>
             </ul>
           </div>
-        </div>
-
-        <div class="mt-8 grid gap-6 lg:grid-cols-3">
-          <div class="hidden lg:block" />
-          <ClinicCard v-bind="medicalWomensClinic" />
-          <ClinicCard v-bind="medicalPediatricClinic" />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import type { ServiceClinic, ServiceOffering } from './types'
+import type { ServiceOffering } from './types'
 
 export const medicalOfferings: ServiceOffering[] = [
   {
@@ -49,17 +49,3 @@ export const medicalPediatricServices = [
   'Well Baby Care',
   'Well-Child Check-Ups',
 ]
-
-export const medicalWomensClinic: ServiceClinic = {
-  name: 'Comprehensive Primary Health Care & Dental Center',
-  address: '710 North King Street, Honolulu, HI 96817',
-  phone: '(808) 843-7550',
-  hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-}
-
-export const medicalPediatricClinic: ServiceClinic = {
-  name: 'Comprehensive Primary Health Care & Dental Center',
-  address: '710 North King Street, Honolulu, HI 96817',
-  phone: '(808) 843-7552',
-  hours: 'Monday–Friday 8:00 AM – 5:00 PM',
-}

@@ -31,9 +31,7 @@ export {
 export {
   medicalAdultServices,
   medicalOfferings,
-  medicalPediatricClinic,
   medicalPediatricServices,
-  medicalWomensClinic,
   medicalWomensServices,
 } from './services/medical-content'
 
