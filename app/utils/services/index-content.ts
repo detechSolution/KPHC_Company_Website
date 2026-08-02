@@ -38,7 +38,7 @@ export const servicesIndexCards: ServiceCard[] = [
     count: 'ADA Recognized',
     description: 'Diabetes self-management education and registered dietitian counseling to help you build healthier habits every day.',
     to: '/services/nutrition',
-    image: '/images/home/wic.webp',
+    image: '/images/services/nutrition-services.webp',
     alt: 'Nutrition support and healthy eating education at Kalihi-Palama Health Center',
   },
   {
