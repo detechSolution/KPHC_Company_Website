@@ -34,7 +34,7 @@ const props = withDefaults(defineProps<{
 
 const slotRels = [-2, -1, 0, 1, 2] as const
 
-const { offset, paused, reduceMotion, activeIndex, goTo } = useCarousel({
+const { offset, userPaused, reduceMotion, activeIndex, goTo, togglePause } = useCarousel({
   itemCount: () => props.items.length,
   delay: () => props.delay,
 })
@@ -120,10 +120,6 @@ onMounted(preloadAdjacentImages)
     role="region"
     aria-roledescription="carousel"
     aria-label="Healthcare photo carousel"
-    @mouseenter="paused = true"
-    @mouseleave="paused = false"
-    @focusin="paused = true"
-    @focusout="paused = false"
   >
     <div class="hero-carousel__track">
       <div
@@ -135,13 +131,14 @@ onMounted(preloadAdjacentImages)
           slotSizeClass(slot.rel),
           reduceMotion && 'hero-carousel-slide--reduced-motion',
         ]"
+        :aria-hidden="slot.isCenter ? undefined : 'true'"
       >
         <Transition name="hero-carousel-image">
           <img
             v-if="slot.item"
             :key="slot.item.src"
             :src="slot.item.src"
-            :alt="slot.item.alt"
+            :alt="slot.isCenter ? slot.item.alt : ''"
             class="absolute inset-0 size-full object-cover"
             width="880"
             height="550"
@@ -159,20 +156,35 @@ onMounted(preloadAdjacentImages)
 
     <div
       v-if="items.length > 1"
-      class="hero-carousel__dots"
-      role="tablist"
-      aria-label="Carousel slides"
+      class="hero-carousel__controls"
     >
-      <button
-        v-for="(_, index) in items"
-        :key="index"
-        type="button"
-        role="tab"
-        class="hero-carousel__dot"
-        :class="index === activeIndex && 'hero-carousel__dot--active'"
-        :aria-label="`Go to slide ${index + 1} of ${items.length}`"
-        :aria-selected="index === activeIndex"
-        @click="goTo(index)"
+      <div
+        class="hero-carousel__dots"
+        role="group"
+        aria-label="Carousel slides"
+      >
+        <button
+          v-for="(_, index) in items"
+          :key="index"
+          type="button"
+          class="hero-carousel__dot"
+          :class="index === activeIndex && 'hero-carousel__dot--active'"
+          :aria-label="`Go to slide ${index + 1} of ${items.length}`"
+          :aria-current="index === activeIndex ? 'true' : undefined"
+          @click="goTo(index)"
+        />
+      </div>
+      <UButton
+        v-if="!reduceMotion"
+        :icon="userPaused ? 'i-lucide-play' : 'i-lucide-pause'"
+        :aria-label="userPaused ? 'Play healthcare photo carousel' : 'Pause healthcare photo carousel'"
+        :aria-pressed="userPaused"
+        color="neutral"
+        variant="outline"
+        size="sm"
+        square
+        :ui="{ base: 'rounded-full' }"
+        @click="togglePause"
       />
     </div>
   </div>
@@ -272,12 +284,18 @@ onMounted(preloadAdjacentImages)
     0 2px 4px -2px rgb(15 60 40 / 0.04);
 }
 
+.hero-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-stack);
+  margin-top: var(--spacing-stack-lg);
+}
+
 .hero-carousel__dots {
   display: flex;
   justify-content: center;
   gap: var(--spacing-stack-sm);
-  /* Clear of slide shadows; keeps image→dots closer to dots→next-section rhythm. */
-  margin-top: var(--spacing-stack-lg);
 }
 
 .hero-carousel__dot {
@@ -299,7 +317,7 @@ onMounted(preloadAdjacentImages)
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background: var(--color-green-200);
+  background: var(--color-zinc-600);
   transition:
     width 0.3s ease,
     background-color 0.3s ease;
@@ -310,16 +328,16 @@ onMounted(preloadAdjacentImages)
 }
 
 .hero-carousel__dot:hover::before {
-  background: var(--color-green-300);
+  background: var(--color-zinc-700);
 }
 
 .hero-carousel__dot--active::before {
   width: 1.5rem;
-  background: var(--color-green-500);
+  background: var(--color-green-700);
 }
 
 .hero-carousel__dot:focus-visible {
-  outline: 2px solid var(--color-green-500);
+  outline: 2px solid var(--color-green-700);
   outline-offset: 2px;
 }
 

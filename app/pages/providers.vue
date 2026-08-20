@@ -11,12 +11,24 @@ usePageSeo({
 })
 
 const selectedSpecialty = ref<string>('all')
+const specialtyLabelId = useId()
 
 const filteredProviders = computed(() => {
   if (selectedSpecialty.value === 'all') {
     return providers
   }
   return providers.filter(provider => provider.specialty === selectedSpecialty.value)
+})
+
+const providerStatus = computed(() => {
+  const count = filteredProviders.value.length
+  const specialty = selectedSpecialty.value === 'all'
+    ? 'all specialties'
+    : selectedSpecialty.value
+  if (count === 0)
+    return `No providers found for ${specialty}.`
+  const noun = count === 1 ? 'provider' : 'providers'
+  return `${count} ${noun} shown for ${specialty}.`
 })
 
 const specialtyOptions = computed(() => [
@@ -43,15 +55,34 @@ const specialtyOptions = computed(() => [
           <p class="text-center text-sm leading-relaxed text-zinc-600 sm:text-left sm:text-base">
             Browse our care team by specialty. Call the clinic nearest you to schedule an appointment.
           </p>
-          <USelect
-            v-model="selectedSpecialty"
-            :items="specialtyOptions"
-            value-key="value"
-            label-key="label"
-            class="w-full shrink-0 sm:w-64"
-            aria-label="Filter providers by specialty"
-          />
+          <div class="flex w-full shrink-0 flex-col gap-1.5 sm:w-64">
+            <p
+              :id="specialtyLabelId"
+              class="text-sm font-medium text-zinc-950"
+            >
+              Specialty
+            </p>
+            <USelect
+              v-model="selectedSpecialty"
+              :items="specialtyOptions"
+              value-key="value"
+              label-key="label"
+              class="w-full"
+              :aria-labelledby="specialtyLabelId"
+            />
+          </div>
         </div>
+
+        <h2 class="sr-only">
+          Provider directory
+        </h2>
+        <p
+          class="sr-only"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {{ providerStatus }}
+        </p>
 
         <p
           v-if="filteredProviders.length === 0"
@@ -73,6 +104,7 @@ const specialtyOptions = computed(() => [
 
         <CalloutBox
           title="Ready to Schedule?"
+          as="h2"
           class="mt-stack-xl"
         >
           <p>

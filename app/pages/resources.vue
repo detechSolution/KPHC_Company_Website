@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { AccordionSection } from '~/utils/resources-content'
+import { newTabLabel } from '~/utils/a11y'
 import { HIPAA_NOTICE_PDF } from '~/utils/external-links'
 import {
   registrationItems,
@@ -122,6 +123,9 @@ watch(openItems, async (current, previous) => {
         id="resources-accordion"
         class="mx-auto w-full max-w-3xl scroll-mt-[calc(var(--ui-header-height)+1rem)] px-gutter sm:px-gutter-lg"
       >
+        <h2 class="sr-only">
+          Patient resource topics
+        </h2>
         <UAccordion
           v-model="openItems"
           type="multiple"
@@ -159,9 +163,9 @@ watch(openItems, async (current, previous) => {
               <p>
                 This Notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully.
               </p>
-              <h4 class="text-base font-semibold text-zinc-950">
+              <h3 class="text-base font-semibold text-zinc-950">
                 Our Pledge Regarding Protected Health Information
-              </h4>
+              </h3>
               <p>
                 We understand that health information about you is personal. We are committed to protecting your privacy while providing quality care.
               </p>
@@ -192,10 +196,12 @@ watch(openItems, async (current, previous) => {
               </CalloutBox>
               <UButton
                 label="Download Full HIPAA Privacy Notice (PDF)"
+                :aria-label="newTabLabel('Download Full HIPAA Privacy Notice (PDF)')"
                 color="primary"
                 size="lg"
                 :to="HIPAA_NOTICE_PDF"
                 target="_blank"
+                rel="noopener noreferrer"
                 external
               />
             </div>
@@ -226,9 +232,9 @@ watch(openItems, async (current, previous) => {
                       class="size-5"
                     />
                   </div>
-                  <h4 class="mt-3 text-sm font-semibold text-zinc-950">
+                  <h3 class="mt-3 text-sm font-semibold text-zinc-950">
                     {{ option.title }}
-                  </h4>
+                  </h3>
                   <p class="mt-1.5 text-xs leading-relaxed text-zinc-600">
                     {{ option.description }}
                   </p>
@@ -246,9 +252,9 @@ watch(openItems, async (current, previous) => {
                 Please arrive at least 30 minutes early for your first visit. Bring your insurance card and photo ID, and be prepared to complete registration forms.
               </CalloutBox>
 
-              <h4 class="text-base font-semibold text-zinc-950">
+              <h3 class="text-base font-semibold text-zinc-950">
                 What to bring to your first appointment?
-              </h4>
+              </h3>
               <ol class="space-y-4">
                 <li
                   v-for="(entry, index) in registrationItems"
@@ -297,10 +303,12 @@ watch(openItems, async (current, previous) => {
               </p>
               <UButton
                 label="Download HIPAA Notice of Privacy Practices (PDF)"
+                :aria-label="newTabLabel('Download HIPAA Notice of Privacy Practices (PDF)')"
                 color="primary"
                 size="lg"
                 :to="HIPAA_NOTICE_PDF"
                 target="_blank"
+                rel="noopener noreferrer"
                 external
               />
             </div>

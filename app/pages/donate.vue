@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { newTabLabel } from '~/utils/a11y'
 import { PAYPAL_DONATE_URL } from '~/utils/external-links'
 
 usePageSeo({
@@ -38,6 +39,7 @@ usePageSeo({
           </div>
           <UButton
             label="Donate Here"
+            :aria-label="newTabLabel('Donate Here')"
             :to="PAYPAL_DONATE_URL"
             target="_blank"
             rel="noopener noreferrer"
@@ -96,6 +98,7 @@ usePageSeo({
         <div class="mt-stack-lg flex w-full flex-col items-stretch gap-stack-sm sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <UButton
             label="Donate Here"
+            :aria-label="newTabLabel('Donate Here')"
             :to="PAYPAL_DONATE_URL"
             target="_blank"
             rel="noopener noreferrer"

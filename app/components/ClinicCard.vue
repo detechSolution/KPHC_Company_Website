@@ -48,7 +48,7 @@ const hourLines = computed(() => {
         />
         <a
           :href="phoneHref ?? `tel:${phone.replace(/\D/g, '')}`"
-          class="text-primary transition-colors hover:text-primary/80"
+          class="text-primary transition-colors hover:underline"
         >
           {{ phone }}
         </a>
@@ -130,7 +130,7 @@ const hourLines = computed(() => {
               <a
                 v-if="segment.type === 'phone'"
                 :href="phoneToTelHref(segment.value)"
-                class="text-primary transition-colors hover:text-primary/80"
+                class="text-primary transition-colors hover:underline"
               >{{ segment.value }}</a>
               <template v-else>{{ segment.value }}</template>
             </template>
@@ -163,9 +163,11 @@ const hourLines = computed(() => {
           <a
             v-if="segment.type === 'phone'"
             :href="phoneToTelHref(segment.value)"
-            class="text-primary transition-colors hover:text-primary/80"
+            class="text-primary transition-colors hover:underline"
           >{{ segment.value }}</a>
-          <template v-else>{{ segment.value }}</template>
+          <template v-else>
+            {{ segment.value }}
+          </template>
         </template>
       </p>
     </div>

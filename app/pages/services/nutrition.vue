@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { NEW_TAB_SUFFIX } from '~/utils/a11y'
 import { BOOK_APPOINTMENT_HREF, NUTRITION_PHONE, NUTRITION_PHONE_HREF } from '~/utils/external-links'
 import {
   nutritionClassSessions,
@@ -39,6 +40,7 @@ usePageSeo({
           </div>
           <CalloutBox
             title="Program Coordinator"
+            as="h3"
             class="mt-6"
           >
             <p class="font-semibold text-zinc-950">
@@ -116,7 +118,7 @@ usePageSeo({
             </ul>
           </div>
 
-          <CalloutBox title="Language Access">
+          <CalloutBox title="Language Access" as="h3">
             Chuukese, Filipino, and Chinese classes are available. Call for the specific dates of language-specific sessions.
           </CalloutBox>
         </div>
@@ -183,9 +185,11 @@ usePageSeo({
                   class="inline-flex items-center gap-1.5 text-base text-primary hover:underline"
                 >
                   {{ link.label }}
+                  <span class="sr-only">{{ NEW_TAB_SUFFIX }}</span>
                   <UIcon
                     name="i-lucide-square-arrow-out-up-right"
                     class="size-3.5 shrink-0"
+                    aria-hidden="true"
                   />
                 </a>
               </li>

@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
   delay: 5500,
 })
 
-const { paused, activeIndex, goTo, advance } = useCarousel({
+const { userPaused, activeIndex, goTo, advance, togglePause, reduceMotion } = useCarousel({
   itemCount: () => props.items.length,
   delay: () => props.delay,
 })
@@ -22,10 +22,6 @@ const active = computed(() => props.items[activeIndex.value])
     role="region"
     aria-roledescription="carousel"
     aria-label="Event pictures"
-    @mouseenter="paused = true"
-    @mouseleave="paused = false"
-    @focusin="paused = true"
-    @focusout="paused = false"
   >
     <div class="relative aspect-[16/9] w-full overflow-hidden rounded-card bg-green-50 sm:aspect-[2/1]">
       <template v-if="active">
@@ -81,19 +77,23 @@ const active = computed(() => props.items[activeIndex.value])
         :ui="{ base: 'rounded-full' }"
         @click="advance(-1)"
       />
-      <div class="flex items-center gap-1">
+      <div
+        class="flex items-center gap-1"
+        role="group"
+        aria-label="Event picture slides"
+      >
         <button
           v-for="(item, index) in items"
           :key="index"
           type="button"
-          class="relative flex size-6 items-center justify-center rounded-full"
+          class="relative flex size-6 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           :aria-label="`Go to event picture ${index + 1}`"
           :aria-current="index === activeIndex ? 'true' : undefined"
           @click="goTo(index)"
         >
           <span
             class="size-2.5 rounded-full transition-colors"
-            :class="index === activeIndex ? 'bg-primary' : 'bg-zinc-300 hover:bg-zinc-400'"
+            :class="index === activeIndex ? 'bg-primary' : 'bg-zinc-500 hover:bg-zinc-600'"
           />
         </button>
       </div>
@@ -106,6 +106,18 @@ const active = computed(() => props.items[activeIndex.value])
         square
         :ui="{ base: 'rounded-full' }"
         @click="advance(1)"
+      />
+      <UButton
+        v-if="!reduceMotion"
+        :icon="userPaused ? 'i-lucide-play' : 'i-lucide-pause'"
+        :aria-label="userPaused ? 'Play event pictures' : 'Pause event pictures'"
+        :aria-pressed="userPaused"
+        color="neutral"
+        variant="outline"
+        size="sm"
+        square
+        :ui="{ base: 'rounded-full' }"
+        @click="togglePause"
       />
     </div>
   </div>

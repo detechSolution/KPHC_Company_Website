@@ -47,6 +47,7 @@ usePageSeo({
           </div>
           <CalloutBox
             title="Who Is Eligible?"
+            as="h3"
             class="mt-6"
           >
             The Behavioral Health Program provides behavioral health treatment to patients of all ages that are current patients at Kalihi-Palama Health Center. Insurance and sliding-fee options may apply — call us to learn more.

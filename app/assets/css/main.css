@@ -70,14 +70,22 @@
   --ui-color-primary-500: var(--color-green-700);
 }
 
-/* Keyboard focus — visible on :focus-visible only; mouse clicks stay clean */
+html {
+  /* Keep focused controls clear of the sticky header (WCAG 2.4.11). */
+  scroll-padding-top: calc(var(--ui-header-height) + 1rem);
+  /* Prevent 100vw full-bleed media from creating a horizontal scrollbar (1.4.10). */
+  overflow-x: clip;
+}
+
+/* Keyboard focus — visible on :focus-visible only; mouse clicks stay clean.
+   green-700 meets 3:1 non-text contrast on white; brand green-500 does not. */
 a[data-slot="title"]:focus-visible,
 [data-slot="toggle"]:focus-visible {
-  outline: 2px solid var(--color-green-500);
+  outline: 2px solid var(--color-green-700);
   outline-offset: 2px;
 }
 
 [data-slot="link"]:focus-visible::before {
-  outline: 2px solid var(--color-green-500) !important;
+  outline: 2px solid var(--color-green-700) !important;
   outline-offset: 2px;
 }

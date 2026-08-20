@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { newTabLabel } from '~/utils/a11y'
 import { CAREERS_JOBS_URL } from '~/utils/external-links'
 
 usePageSeo({
@@ -16,11 +17,12 @@ usePageSeo({
       description="Join a team dedicated to health equity, cultural competence, and compassionate care for everyone in our community."
       :links="[
         {
-          label: 'View Current Openings',
-          to: CAREERS_JOBS_URL,
-          target: '_blank',
-          rel: 'noopener noreferrer',
-          color: 'primary',
+          'aria-label': newTabLabel('View Current Openings'),
+          'color': 'primary',
+          'label': 'View Current Openings',
+          'rel': 'noopener noreferrer',
+          'target': '_blank',
+          'to': CAREERS_JOBS_URL,
         },
       ]"
     />
@@ -65,6 +67,7 @@ usePageSeo({
         <div class="mt-stack-lg flex w-full flex-col items-stretch gap-stack-sm sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <UButton
             label="View Current Openings"
+            :aria-label="newTabLabel('View Current Openings')"
             :to="CAREERS_JOBS_URL"
             target="_blank"
             rel="noopener noreferrer"

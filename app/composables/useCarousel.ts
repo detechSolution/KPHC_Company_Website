@@ -10,7 +10,8 @@ export interface UseCarouselOptions {
 
 export function useCarousel(options: UseCarouselOptions) {
   const offset = ref(0)
-  const paused = ref(false)
+  /** Sticky pause from the visible Pause control (WCAG 2.2.2). */
+  const userPaused = ref(false)
   const reduceMotion = ref(false)
 
   const count = computed(() => toValue(options.itemCount))
@@ -29,13 +30,17 @@ export function useCarousel(options: UseCarouselOptions) {
     goTo(activeIndex.value + delta)
   }
 
+  function togglePause() {
+    userPaused.value = !userPaused.value
+  }
+
   let timer: ReturnType<typeof setInterval> | undefined
 
   function start() {
     stop()
     const delay = toValue(options.delay ?? 5000)
     const autoplay = toValue(options.autoplay ?? true)
-    if (!autoplay || reduceMotion.value || count.value < 2 || paused.value)
+    if (!autoplay || reduceMotion.value || count.value < 2 || userPaused.value)
       return
     timer = setInterval(advance, delay, 1)
   }
@@ -61,7 +66,7 @@ export function useCarousel(options: UseCarouselOptions) {
       () => toValue(options.delay),
       () => toValue(options.itemCount),
       () => toValue(options.autoplay ?? true),
-      paused,
+      userPaused,
       reduceMotion,
     ],
     start,
@@ -69,11 +74,12 @@ export function useCarousel(options: UseCarouselOptions) {
 
   return {
     offset,
-    paused,
+    userPaused,
     reduceMotion,
     activeIndex,
     goTo,
     advance,
+    togglePause,
     start,
     stop,
   }

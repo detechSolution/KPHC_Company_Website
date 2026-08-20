@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { newTabLabel } from '~/utils/a11y'
 import {
   FACEBOOK_URL,
   INSTAGRAM_URL,
@@ -70,7 +71,7 @@ const socialLinks = [
             <p>
               <a
                 :href="contact.phoneHref"
-                class="transition-colors hover:text-white"
+                class="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {{ contact.phone }}
               </a>
@@ -78,7 +79,7 @@ const socialLinks = [
             <p>
               <a
                 :href="contact.emailHref"
-                class="transition-colors hover:text-white"
+                class="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {{ contact.email }}
               </a>
@@ -92,7 +93,8 @@ const socialLinks = [
               :to="social.to"
               :target="social.target"
               :icon="social.icon"
-              :aria-label="social.label"
+              :aria-label="newTabLabel(social.label)"
+              :rel="social.target ? 'noopener noreferrer' : undefined"
               color="neutral"
               variant="outline"
               square
@@ -117,7 +119,8 @@ const socialLinks = [
                 :to="link.to"
                 :target="link.target"
                 :rel="link.target ? 'noopener noreferrer' : undefined"
-                class="text-sm text-zinc-300 transition-colors hover:text-white"
+                :aria-label="link.target ? newTabLabel(link.label) : undefined"
+                class="text-sm text-zinc-300 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {{ link.label }}
               </NuxtLink>
@@ -138,7 +141,8 @@ const socialLinks = [
                 :to="link.to"
                 :target="link.target"
                 :rel="link.target ? 'noopener noreferrer' : undefined"
-                class="text-sm text-zinc-300 transition-colors hover:text-white"
+                :aria-label="link.target ? newTabLabel(link.label) : undefined"
+                class="text-sm text-zinc-300 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {{ link.label }}
               </NuxtLink>

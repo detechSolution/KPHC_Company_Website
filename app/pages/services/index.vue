@@ -56,7 +56,7 @@ usePageSeo({
             </p>
             <div class="mt-6">
               <UButton
-                label="View Service Detail"
+                :label="`View ${service.title} details`"
                 :to="service.to"
                 color="primary"
                 size="lg"

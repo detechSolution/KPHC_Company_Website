@@ -42,6 +42,7 @@ usePageSeo({
           </div>
           <CalloutBox
             title="Who Is Eligible"
+            as="h3"
             class="mt-6"
           >
             {{ defaultEligibilityCallout }}

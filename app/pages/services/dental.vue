@@ -41,6 +41,7 @@ usePageSeo({
           </div>
           <CalloutBox
             title="Who Is Eligible"
+            as="h3"
             class="mt-6"
           >
             We accept QUEST and most private dental insurance plans, and offer sliding-scale discounts for low-income patients who qualify. We can help facilitate completing an application to obtain State Quest coverage if eligible. Proof of income is required at the time of registration (to be updated annually) to participate in sliding scale discounts.

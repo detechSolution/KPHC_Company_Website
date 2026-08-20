@@ -19,6 +19,8 @@ usePageSeo({
 
 const route = useRoute()
 const activeTab = ref<MissionTab>('mission')
+const missionHeadingId = useId()
+const missionPanelId = useId()
 
 async function handleRouteHash() {
   const target = aboutTargetFromHash(route.hash)
@@ -172,18 +174,24 @@ watch(() => route.hash, () => {
         />
 
         <div>
+          <h2
+            :id="missionHeadingId"
+            class="sr-only"
+          >
+            Mission, vision, and values
+          </h2>
           <div
             class="inline-flex rounded-full border border-green-200 bg-white p-1"
-            role="tablist"
-            aria-label="Mission, vision, and values"
+            role="group"
+            :aria-labelledby="missionHeadingId"
           >
             <button
               v-for="tab in missionTabs"
               :key="tab.id"
               type="button"
-              role="tab"
-              :aria-selected="activeTab === tab.id"
-              class="rounded-full px-4 py-2 text-sm font-medium transition-colors"
+              :aria-pressed="activeTab === tab.id"
+              :aria-controls="missionPanelId"
+              class="rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               :class="activeTab === tab.id
                 ? 'bg-primary text-white'
                 : 'text-zinc-700 hover:text-primary'"
@@ -194,8 +202,8 @@ watch(() => route.hash, () => {
           </div>
 
           <div
+            :id="missionPanelId"
             class="mt-stack-lg"
-            role="tabpanel"
           >
             <div class="flex size-12 items-center justify-center rounded-xl bg-primary text-white">
               <UIcon

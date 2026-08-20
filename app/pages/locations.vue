@@ -23,7 +23,10 @@ usePageSeo({
 
     <section class="bg-white py-section-sm sm:py-section">
       <div class="mx-auto w-full max-w-(--ui-container) px-gutter sm:px-gutter-lg">
-        <CalloutBox title="After Hours Assistance">
+        <CalloutBox
+          title="After Hours Assistance"
+          as="h2"
+        >
           <ul class="mt-1 space-y-2">
             <li
               v-for="row in afterHours"

@@ -43,9 +43,20 @@ useSeoMeta({
 
 <template>
   <UApp>
+    <a
+      href="#main"
+      class="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-3 focus-visible:left-3 focus-visible:z-100 focus-visible:rounded-card focus-visible:bg-primary focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm focus-visible:font-semibold focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+    >
+      Skip to main content
+    </a>
+
     <AppHeader />
 
-    <UMain class="pt-(--ui-header-height)">
+    <UMain
+      id="main"
+      tabindex="-1"
+      class="pt-(--ui-header-height)"
+    >
       <NuxtPage />
     </UMain>
 

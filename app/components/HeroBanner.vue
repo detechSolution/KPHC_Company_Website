@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
   eyebrowIcon?: string
   title: string
   description?: string
-  links?: ButtonProps[]
+  links?: Array<ButtonProps & { 'aria-label'?: string }>
   align?: HeroBannerAlign
   /** soft = mint gradient (homepage), solid = green-50 band, plain = white */
   variant?: HeroBannerVariant

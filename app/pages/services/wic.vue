@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { NEW_TAB_SUFFIX, newTabLabel } from '~/utils/a11y'
 import {
   HI_WIC_APPLY_URL,
   HIPAA_NOTICE_PDF,
@@ -51,6 +52,7 @@ usePageSeo({
           </div>
           <CalloutBox
             title="Qualification"
+            as="h3"
             class="mt-6"
           >
             <p class="mb-3">
@@ -107,7 +109,7 @@ usePageSeo({
                 target="_blank"
                 rel="noopener noreferrer"
                 class="font-medium text-primary hover:underline"
-              >apply online at hiwic.org/apply</a>.
+              >apply online at hiwic.org/apply<span class="sr-only">{{ NEW_TAB_SUFFIX }}</span></a>.
             </span>
           </li>
         </ul>
@@ -167,6 +169,7 @@ usePageSeo({
             rel="noopener noreferrer"
             icon="i-lucide-square-arrow-out-up-right"
             label="Apply Online"
+            :aria-label="newTabLabel('Apply Online')"
             size="xl"
             color="primary"
             variant="outline"
@@ -242,6 +245,7 @@ usePageSeo({
             class="mt-4 inline-flex items-center gap-1.5 text-base font-medium text-primary hover:underline"
           >
             View KPHC's full HIPAA Notice of Privacy Practices
+            <span class="sr-only">{{ NEW_TAB_SUFFIX }}</span>
             <UIcon
               name="i-lucide-square-arrow-out-up-right"
               class="size-3.5 shrink-0"

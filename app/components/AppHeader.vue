@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { newTabLabel } from '~/utils/a11y'
 import { aboutNavLinks } from '~/utils/about-nav'
 import {
   BOOK_APPOINTMENT_HREF,
@@ -174,6 +175,10 @@ function closeMobileMenu(close?: () => void) {
   menuOpen.value = false
   close?.()
 }
+
+function mobileNavGroupId(label: string | undefined) {
+  return `mobile-nav-${(label ?? 'group').toLowerCase().replace(/\s+/g, '-')}`
+}
 </script>
 
 <template>
@@ -264,8 +269,10 @@ function closeMobileMenu(close?: () => void) {
         <UButton
           class="hidden shrink-0 min-[1280px]:inline-flex group-data-[compact]/nav:hidden!"
           label="Patient Portal"
+          :aria-label="newTabLabel('Patient Portal')"
           :to="PATIENT_PORTAL_URL"
           target="_blank"
+          rel="noopener noreferrer"
           color="primary"
           variant="outline"
           size="md"
@@ -337,13 +344,15 @@ function closeMobileMenu(close?: () => void) {
               >
                 <template v-if="item.children?.length">
                   <button
+                    :id="`${mobileNavGroupId(item.label)}-trigger`"
                     type="button"
-                    class="flex w-full items-center justify-between gap-2 rounded-card px-3 py-2.5 text-left text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60"
+                    class="flex w-full items-center justify-between gap-2 rounded-card px-3 py-2.5 text-left text-base font-medium text-zinc-800 transition-colors hover:bg-green-50/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     :class="[
                       item.active && !mobileGroupHasActiveChild(item) && 'font-semibold text-primary',
                       mobileGroupExpanded(item) && !mobileGroupHasActiveChild(item) && 'bg-green-50/80',
                     ]"
                     :aria-expanded="mobileGroupExpanded(item)"
+                    :aria-controls="`${mobileNavGroupId(item.label)}-panel`"
                     @click="toggleMobileGroup(item)"
                   >
                     <span>{{ item.label }}</span>
@@ -366,7 +375,8 @@ function closeMobileMenu(close?: () => void) {
                     leave-to-class="opacity-0 -translate-y-1"
                   >
                     <div
-                      v-if="mobileGroupExpanded(item)"
+                      v-show="mobileGroupExpanded(item)"
+                      :id="`${mobileNavGroupId(item.label)}-panel`"
                       class="mb-1 ms-1 flex flex-col gap-0.5 border-l-2 border-green-200 ps-3"
                     >
                       <ULink
@@ -398,8 +408,10 @@ function closeMobileMenu(close?: () => void) {
             <div class="mt-stack-lg flex flex-col gap-2.5 border-t border-zinc-100 pt-stack-lg">
               <UButton
                 label="Patient Portal"
+                :aria-label="newTabLabel('Patient Portal')"
                 :to="PATIENT_PORTAL_URL"
                 target="_blank"
+                rel="noopener noreferrer"
                 color="primary"
                 variant="outline"
                 size="lg"

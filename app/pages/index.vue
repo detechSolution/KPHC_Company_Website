@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { NEW_TAB_SUFFIX } from '~/utils/a11y'
 import { CAREERS_JOBS_URL } from '~/utils/external-links'
 import { DEFAULT_DESCRIPTION } from '~/utils/site'
 
@@ -91,6 +92,10 @@ const highlightCards = [
                 name="i-lucide-chevron-right"
                 class="size-4"
               />
+              <span
+                v-if="card.target"
+                class="sr-only"
+              >{{ NEW_TAB_SUFFIX }}</span>
             </span>
           </div>
         </NuxtLink>

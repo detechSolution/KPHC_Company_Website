@@ -52,7 +52,7 @@ withDefaults(defineProps<{
       >
         <ULink
           :to="footerLinkTo"
-          class="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-primary/80"
+          class="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:underline"
         >
           <UIcon
             name="i-lucide-map-pin"
