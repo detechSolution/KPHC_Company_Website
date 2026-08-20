@@ -13,6 +13,7 @@ export const DEFAULT_DESCRIPTION = 'Care when you need it most of all. Comprehen
 export const PUBLIC_ROUTES = [
   '/',
   '/about',
+  '/accessibility',
   '/careers',
   '/donate',
   '/events',

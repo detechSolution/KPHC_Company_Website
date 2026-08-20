@@ -77,6 +77,30 @@ html {
   overflow-x: clip;
 }
 
+/* Skip link: parked above the viewport until keyboard focus (2.4.1).
+   Fixed + transform (not clip/1px) so it paints above the sticky header. */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 60;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-card);
+  background: var(--color-green-700);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translateY(-120%);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: none;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 /* Keyboard focus — visible on :focus-visible only; mouse clicks stay clean.
    green-700 meets 3:1 non-text contrast on white; brand green-500 does not. */
 a[data-slot="title"]:focus-visible,

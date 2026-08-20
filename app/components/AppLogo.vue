@@ -1,7 +1,16 @@
+<script setup lang="ts">
+withDefaults(defineProps<{
+  /** Empty string when the logo sits inside a named link. */
+  alt?: string
+}>(), {
+  alt: 'Kalihi-Palama Health Center',
+})
+</script>
+
 <template>
   <img
     src="/images/logo-header.webp"
-    alt="Kalihi-Palama Health Center"
+    :alt="alt"
     width="608"
     height="206"
     fetchpriority="high"

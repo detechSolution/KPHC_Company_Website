@@ -69,6 +69,7 @@ const specialtyOptions = computed(() => [
               label-key="label"
               class="w-full"
               :aria-labelledby="specialtyLabelId"
+              aria-label="Specialty"
             />
           </div>
         </div>

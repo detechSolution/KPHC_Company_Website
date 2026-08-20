@@ -82,11 +82,11 @@ const highlightCards = [
             height="480"
             sizes="(min-width: 1024px) 28rem, (min-width: 640px) 50vw, 100vw"
           >
-          <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-950/80 via-zinc-950/30 to-transparent p-5 sm:p-6">
+          <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-zinc-950/95 via-zinc-950/55 to-transparent p-5 sm:p-6">
             <h3 class="text-lg font-semibold text-white text-balance sm:text-xl">
               {{ card.title }}
             </h3>
-            <span class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-green-200 transition-colors group-hover:text-white">
+            <span class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-white">
               {{ card.action }}
               <UIcon
                 name="i-lucide-chevron-right"

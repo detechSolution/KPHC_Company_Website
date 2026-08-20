@@ -193,7 +193,7 @@ function mobileNavGroupId(label: string | undefined) {
       aria-hidden="true"
       class="pointer-events-none fixed top-0 -left-[9999px] -z-10 flex items-center gap-6 whitespace-nowrap"
     >
-      <AppLogo />
+      <AppLogo alt="" />
       <div class="flex shrink-0 items-center gap-1">
         <span
           v-for="item in items"
@@ -250,7 +250,7 @@ function mobileNavGroupId(label: string | undefined) {
         aria-label="Kalihi-Palama Health Center"
         class="pointer-events-auto flex min-[1280px]:hidden group-data-[compact]/nav:flex!"
       >
-        <AppLogo />
+        <AppLogo alt="" />
       </ULink>
 
       <UNavigationMenu
@@ -296,7 +296,7 @@ function mobileNavGroupId(label: string | undefined) {
               class="flex min-w-0 flex-1 items-center"
               @click="closeMobileMenu(close)"
             >
-              <AppLogo />
+              <AppLogo alt="" />
             </ULink>
 
             <UButton

@@ -37,6 +37,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Our Providers', to: '/providers' },
   { label: 'Resources', to: '/resources' },
   { label: 'Nutrition', to: '/services/nutrition' },
+  { label: 'Accessibility', to: '/accessibility' },
 ]
 
 const socialLinks = [
