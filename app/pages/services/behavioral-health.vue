@@ -56,12 +56,12 @@ usePageSeo({
 
         <img
           src="/images/services/behavioral-health-services.webp"
-          alt="Kalihi-Palama Health Center community members gathered together"
+          alt="Kalihi-Palama Health Center staff at a Community Health Center Week donation drive"
           class="aspect-[4/3] w-full rounded-card object-cover"
           loading="lazy"
           decoding="async"
-          width="800"
-          height="600"
+          width="880"
+          height="660"
         >
       </div>
     </section>
