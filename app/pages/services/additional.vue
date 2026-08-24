@@ -53,12 +53,12 @@ usePageSeo({
 
         <img
           src="/images/services/additional-services.webp"
-          alt="Healthcare provider administering a vaccination to a patient"
+          alt="Kalihi-Palama Health Center staff at Tamashiro Market"
           class="aspect-[4/3] w-full rounded-card object-cover"
           loading="lazy"
           decoding="async"
-          width="800"
-          height="600"
+          width="880"
+          height="660"
         >
       </div>
     </section>

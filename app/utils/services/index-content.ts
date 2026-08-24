@@ -31,7 +31,7 @@ export const servicesIndexCards: ServiceCard[] = [
     description: 'Optometry, pharmacy, and wellness education that wrap around your primary care and keep your family supported.',
     to: '/services/additional',
     image: '/images/services/additional-services.webp',
-    alt: 'Healthcare provider administering a vaccination to a patient',
+    alt: 'Kalihi-Palama Health Center staff at Tamashiro Market',
   },
   {
     title: 'Nutrition',
