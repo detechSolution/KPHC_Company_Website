@@ -61,13 +61,13 @@ usePageSeo({
         </div>
 
         <img
-          src="/images/home/wic.webp"
-          alt="Nutrition support and healthy eating education at Kalihi-Palama Health Center"
-          class="aspect-[4/3] w-full rounded-card object-cover"
+          src="/images/services/nutrition-services.webp"
+          alt="Registered dietitian with nutrition education food models at Kalihi-Palama Health Center"
+          class="aspect-[6/5] w-full rounded-card object-cover"
           loading="lazy"
           decoding="async"
-          width="800"
-          height="600"
+          width="880"
+          height="760"
         >
       </div>
     </section>

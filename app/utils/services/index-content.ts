@@ -38,8 +38,8 @@ export const servicesIndexCards: ServiceCard[] = [
     count: 'ADA Recognized',
     description: 'Diabetes self-management education and registered dietitian counseling to help you build healthier habits every day.',
     to: '/services/nutrition',
-    image: '/images/home/wic.webp',
-    alt: 'Smiling child receiving WIC nutrition support at Kalihi-Palama Health Center',
+    image: '/images/services/nutrition-services.webp',
+    alt: 'Registered dietitian with nutrition education food models at Kalihi-Palama Health Center',
   },
   {
     title: 'Women, Infants, & Children (WIC)',

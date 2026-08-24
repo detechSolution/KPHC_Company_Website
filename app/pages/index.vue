@@ -125,23 +125,23 @@ const highlightCards = [
 
         <div class="grid grid-cols-2 gap-grid">
           <img
-            src="/images/home/empowering-pediatric-care.webp"
-            alt="Kalihi-Palama Health Center provider with a young patient during a checkup"
-            class="aspect-square w-full rounded-card object-cover"
+            src="/images/home/empowering-care-team.webp"
+            alt="Pediatric care team at Kalihi-Palama Health Center"
+            class="aspect-[4/3] w-full rounded-card object-cover"
             loading="lazy"
             decoding="async"
-            width="480"
-            height="480"
+            width="1024"
+            height="684"
             sizes="(min-width: 1024px) 22rem, 50vw"
           >
           <img
-            src="/images/services/medical-services.webp"
-            alt="Medical care team at Kalihi-Palama Health Center"
-            class="aspect-square w-full rounded-card object-cover"
+            src="/images/home/empowering-pediatric-care.webp"
+            alt="Kalihi-Palama Health Center provider examining a young patient during a checkup"
+            class="aspect-[4/3] w-full rounded-card object-cover object-[center_40%]"
             loading="lazy"
             decoding="async"
-            width="480"
-            height="480"
+            width="660"
+            height="880"
             sizes="(min-width: 1024px) 22rem, 50vw"
           >
         </div>
