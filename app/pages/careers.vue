@@ -46,7 +46,7 @@ usePageSeo({
 
         <img
           src="/images/home/hiring.webp"
-          alt="Kalihi-Palama Health Center care team"
+          alt="Family medicine care team at Kalihi-Palama Health Center"
           class="aspect-[4/3] w-full rounded-card object-cover"
           loading="lazy"
           decoding="async"

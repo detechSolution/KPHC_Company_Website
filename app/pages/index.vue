@@ -23,7 +23,7 @@ const highlightCards = [
     to: CAREERS_JOBS_URL,
     target: '_blank' as const,
     image: '/images/home/hiring.webp',
-    alt: 'Kalihi-Palama Health Center care team',
+    alt: 'Family medicine care team at Kalihi-Palama Health Center',
   },
   {
     title: 'Apply for WIC Services',
@@ -136,7 +136,7 @@ const highlightCards = [
           >
           <img
             src="/images/services/medical-services.webp"
-            alt="Healthcare provider in consultation with a patient at Kalihi-Palama Health Center"
+            alt="Medical care team at Kalihi-Palama Health Center"
             class="aspect-square w-full rounded-card object-cover"
             loading="lazy"
             decoding="async"

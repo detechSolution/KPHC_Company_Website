@@ -39,7 +39,7 @@ export const providersCta: ProvidersCtaContent = {
   description: 'Doctors, nurse practitioners, and specialists across medical, dental, behavioral health, and more — delivering compassionate, culturally competent care at KPHC.',
   buttonLabel: 'View Our Providers',
   image: '/images/services/medical-services.webp',
-  imageAlt: 'Healthcare provider in consultation with a patient at Kalihi-Palama Health Center',
+  imageAlt: 'Medical care team at Kalihi-Palama Health Center',
 }
 
 export const boardOfDirectors: LeadershipMember[] = [

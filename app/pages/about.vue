@@ -81,9 +81,9 @@ watch(() => route.hash, () => {
         <div class="relative">
           <ContentImage
             src="/images/home/hiring.webp"
-            alt="Kalihi-Palama Health Center care team"
+            alt="Family medicine care team at Kalihi-Palama Health Center"
             :width="880"
-            :height="680"
+            :height="660"
             sizes="(min-width: 1024px) 40rem, 100vw"
           />
           <div class="absolute bottom-4 left-4 flex items-center gap-stack-sm rounded-card bg-green-900 px-4 py-3 text-white shadow-lg sm:bottom-6 sm:left-6">
@@ -321,7 +321,7 @@ watch(() => route.hash, () => {
           :src="providersCta.image"
           :alt="providersCta.imageAlt"
           :width="880"
-          :height="680"
+          :height="660"
           sizes="(min-width: 1024px) 40rem, 100vw"
         />
 

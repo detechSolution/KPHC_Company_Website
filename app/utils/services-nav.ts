@@ -33,6 +33,6 @@ export const servicesNavLinks: ServiceNavLink[] = [
   {
     label: 'WIC',
     to: '/services/wic',
-    icon: 'i-lucide-shopping-cart',
+    icon: 'i-lucide-baby',
   },
 ]

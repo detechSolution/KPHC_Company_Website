@@ -51,7 +51,7 @@ usePageSeo({
 
         <img
           src="/images/services/medical-services.webp"
-          alt="Healthcare provider in consultation with a patient at Kalihi-Palama Health Center"
+          alt="Medical care team at Kalihi-Palama Health Center"
           class="aspect-[4/3] w-full rounded-card object-cover"
           loading="lazy"
           decoding="async"

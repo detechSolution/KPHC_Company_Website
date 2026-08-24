@@ -30,7 +30,7 @@ usePageSeo({
     <HeroBanner
       align="start"
       eyebrow="KPHC SERVICES"
-      eyebrow-icon="i-lucide-shopping-cart"
+      eyebrow-icon="i-lucide-baby"
       title="Women, Infants, and Children (WIC)"
       description="Nutrition support for families who qualify — eat well, be active, and stay healthy"
     />

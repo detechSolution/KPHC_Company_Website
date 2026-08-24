@@ -7,7 +7,7 @@ export const servicesIndexCards: ServiceCard[] = [
     description: 'Comprehensive primary care for adults, women, and children — including preventive visits, chronic disease management, and family medicine.',
     to: '/services/medical',
     image: '/images/services/medical-services.webp',
-    alt: 'Patient and provider in a consultation at Kalihi-Palama Health Center',
+    alt: 'Medical care team at Kalihi-Palama Health Center',
   },
   {
     title: 'Behavioral Health and Social Services',
