@@ -43,8 +43,8 @@ export const main915MedicalHours: ClinicMedicalHours = {
   extended: {
     heading: 'Extended Hours',
     lines: [
-      { days: 'Saturday', time: '8:00am – 5:00pm' },
       { days: 'Wednesday', time: '5:00pm – 7:00pm' },
+      { days: 'Saturday', time: '8:00am – 5:00pm' },
     ],
   },
 }
@@ -55,8 +55,8 @@ export const main915ExtendedHoursNote: ClinicExtendedHoursNote = {
   extended: {
     heading: 'Extended Hours',
     lines: [
-      { days: 'Saturday', time: '8:00am – 5:00pm' },
       { days: 'Wednesday', time: '5:00pm – 7:00pm' },
+      { days: 'Saturday', time: '8:00am – 5:00pm' },
     ],
   },
   scheduling: 'To schedule an appointment during the extended hours, call (808) 848-1438.',
