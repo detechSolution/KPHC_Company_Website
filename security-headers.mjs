@@ -1,6 +1,6 @@
 /**
  * Single source of truth for HTML response security headers.
- * Synced into vercel.json by scripts/sync-vercel-security-headers.mjs.
+ * Synced into vercel.json and public/.htaccess by scripts/sync-*-security-headers.mjs.
  *
  * Static-site CSP: inline script/style required for Nuxt SSG payload + JSON-LD.
  */

@@ -5,6 +5,7 @@
 .nitro
 .cache
 dist
+siteground-deploy.zip
 
 # Node dependencies
 node_modules
