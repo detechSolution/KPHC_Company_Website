@@ -1,4 +1,5 @@
 # SiteGround/Apache configuration for the generated Nuxt static site.
+# Replace any legacy WordPress .htaccess in public_html with this file on deploy.
 Options -Indexes
 DirectorySlash Off
 DirectoryIndex index.html
@@ -10,6 +11,12 @@ ErrorDocument 404 /404.html
   # Keep all production traffic encrypted.
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Do not bootstrap legacy WordPress when the static site is present.
+  RewriteRule ^index\.php$ - [F,L]
+
+  # Hashed build assets and public files must never fall through to PHP rewrites.
+  RewriteRule ^(_nuxt|_fonts|images|docs|favicon|apple-touch-icon|web-app-manifest|site\.webmanifest|robots\.txt|sitemap\.xml) - [L]
 
   # Serve Nuxt's route/index.html files without redirecting /route to /route/.
   RewriteCond %{REQUEST_FILENAME} !-f

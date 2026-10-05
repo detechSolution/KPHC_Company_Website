@@ -49,10 +49,20 @@ header values stay aligned with `security-headers.mjs` via
 archive to the domain's `public_html` directory, extract it there, and remove
 the archive afterward. The extracted `index.html`, `.htaccess`, `_nuxt`, and
 other generated files must sit directly inside `public_html` (not inside an
-extra folder).
+extra folder). Enable **Show Hidden Files** so `.htaccess` is uploaded and
+extracted. See `public/DEPLOY-TO-SITEGROUND.txt` (included in the zip) for the
+full WordPress → static cutover checklist.
 
 **Requirements:** `build:siteground` needs the `zip` command on your PATH
 (macOS includes it; on Windows use Git Bash or WSL, or install zip manually).
+
+**Wrong page after extract?** An unstyled bullet-list menu labeled **Patient
+Care** (not **Services**) is still the **legacy WordPress** site — CSS often
+breaks when `wp-content` and `.htaccess` are out of sync after a partial
+upload. Remove `index.php`, the old `.htaccess`, and other WordPress bootstrap
+files from `public_html`, then extract a fresh zip. The new site hero text is
+**Quality Healthcare That Puts You First**. Flush SiteGround **Dynamic Cache**
+after deploy.
 
 **If headers or pretty URLs fail after deploy:** confirm Apache modules
 `mod_rewrite`, `mod_headers`, and `mod_deflate` are enabled and that

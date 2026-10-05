@@ -8,7 +8,13 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const outputDirectory = join(root, '.output/public')
 const archivePath = join(root, 'siteground-deploy.zip')
 
-for (const requiredFile of ['index.html', '404.html', '.htaccess']) {
+for (const requiredFile of [
+  'index.html',
+  '404.html',
+  '.htaccess',
+  'DEPLOY-TO-SITEGROUND.txt',
+  '_nuxt',
+]) {
   try {
     await access(join(outputDirectory, requiredFile), constants.R_OK)
   }
@@ -39,3 +45,4 @@ if (result.status !== 0) {
 
 const archive = await stat(archivePath)
 console.log(`Created ${archivePath} (${(archive.size / 1024 / 1024).toFixed(1)} MB)`)
+console.log('Upload to public_html, extract in place, and follow DEPLOY-TO-SITEGROUND.txt (WordPress cleanup + cache flush).')

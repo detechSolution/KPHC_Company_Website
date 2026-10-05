@@ -1,0 +1,41 @@
+Kalihi-Palama Health Center — SiteGround static deploy (Nuxt SSG)
+================================================================
+
+You are seeing the OLD WordPress site (menus like "Patient Care") or an
+unstyled WordPress page if legacy PHP files and .htaccess were left in
+public_html. The new site nav is: Home, Services, About Us, Locations,
+Resources, Careers, Donate — hero headline "Quality Healthcare That Puts
+You First".
+
+Before extracting siteground-deploy.zip
+---------------------------------------
+1. In Site Tools → Site → File Manager, open public_html for kphc.org.
+2. Enable "Show Hidden Files" in File Manager settings.
+3. Back up the current site (download public_html or use SiteGround backup).
+4. Remove legacy WordPress cutover files so Apache serves the static site:
+   - .htaccess (will be replaced by the one in this zip)
+   - index.php, wp-config.php, wp-*.php, xmlrpc.php
+   - wp-admin/ and wp-includes/ (large; optional until cutover is confirmed)
+   - wp-content/ only after you no longer need the old CMS
+
+Extract the zip
+---------------
+1. Upload siteground-deploy.zip into public_html (not a subfolder).
+2. Extract here so these sit DIRECTLY in public_html:
+   index.html, .htaccess, 404.html, _nuxt/, images/, etc.
+3. Delete siteground-deploy.zip after a successful extract.
+4. Confirm hidden .htaccess exists and _nuxt/ contains .css and .js files.
+
+After deploy
+------------
+1. Site Tools → Speed → Caching → Dynamic Cache → Flush (and Memcached if on).
+2. Hard-refresh the browser (or use a private window).
+3. Open https://www.kphc.org/ — you should see the new homepage, not
+   "UNDER CONSTRUCTION" or a bullet-list WordPress menu.
+
+If CSS/JS still fail
+--------------------
+- Paths like /_nuxt/entry.*.css must return 200 (not 404). If 404, _nuxt was
+  not extracted or was placed in a nested folder.
+- If you still see WordPress HTML, index.php or old .htaccess is still active;
+  repeat the cleanup step and re-upload a fresh zip from: pnpm build:siteground
