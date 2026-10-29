@@ -12,6 +12,7 @@ export interface Provider {
 
 export const providerSpecialties = [
   'Behavioral Health',
+  'Dental',
   'Family Medicine',
   'Internal Medicine',
   'Internal Medicine & Pediatrics',
@@ -80,6 +81,10 @@ export const providers: Provider[] = [
     specialty: 'Behavioral Health',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Behavioral Health & Medical — 952 N King St'],
     credentials: 'Licensed Clinical Social Worker',
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Social Work',
+    ],
   },
   {
     name: 'Carmen Linhares, CNM',
@@ -109,6 +114,10 @@ export const providers: Provider[] = [
     specialty: 'Behavioral Health',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Main Medical & Dental Center — 915 N King St'],
     credentials: 'Licensed Clinical Social Worker',
+    education: [
+      'University of Hawaii at Manoa',
+      'Master of Social Work',
+    ],
   },
   {
     name: 'Erean Larryfiakpuyi, LCSW',
@@ -169,13 +178,10 @@ export const providers: Provider[] = [
     locations: ['Behavioral Health & Medical — 952 N King St'],
     credentials: 'Board Certified ANCC',
     education: [
-      'Saint John Fisher University — MSN, PMHNP',
-      'SUNY Brockport — BSN',
-      'SUNY Geneseo — BA in English',
+      'Saint John Fisher University, MSN, PMHNP',
+      'SUNY Brockport accelerated program, BSN',
+      'SUNY Geneseo, BA in English',
     ],
-    featured: true,
-    professionalInterests: 'Joanne is a board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) with extensive experience providing care across the lifespan. She brings strong clinical expertise in psychiatric evaluation, diagnosis, medication management, and evidence-based psychotherapy, along with advanced skills in crisis intervention and high-acuity care. Grounded in integrity and the principles of beneficence and non-maleficence, she delivers patient-centered, collaborative care. Passionate about reducing mental health stigma, she empowers patients to achieve lasting cognitive and behavioral change by fostering a safe and supportive environment that promotes growth and resilience. A diverse background in psychiatry, pediatrics, and education informs a holistic and compassionate approach to care.',
-    personalInterests: 'Joanne enjoys journaling about life, reading books with meaningful and transformative insights, and spending time outdoors surfing, hiking, and swimming in the ocean. She embraces adventure and values opportunities for exploration and personal growth.',
   },
   {
     name: 'Kaitlynn Ebisutani, MD',
@@ -187,6 +193,16 @@ export const providers: Provider[] = [
       'University of Hawaii John A. Burns School of Medicine',
     ],
     residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
+  },
+  {
+    name: 'Keith Larson, DDS',
+    specialty: 'Dental',
+    locations: ['Downtown Family Medical & Dental — 89 S King St', 'Main Medical & Dental Center — 915 N King St'],
+    credentials: 'Compliance Officer & Dental Director',
+    education: [
+      'University of Minnesota',
+      'BS, DDS',
+    ],
   },
   {
     name: 'Kesha Mimms, APRN',
@@ -211,8 +227,6 @@ export const providers: Provider[] = [
       'University of Santo Tomas',
     ],
     residencyTraining: ['University of Hawaii - Internal Medicine'],
-    personalInterests: 'I enjoy traveling to different parts of the world to experience new cultures and new cuisines. I love spending time with my family and friends, as well as reading comic books, playing video games, and watching movies.',
-    featured: true,
   },
   {
     name: 'Leanna Gordon, DO, MPH',
@@ -343,17 +357,6 @@ export const providers: Provider[] = [
       'University of Hawaii John A. Burns School of Medicine',
     ],
     residencyTraining: ['University of Hawaii - Pediatrics'],
-  },
-  {
-    name: 'Rieko Nieto, LCSW',
-    specialty: 'Behavioral Health',
-    locations: ['Comprehensive Primary Health Care — 710 N King St', 'Behavioral Health & Medical — 952 N King St'],
-    credentials: 'Licensed Clinical Social Worker / Certified Substance Abuse Counselor',
-    education: [
-      'University of Hawaii at Manoa',
-      'Master of Social Work',
-    ],
-    personalInterests: 'Tahitian dance, hula, surfing, hiking, and fishing',
   },
   {
     name: 'Ritabelle Fernandes, MD, MPH',
