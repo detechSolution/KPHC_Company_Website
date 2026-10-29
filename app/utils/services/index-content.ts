@@ -15,7 +15,7 @@ export const servicesIndexCards: ServiceCard[] = [
     description: 'Integrated counseling, case management, and healthcare for the homeless programs that support mind, emotions, and daily life.',
     to: '/services/behavioral-health',
     image: '/images/services/behavioral-health-services.webp',
-    alt: 'Kalihi-Palama Health Center staff at a Community Health Center Week donation drive',
+    alt: 'Behavioral health team at Kalihi-Palama Health Center',
   },
   {
     title: 'Dental Services',

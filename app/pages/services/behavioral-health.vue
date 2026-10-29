@@ -56,7 +56,7 @@ usePageSeo({
 
         <img
           src="/images/services/behavioral-health-services.webp"
-          alt="Kalihi-Palama Health Center staff at a Community Health Center Week donation drive"
+          alt="Behavioral health team at Kalihi-Palama Health Center"
           class="aspect-[4/3] w-full rounded-card object-cover"
           loading="lazy"
           decoding="async"
