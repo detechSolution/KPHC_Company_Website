@@ -22,6 +22,14 @@ export interface MissionContent {
 export interface LeadershipMember {
   name: string
   role: string
+  photo?: string
+}
+
+export const executiveTeamPhoto = {
+  src: '/images/about-us/executive-team.webp',
+  alt: 'Kalihi-Palama Health Center executive team',
+  width: 1024,
+  height: 819,
 }
 
 export interface ProvidersCtaContent {
@@ -57,12 +65,27 @@ export const boardOfDirectors: LeadershipMember[] = [
 ]
 
 export const executiveTeam: LeadershipMember[] = [
-  { name: 'Emmanuel Kintu', role: 'CEO / Executive Director' },
-  { name: 'Darrin Sato', role: 'COO' },
+  { name: 'Emmanuel Kintu', role: 'CEO / Executive Director', photo: '/images/about-us/emmanuel-kintu.webp' },
+  { name: 'Darrin Sato', role: 'COO', photo: '/images/about-us/darrin-sato.webp' },
   { name: 'Diana Carris', role: 'CFO' },
-  { name: 'Keith Larson', role: 'Dental Director' },
-  { name: 'Leanna Gordon', role: 'Medical Director' },
+  { name: 'Keith Larson', role: 'Dental Director', photo: '/images/about-us/keith-larson.webp' },
+  { name: 'Leanna Gordon', role: 'Medical Director', photo: '/images/about-us/leanna-gordon.webp' },
 ]
+
+const HONORIFICS = new Set(['kahu', 'dr', 'mr', 'mrs', 'ms', 'miss', 'rev', 'sir'])
+
+export function leadershipInitials(name: string): string {
+  return name
+    .split(/\s+/)
+    .map(part => part.replace(/\./g, ''))
+    .filter((part) => {
+      const first = part[0] ?? ''
+      return /[a-z]/i.test(first) && !HONORIFICS.has(part.toLowerCase())
+    })
+    .slice(0, 2)
+    .map(part => part[0]!.toUpperCase())
+    .join('')
+}
 
 export const historyCards: HistoryCard[] = [
   {

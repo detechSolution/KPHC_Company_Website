@@ -3,6 +3,7 @@ import type { MissionTab } from '~/utils/about-content'
 import {
   boardOfDirectors,
   executiveTeam,
+  executiveTeamPhoto,
   historyCards,
   missionContent,
   missionTabs,
@@ -265,18 +266,11 @@ watch(() => route.hash, () => {
         </p>
 
         <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          <article
+          <LeadershipCard
             v-for="member in boardOfDirectors"
             :key="member.name"
-            class="rounded-card border border-zinc-200 bg-white p-5 shadow-sm sm:p-6"
-          >
-            <h3 class="font-semibold text-zinc-950">
-              {{ member.name }}
-            </h3>
-            <p class="mt-1 text-sm font-medium text-primary">
-              {{ member.role }}
-            </p>
-          </article>
+            v-bind="member"
+          />
         </div>
       </div>
     </section>
@@ -295,19 +289,23 @@ watch(() => route.hash, () => {
           Our executive leadership oversees day-to-day operations and ensures high-quality, integrated care across all KPHC programs and sites.
         </p>
 
+        <ContentImage
+          :src="executiveTeamPhoto.src"
+          :alt="executiveTeamPhoto.alt"
+          aspect-class="h-auto"
+          object-class=""
+          class="mt-stack-xl"
+          :width="executiveTeamPhoto.width"
+          :height="executiveTeamPhoto.height"
+          sizes="(min-width: 82.5rem) 82.5rem, 100vw"
+        />
+
         <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          <article
+          <LeadershipCard
             v-for="member in executiveTeam"
             :key="member.name"
-            class="rounded-card border border-zinc-200 bg-white p-5 shadow-sm sm:p-6"
-          >
-            <h3 class="font-semibold text-zinc-950">
-              {{ member.name }}
-            </h3>
-            <p class="mt-1 text-sm font-medium text-primary">
-              {{ member.role }}
-            </p>
-          </article>
+            v-bind="member"
+          />
         </div>
       </div>
     </section>
