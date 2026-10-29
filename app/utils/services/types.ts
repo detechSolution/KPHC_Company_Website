@@ -42,6 +42,13 @@ export interface ServiceReason {
   description: string
 }
 
+export interface NutritionClassSeries {
+  id: string
+  language: string
+  dates: string
+  note?: string
+}
+
 export interface NutritionResourceGroup {
   title: string
   links: { label: string, href: string }[]

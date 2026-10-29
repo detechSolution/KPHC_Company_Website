@@ -36,7 +36,8 @@ export {
 } from './services/medical-content'
 
 export {
-  nutritionClassSessions,
+  nutritionClassSchedule,
+  nutritionClassSeries,
   nutritionClassTopics,
   nutritionResourceGroups,
 } from './services/nutrition-content'
@@ -51,6 +52,7 @@ export type {
   BehavioralProvider,
   ExpectItem,
   HomelessProgram,
+  NutritionClassSeries,
   NutritionResourceGroup,
   ServiceCard,
   ServiceClinic,

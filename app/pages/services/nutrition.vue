@@ -2,7 +2,8 @@
 import { NEW_TAB_SUFFIX } from '~/utils/a11y'
 import { BOOK_APPOINTMENT_HREF, NUTRITION_PHONE, NUTRITION_PHONE_HREF } from '~/utils/external-links'
 import {
-  nutritionClassSessions,
+  nutritionClassSchedule,
+  nutritionClassSeries,
   nutritionClassTopics,
   nutritionResourceGroups,
 } from '~/utils/services-content'
@@ -35,7 +36,7 @@ usePageSeo({
               KPHC is a recognized Diabetes Self-Management Education Program by the American Diabetes Association. We offer diabetes classes for patients with prediabetes or diabetes, and for anyone who wants to learn more about prevention.
             </p>
             <p>
-              Classes are taught by a Registered Dietitian and a Registered Nurse. Each series includes two sessions, and every class ends with a food demonstration and tasting for all participants.
+              Classes are taught by a Registered Dietitian and a Registered Nurse. Each series includes three sessions, and every class ends with a food demonstration and tasting for all participants.
             </p>
           </div>
           <CalloutBox
@@ -78,7 +79,7 @@ usePageSeo({
           Diabetes Self-Management Classes
         </h2>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 text-pretty">
-          Sessions cover practical topics that help you manage diabetes day to day. Information is split across two class meetings.
+          Sessions cover practical topics that help you manage diabetes day to day. Information is split across three class meetings.
         </p>
 
         <ul class="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -98,28 +99,36 @@ usePageSeo({
         <div class="mt-stack-xl grid gap-8 lg:grid-cols-2">
           <div>
             <h3 class="text-xl font-semibold text-zinc-950 sm:text-2xl">
-              Typical class schedule
+              {{ nutritionClassSchedule.year }} class schedule
             </h3>
             <p class="mt-3 text-base leading-relaxed text-zinc-600 text-pretty">
-              Classes are usually held on Tuesdays from 1:00–4:00 PM in two-session series. Call for current dates.
+              Classes are held on {{ nutritionClassSchedule.weekday }} from {{ nutritionClassSchedule.time }} in three-session series at the {{ nutritionClassSchedule.location }}.
             </p>
             <ul class="mt-5 space-y-2.5 text-base text-zinc-600">
               <li
-                v-for="month in nutritionClassSessions"
-                :key="month"
+                v-for="series in nutritionClassSeries"
+                :key="series.id"
                 class="flex gap-2"
               >
                 <UIcon
                   name="i-lucide-calendar"
                   class="mt-0.5 size-4 shrink-0 text-primary"
                 />
-                <span>{{ month }} (two consecutive Tuesdays)</span>
+                <span>
+                  <span class="font-medium text-zinc-800">{{ series.language }}</span>
+                  — {{ series.dates }}<template v-if="series.note"> ({{ series.note }})</template>
+                </span>
               </li>
             </ul>
           </div>
 
           <CalloutBox title="Language Access" as="h3">
-            Chuukese, Filipino, and Chinese classes are available. Call for the specific dates of language-specific sessions.
+            <p>
+              English, Chuukese, Filipino, Marshallese, and Chinese classes are offered throughout the year.
+            </p>
+            <p class="mt-3">
+              Chinese classes meet on Wednesdays at the {{ nutritionClassSchedule.downtownLocation }}. Call to confirm the current series and reserve a seat.
+            </p>
           </CalloutBox>
         </div>
 
