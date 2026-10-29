@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
 import { PUBLIC_ROUTES } from './app/utils/site'
 import { SECURITY_HEADERS } from './security-headers.mjs'
 
@@ -52,7 +54,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: import.meta.dev,
+    enabled: true,
   },
 
   app: {
