@@ -15,10 +15,8 @@ export const providerSpecialties = [
   'Dental',
   'Family Medicine',
   'Internal Medicine',
-  'Internal Medicine & Pediatrics',
   'Nutrition',
   'Obstetrics & Gynecology',
-  'Optometry',
   'Pediatrics',
   'Preventive Medicine',
   'Psychiatry',
@@ -58,17 +56,6 @@ export const providers: Provider[] = [
     residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
-    name: 'Asia Ayabe, MD',
-    specialty: 'Obstetrics & Gynecology',
-    locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
-    credentials: 'American Board of Obstetrics & Gynecology',
-    education: [
-      'Pomona College',
-      'University of Hawaii John A. Burns School of Medicine',
-    ],
-    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
-  },
-  {
     name: 'Blandina Mamaclay, APRN',
     specialty: 'Pediatrics',
     locations: ['Downtown Family Medical & Dental — 89 S King St'],
@@ -87,12 +74,6 @@ export const providers: Provider[] = [
     ],
   },
   {
-    name: 'Carmen Linhares, CNM',
-    specialty: 'Women\'s Health',
-    locations: ['Comprehensive Primary Health Care — 710 N King St'],
-    credentials: 'Certified Nurse-Midwife',
-  },
-  {
     name: 'Chen Yen Wang, APRN, PhD',
     specialty: 'Internal Medicine',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Behavioral Health & Medical — 952 N King St'],
@@ -108,34 +89,6 @@ export const providers: Provider[] = [
     locations: ['Downtown Family Medical & Dental — 89 S King St'],
     credentials: 'Family Nurse Practitioner - Board Certified',
     education: ['University of Hawaii at Manoa'],
-  },
-  {
-    name: 'Darrin Sato, LCSW',
-    specialty: 'Behavioral Health',
-    locations: ['Downtown Family Medical & Dental — 89 S King St', 'Main Medical & Dental Center — 915 N King St'],
-    credentials: 'Licensed Clinical Social Worker',
-    education: [
-      'University of Hawaii at Manoa',
-      'Master of Social Work',
-    ],
-  },
-  {
-    name: 'Erean Larryfiakpuyi, LCSW',
-    specialty: 'Behavioral Health',
-    locations: [],
-    credentials: 'Licensed Clinical Social Worker',
-  },
-  {
-    name: 'Glenn Rediger, MD',
-    specialty: 'Internal Medicine',
-    locations: ['Comprehensive Primary Health Care — 710 N King St'],
-    credentials: 'American Board of Internal Medicine',
-    education: [
-      'Taylor University',
-      'Indiana University',
-      'Prince Leopold Institute of Tropical Medicine',
-    ],
-    residencyTraining: ['University of Hawaii - Internal Medicine'],
   },
   {
     name: 'Hanh Le-Scott, APRN',
@@ -161,18 +114,6 @@ export const providers: Provider[] = [
     credentials: 'Licensed Clinical Social Worker',
   },
   {
-    name: 'Jesus Lucas, MD, PhD',
-    specialty: 'Family Medicine',
-    locations: ['Main Medical & Dental Center — 915 N King St'],
-    credentials: 'American Board of Family Medicine',
-    education: [
-      'University of the Philippines College of Arts and Sciences',
-      'University of the Philippines College of Medicine',
-      'Ph.D in Physiology - Wayne State University',
-    ],
-    residencyTraining: ['Louisiana State University Health Sciences Center-Shreveport - Family Medicine'],
-  },
-  {
     name: 'Joanne Williams, APRN',
     specialty: 'Psychiatry',
     locations: ['Behavioral Health & Medical — 952 N King St'],
@@ -184,17 +125,6 @@ export const providers: Provider[] = [
     ],
   },
   {
-    name: 'Kaitlynn Ebisutani, MD',
-    specialty: 'Obstetrics & Gynecology',
-    locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
-    credentials: 'American Board of Obstetrics & Gynecology',
-    education: [
-      'University of Washington',
-      'University of Hawaii John A. Burns School of Medicine',
-    ],
-    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
-  },
-  {
     name: 'Keith Larson, DDS',
     specialty: 'Dental',
     locations: ['Downtown Family Medical & Dental — 89 S King St', 'Main Medical & Dental Center — 915 N King St'],
@@ -203,19 +133,6 @@ export const providers: Provider[] = [
       'University of Minnesota',
       'BS, DDS',
     ],
-  },
-  {
-    name: 'Kesha Mimms, APRN',
-    specialty: 'Psychiatry',
-    locations: ['Behavioral Health & Medical — 952 N King St', 'Downtown Family Medical & Dental — 89 S King St', 'Ka\'a\'ahi Clinic — 546 Ka\'a\'ahi St'],
-    credentials: 'Psychiatric Mental Health Nurse Practitioner',
-    education: [
-      'Northeastern University',
-      'Salem State University',
-      'Northeast Behavioral Health / Lahey Haverhill Clinic / Cornerstone Day Program',
-    ],
-    professionalInterests: 'Adults, geriatrics, SUD, LGBTQ, SPMI',
-    personalInterests: 'Yoga, hiking, cooking, family, and dancing',
   },
   {
     name: 'Kyle Alimurung, MD',
@@ -243,17 +160,6 @@ export const providers: Provider[] = [
     personalInterests: 'Hiking, Snorkeling, Reading',
   },
   {
-    name: 'Lynne Saito-Tom, MD',
-    specialty: 'Obstetrics & Gynecology',
-    locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
-    credentials: 'American Board of Obstetrics & Gynecology',
-    education: [
-      'Willamette University',
-      'University of Hawaii John A. Burns School of Medicine',
-    ],
-    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
-  },
-  {
     name: 'Maile Ishikawa, RD',
     specialty: 'Nutrition',
     locations: ['Main Medical & Dental Center — 915 N King St'],
@@ -272,8 +178,6 @@ export const providers: Provider[] = [
       'Hawai\'i School of Professional Psychology at Argosy University',
       'Master of Science in Psychopharmacology — Alliant University',
     ],
-    professionalInterests: 'Generalist — Community Mental Health Care',
-    personalInterests: 'Hiking, biking, gardening, reading (fiction), movies, and gaming',
   },
   {
     name: 'Michael Walter, MD, MPH',
@@ -307,15 +211,6 @@ export const providers: Provider[] = [
     education: ['University of Hawaii at Manoa'],
   },
   {
-    name: 'Nafanua Braginsky, APRN',
-    specialty: 'Family Medicine',
-    locations: ['Main Medical & Dental Center — 915 N King St'],
-    credentials: 'Family Nurse Practitioner - Board Certified',
-    education: ['University of Hawaii at Manoa'],
-    professionalInterests: 'Community Outreach',
-    personalInterests: 'A day to sleep without disruption',
-  },
-  {
     name: 'Naoko Hokari, MD',
     specialty: 'Pediatrics',
     locations: ['Main Medical & Dental Center — 915 N King St'],
@@ -335,17 +230,6 @@ export const providers: Provider[] = [
       'University of Phoenix',
       'University of Hawaii at Manoa',
     ],
-  },
-  {
-    name: 'Ricardo Molero Bravo, MD',
-    specialty: 'Obstetrics & Gynecology',
-    locations: ['Comprehensive Primary Health Care — 710 N King St', 'Downtown Family Medical & Dental — 89 S King St'],
-    credentials: 'American Board of Obstetrics & Gynecology',
-    education: [
-      'University of South Florida',
-      'University of Central Florida, College of Medicine',
-    ],
-    residencyTraining: ['University of Hawaii - Obstetrics & Gynecology'],
   },
   {
     name: 'Richard Ricardo, MD',
@@ -407,27 +291,6 @@ export const providers: Provider[] = [
     education: [
       'University of Missouri',
       'Frontier School of Midwifery and Family Nursing',
-    ],
-  },
-  {
-    name: 'Tracey Yamamoto-Kubo, OD',
-    specialty: 'Optometry',
-    locations: ['Optometry — 915 N King St'],
-    credentials: 'Doctor of Optometry',
-    education: [
-      'University of Hawaii at Manoa',
-      'Pacific University College of Optometry',
-    ],
-    professionalInterests: 'Primary Eye Care',
-  },
-  {
-    name: 'Wen-Chun Yang, OD',
-    specialty: 'Optometry',
-    locations: ['Optometry — 915 N King St', 'Main Medical & Dental Center — 915 N King St'],
-    credentials: 'Doctor of Optometry',
-    education: [
-      'University of Hawaii at Manoa',
-      'Inter-American University of Puerto Rico',
     ],
   },
   {

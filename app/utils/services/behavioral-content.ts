@@ -20,31 +20,6 @@ export const behavioralProviders: BehavioralProvider[] = [
       'Hawai\'i School of Professional Psychology at Argosy University',
       'Master of Science in Psychopharmacology — Alliant University',
     ],
-    professionalInterests: 'Generalist — Community Mental Health Care',
-    personalInterests: 'Hiking, biking, gardening, reading (fiction), movies, and gaming',
-  },
-  {
-    name: 'Kesha Mimms, APRN',
-    specialty: 'Psychiatry',
-    locations: ['952 N King Street', 'Downtown (89 S King Street)', 'Ka\'a\'ahi Clinic'],
-    credentials: 'Psychiatric Mental Health Nurse Practitioner',
-    education: [
-      'Northeastern University',
-      'Salem State University',
-      'Northeast Behavioral Health / Lahey Haverhill Clinic / Cornerstone Day Program',
-    ],
-    professionalInterests: 'Adults, geriatrics, SUD, LGBTQ, SPMI',
-    personalInterests: 'Yoga, hiking, cooking, family, and dancing',
-  },
-  {
-    name: 'Darrin Sato, LCSW',
-    specialty: 'Behavioral Health',
-    locations: ['Downtown (89 S King Street)', '915 N King Street'],
-    credentials: 'Licensed Clinical Social Worker',
-    education: [
-      'University of Hawaii at Manoa',
-      'Master of Social Work',
-    ],
   },
   {
     name: 'Jermaine Turner, LCSW',
