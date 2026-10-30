@@ -148,11 +148,12 @@ usePageSeo({
         <p class="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-zinc-600 text-pretty">
           Our licensed clinicians and psychiatric providers offer compassionate, culturally competent care across Kalihi-Palama Health Center sites.
         </p>
-        <div class="mt-stack-xl overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm divide-y divide-zinc-100">
+        <div class="mt-stack-xl grid items-stretch gap-4 lg:grid-cols-2">
           <ProviderCard
             v-for="provider in behavioralProviders"
             :key="provider.name"
             v-bind="provider"
+            class="h-full"
           />
         </div>
       </div>

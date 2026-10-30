@@ -94,12 +94,13 @@ const specialtyOptions = computed(() => [
 
         <div
           v-else
-          class="mt-stack-xl overflow-hidden rounded-card border border-zinc-200 bg-white shadow-sm divide-y divide-zinc-100"
+          class="mt-stack-xl grid items-stretch gap-4 lg:grid-cols-2"
         >
           <ProviderCard
             v-for="provider in filteredProviders"
             :key="provider.name"
             v-bind="provider"
+            :class="provider.featured ? 'h-full lg:col-span-2' : 'h-full'"
           />
         </div>
 
