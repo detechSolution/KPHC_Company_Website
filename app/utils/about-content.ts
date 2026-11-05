@@ -113,8 +113,8 @@ export const historyCards: HistoryCard[] = [
     featured: false,
   },
   {
-    year: '2019',
-    title: 'Chinatown Expansion',
+    year: '2008',
+    title: 'Chinatown Downtown Expansion',
     body: 'New clinic sites extended our reach, bringing medical, dental, and supportive services closer to more people across Honolulu.',
     featured: false,
   },
