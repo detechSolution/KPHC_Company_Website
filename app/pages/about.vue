@@ -294,10 +294,10 @@ watch(() => route.hash, () => {
           :alt="executiveTeamPhoto.alt"
           aspect-class="h-auto"
           object-class=""
-          class="mt-stack-xl"
+          class="mx-auto mt-stack-xl w-full max-w-3xl shadow-md"
           :width="executiveTeamPhoto.width"
           :height="executiveTeamPhoto.height"
-          sizes="(min-width: 82.5rem) 82.5rem, 100vw"
+          sizes="(min-width: 48rem) 48rem, 100vw"
         />
 
         <div class="mt-stack-xl grid gap-grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
