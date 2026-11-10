@@ -113,6 +113,12 @@ export const historyCards: HistoryCard[] = [
     featured: false,
   },
   {
+    year: '1999',
+    title: 'FTCA Deemed Entity',
+    body: 'KPHC is a deemed entity covered by the Federal Tort Claims Act (FTCA).',
+    featured: false,
+  },
+  {
     year: '2008',
     title: 'Chinatown Downtown Expansion',
     body: 'New clinic sites extended our reach, bringing medical, dental, and supportive services closer to more people across Honolulu.',
