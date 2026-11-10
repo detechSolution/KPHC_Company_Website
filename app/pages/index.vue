@@ -39,7 +39,6 @@ const highlightCards = [
   <div>
     <HeroBanner
       size="lg"
-      variant="plain"
       title="Quality Healthcare That Puts You First"
       description="Kalihi-Palama Health Center is a Federally Qualified Health Center (FQHC) providing accessible medical, dental, and behavioral health care for our community."
     >

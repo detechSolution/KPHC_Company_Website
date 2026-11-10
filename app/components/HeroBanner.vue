@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<{
   description?: string
   links?: Array<ButtonProps & { 'aria-label'?: string }>
   align?: HeroBannerAlign
-  /** soft = mint gradient (homepage), solid = green-50 band, plain = white */
+  /** soft = mint gradient, solid = green-50 band (default pages), plain = white */
   variant?: HeroBannerVariant
   size?: HeroBannerSize
   images?: { src: string, alt: string }[]
@@ -154,6 +154,7 @@ const descriptionClass = computed(() => [
         :class="[
           isCentered ? 'max-w-full' : 'max-w-4xl',
           variant === 'soft' && 'hero-media--soft',
+          variant === 'solid' && 'hero-media--solid',
         ]"
       >
         <slot>
@@ -208,6 +209,10 @@ const descriptionClass = computed(() => [
 .hero-media--soft {
   /* Soft hero fades to white; match carousel edge fades to the page surface. */
   --hero-carousel-fade: #fff;
+}
+
+.hero-media--solid {
+  --hero-carousel-fade: var(--color-green-50);
 }
 
 @media (prefers-reduced-motion: reduce) {
