@@ -114,7 +114,7 @@ usePageSeo({
           </li>
         </ul>
 
-        <div class="mt-stack-lg grid gap-8 lg:grid-cols-3">
+        <div class="mt-stack-lg max-w-2xl space-y-8">
           <div
             v-for="group in wicDocumentGroups"
             :key="group.title"

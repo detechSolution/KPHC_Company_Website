@@ -31,6 +31,7 @@ export const wicDocumentGroups: WicDocumentGroup[] = [
     examples: [
       'Driver\'s license',
       'State I.D.',
+      'Passport',
       'Birth certificate',
     ],
   },
